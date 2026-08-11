@@ -1313,3 +1313,3802 @@ document.addEventListener(
 
 </body>
       </html>
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <a href="#top" class="logo">
+            🐾 PawCasa
+        </a>
+
+        <nav aria-label="التنقل الرئيسي">
+            <a href="#products">المنتجات</a>
+            <a href="#categories">الفئات</a>
+            <a href="#about">عن PawCasa</a>
+            <a href="#faq">الأسئلة</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button
+                type="button"
+                class="iconbtn"
+                id="themeBtn"
+                aria-label="تغيير المظهر"
+            >
+                🌙
+            </button>
+
+            <button
+                type="button"
+                class="cart"
+                id="cartBtn"
+            >
+                🛒 السلة
+                <span id="cartCount">0</span>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+
+<main id="top">
+
+<section class="hero">
+
+    <div>
+
+        <span class="badge">
+            🐾 متجر الحيوانات الأليفة في المغرب
+        </span>
+
+        <h1>
+            كل ما يحتاجه صديقك الأليف في مكان واحد
+        </h1>
+
+        <p>
+            اكتشف مستلزمات القطط والكلاب والطيور والحيوانات
+            الصغيرة بأسعار مناسبة، واختر منتجاتك ثم أرسل
+            طلبك بسهولة عبر WhatsApp.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#products"
+                class="btn"
+            >
+                🛍️ اكتشف المنتجات
+            </a>
+
+            <button
+                type="button"
+                class="btn secondary"
+                id="heroCartBtn"
+            >
+                🛒 فتح السلة
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual" aria-hidden="true">
+
+        🐶
+
+        <span class="bubble b1">🐱</span>
+        <span class="bubble b2">🐾</span>
+
+    </div>
+
+</section>
+
+
+<section class="launch-panel">
+
+    <div>
+        <span class="badge">PawCasa</span>
+
+        <h2>
+            منتجات مختارة بعناية 🐾
+        </h2>
+
+        <p>
+            تجربة شراء بسيطة وسريعة من الهاتف أو الحاسوب.
+        </p>
+    </div>
+
+    <div class="launch-points">
+        <span>🚚 توصيل</span>
+        <span>💬 WhatsApp</span>
+        <span>💰 أسعار مناسبة</span>
+    </div>
+
+</section>
+
+
+<section id="categories">
+
+    <div class="section-title">
+        <h2>تصفح حسب الفئة</h2>
+    </div>
+
+    <div class="cat-intro">
+
+        <button
+            type="button"
+            class="cat-tile"
+            data-category="all"
+        >
+            <span>🐾</span>
+            <b>الكل</b>
+        </button>
+
+        <button
+            type="button"
+            class="cat-tile"
+            data-category="cats"
+        >
+            <span>🐱</span>
+            <b>القطط</b>
+        </button>
+
+        <button
+            type="button"
+            class="cat-tile"
+            data-category="dogs"
+        >
+            <span>🐶</span>
+            <b>الكلاب</b>
+        </button>
+
+        <button
+            type="button"
+            class="cat-tile"
+            data-category="birds"
+        >
+            <span>🐦</span>
+            <b>الطيور</b>
+        </button>
+
+        <button
+            type="button"
+            class="cat-tile"
+            data-category="small"
+        >
+            <span>🐰</span>
+            <b>الحيوانات الصغيرة</b>
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="products">
+
+    <div class="section-title">
+
+        <h2>
+            منتجات PawCasa
+        </h2>
+
+        <p>
+            اختر المنتج وأضفه إلى السلة
+        </p>
+
+    </div>
+
+
+    <div class="budget-banner">
+
+        <h3>
+            💚 خيارات مناسبة للميزانية
+        </h3>
+
+        <p>
+            منتجات مختارة بأسعار اقتصادية لتلبية احتياجات حيوانك الأليف.
+        </p>
+
+    </div>
+
+
+    <div class="shop-tools">
+
+        <input
+            class="search"
+            id="searchInput"
+            type="search"
+            placeholder="🔎 ابحث عن منتج..."
+            autocomplete="off"
+            aria-label="البحث عن منتج"
+        >
+
+        <select
+            id="sortSelect"
+            aria-label="ترتيب المنتجات"
+        >
+            <option value="default">
+                الترتيب الافتراضي
+            </option>
+
+            <option value="low">
+                السعر من الأقل
+            </option>
+
+            <option value="high">
+                السعر من الأعلى
+            </option>
+
+            <option value="rating">
+                الأعلى تقييماً
+            </option>
+        </select>
+
+    </div>
+
+
+    <div class="filters">
+
+        <button
+            type="button"
+            class="filter active"
+            data-filter="all"
+        >
+            🐾 الكل
+        </button>
+
+        <button
+            type="button"
+            class="filter"
+            data-filter="cats"
+        >
+            🐱 القطط
+        </button>
+
+        <button
+            type="button"
+            class="filter"
+            data-filter="dogs"
+        >
+            🐶 الكلاب
+        </button>
+
+        <button
+            type="button"
+            class="filter"
+            data-filter="birds"
+        >
+            🐦 الطيور
+        </button>
+
+        <button
+            type="button"
+            class="filter"
+            data-filter="small"
+        >
+            🐰 الحيوانات الصغيرة
+        </button>
+
+    </div>
+
+
+    <div
+        class="grid"
+        id="productGrid"
+    >
+
+        <!-- PRODUCT 1 -->
+
+        <article
+            class="card product"
+            data-category="cats"
+            data-name="طعام القطط"
+            data-price="75"
+            data-rating="5"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="1"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=700&q=80"
+                    alt="طعام ومستلزمات القطط"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐱 القطط
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    طعام القطط
+                </h3>
+
+                <p class="desc">
+                    طعام مناسب للقطط بمذاق شهي.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        75 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        اقتصادي
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="cat-food"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="cat-food"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article
+            class="card product"
+            data-category="cats"
+            data-name="لعبة القطط"
+            data-price="45"
+            data-rating="4"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="2"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=80"
+                    alt="لعبة للقطط"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐱 القطط
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    لعبة القطط
+                </h3>
+
+                <p class="desc">
+                    لعبة بسيطة تساعد قطتك على الحركة والنشاط.
+                </p>
+
+                <div class="rating">
+                    ★★★★☆
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        45 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        جديد
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="cat-toy"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="cat-toy"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article
+            class="card product"
+            data-category="dogs"
+            data-name="طعام الكلاب"
+            data-price="90"
+            data-rating="5"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="3"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=80"
+                    alt="طعام للكلاب"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐶 الكلاب
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    طعام الكلاب
+                </h3>
+
+                <p class="desc">
+                    غذاء مناسب للكلاب للاستخدام اليومي.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        90 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        الأكثر طلباً
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="dog-food"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="dog-food"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article
+            class="card product"
+            data-category="dogs"
+            data-name="لعبة الكلاب"
+            data-price="55"
+            data-rating="4"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="4"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80"
+                    alt="لعبة للكلاب"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐶 الكلاب
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    لعبة الكلاب
+                </h3>
+
+                <p class="desc">
+                    لعبة للترفيه وتشجيع الكلب على النشاط.
+                </p>
+
+                <div class="rating">
+                    ★★★★☆
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        55 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        اقتصادي
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="dog-toy"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="dog-toy"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 5 -->
+
+        <article
+            class="card product"
+            data-category="birds"
+            data-name="طعام الطيور"
+            data-price="40"
+            data-rating="5"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="5"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=700&q=80"
+                    alt="طعام الطيور"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐦 الطيور
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    طعام الطيور
+                </h3>
+
+                <p class="desc">
+                    خلطة مناسبة للطيور للاستخدام اليومي.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        40 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        اقتصادي
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="bird-food"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="bird-food"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 6 -->
+
+        <article
+            class="card product"
+            data-category="birds"
+            data-name="قفص الطيور"
+            data-price="180"
+            data-rating="4"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="6"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=700&q=80"
+                    alt="قفص الطيور"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐦 الطيور
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    قفص الطيور
+                </h3>
+
+                <p class="desc">
+                    قفص مناسب للطيور المنزلية مع مساحة مريحة.
+                </p>
+
+                <div class="rating">
+                    ★★★★☆
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        180 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        مميز
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="bird-cage"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="bird-cage"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 7 -->
+
+        <article
+            class="card product"
+            data-category="small"
+            data-name="طعام الأرانب"
+            data-price="50"
+            data-rating="5"
+        >
+
+            <button
+                type="button"
+                class="wishlist"
+                aria-label="إضافة إلى المفضلة"
+                data-wishlist="7"
+            >
+                ♡
+            </button>
+
+            <div class="pic">
+
+                <img
+                    src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=700&q=80"
+                    alt="أرنب"
+                    loading="lazy"
+                >
+
+                <span class="tag">
+                    🐰 الحيوانات الصغيرة
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    طعام الأرانب
+                </h3>
+
+                <p class="desc">
+                    غذاء مناسب للأرانب والحيوانات الصغيرة.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        50 MAD
+                    </div>
+
+                    <span class="mini-badge">
+                        اقتصادي
+                    </span>
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 توصيل متاح
+                </div>
+
+                <button
+                    type="button"
+                    class="btn add-product"
+                    data-id="rabbit-food"
+                >
+                    🛒 أضف للسلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary quick-view"
+                    data-id="rabbit-food"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 8 -->
+
+        <article
+            class="card product"
+            data-category="small"
+            data-name="إكسسوارات الحيو
+            </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <a href="#top" class="logo" aria-label="PawCasa">
+            🐾 PawCasa
+        </a>
+
+        <nav aria-label="التنقل الرئيسي">
+            <a href="#products">المنتجات</a>
+            <a href="#about">من نحن</a>
+            <a href="#faq">الأسئلة</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                class="iconbtn"
+                id="themeBtn"
+                aria-label="تغيير المظهر"
+            >
+                🌙
+            </button>
+
+            <button
+                type="button"
+                class="cart"
+                id="cartBtn"
+                aria-label="فتح سلة المشتريات"
+            >
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+    </div>
+</header>
+
+
+<main id="top">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <span class="badge">
+                🐾 متجر PawCasa في المغرب
+            </span>
+
+            <h1>
+                كل ما يحتاجه صديقك الأليف في مكان واحد
+            </h1>
+
+            <p>
+                اكتشف مجموعة مختارة من مستلزمات القطط والكلاب
+                والطيور والحيوانات الصغيرة، بأسعار مناسبة
+                وطلب سهل وسريع عبر WhatsApp.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#products"
+                    class="btn"
+                >
+                    🛍️ اكتشف المنتجات
+                </a>
+
+                <a
+                    href="#about"
+                    class="btn secondary"
+                >
+                    تعرف علينا
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="hero-visual"
+            aria-label="حيوانات أليفة"
+        >
+
+            🐶🐱
+
+            <span class="bubble b1">
+                🐾
+            </span>
+
+            <span class="bubble b2">
+                ❤️
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAUNCH PANEL -->
+
+    <section class="launch-panel">
+
+        <div>
+
+            <span class="badge">
+                ✨ PawCasa
+            </span>
+
+            <h2>
+                متجر بسيط، طلب سريع، وخدمة مباشرة
+            </h2>
+
+            <p>
+                أضف المنتجات إلى السلة، ثم أرسل تفاصيل طلبك
+                مباشرة عبر WhatsApp.
+            </p>
+
+        </div>
+
+        <div class="launch-points">
+
+            <span>🛒 سلة مشتريات</span>
+            <span>📱 WhatsApp</span>
+            <span>🇲🇦 المغرب</span>
+            <span>🐾 منتجات متنوعة</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section>
+
+        <div class="section-title">
+            <h2>
+                لماذا PawCasa؟
+            </h2>
+
+            <p>
+                تجربة شراء سهلة ومناسبة لأصحاب الحيوانات الأليفة
+            </p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div>🚚</div>
+                <b>توصيل محلي</b>
+                <span>خدمة موجهة لعملائنا في المغرب.</span>
+            </div>
+
+            <div class="feature">
+                <div>💰</div>
+                <b>أسعار مناسبة</b>
+                <span>منتجات مختارة بميزانيات مختلفة.</span>
+            </div>
+
+            <div class="feature">
+                <div>📱</div>
+                <b>طلب عبر WhatsApp</b>
+                <span>أرسل طلبك مباشرة وبسهولة.</span>
+            </div>
+
+            <div class="feature">
+                <div>🐾</div>
+                <b>للحيوانات المختلفة</b>
+                <span>قطط وكلاب وطيور وحيوانات صغيرة.</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section id="products">
+
+        <div class="section-title">
+
+            <h2>
+                🛍️ منتجات PawCasa
+            </h2>
+
+            <p>
+                اختر الفئة أو ابحث عن المنتج الذي تريده
+            </p>
+
+        </div>
+
+
+        <!-- CATEGORY TILES -->
+
+        <div class="cat-intro">
+
+            <button
+                type="button"
+                class="cat-tile"
+                data-category="all"
+            >
+                <span>🐾</span>
+                <b>الكل</b>
+            </button>
+
+            <button
+                type="button"
+                class="cat-tile"
+                data-category="cats"
+            >
+                <span>🐱</span>
+                <b>القطط</b>
+            </button>
+
+            <button
+                type="button"
+                class="cat-tile"
+                data-category="dogs"
+            >
+                <span>🐶</span>
+                <b>الكلاب</b>
+            </button>
+
+            <button
+                type="button"
+                class="cat-tile"
+                data-category="birds"
+            >
+                <span>🐦</span>
+                <b>الطيور</b>
+            </button>
+
+            <button
+                type="button"
+                class="cat-tile"
+                data-category="small"
+            >
+                <span>🐰</span>
+                <b>حيوانات صغيرة</b>
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH / SORT -->
+
+        <div class="shop-tools">
+
+            <input
+                id="searchInput"
+                class="search"
+                type="search"
+                placeholder="🔎 ابحث عن منتج..."
+                autocomplete="off"
+                aria-label="البحث عن منتج"
+            >
+
+            <select
+                id="sortSelect"
+                aria-label="ترتيب المنتجات"
+            >
+
+                <option value="default">
+                    الترتيب الافتراضي
+                </option>
+
+                <option value="price-low">
+                    السعر: من الأقل للأعلى
+                </option>
+
+                <option value="price-high">
+                    السعر: من الأعلى للأقل
+                </option>
+
+                <option value="rating">
+                    الأعلى تقييمًا
+                </option>
+
+                <option value="name">
+                    الاسم
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div
+            class="filters"
+            id="filters"
+            aria-label="فئات المنتجات"
+        >
+
+            <button
+                type="button"
+                class="filter active"
+                data-category="all"
+            >
+                الكل
+            </button>
+
+            <button
+                type="button"
+                class="filter"
+                data-category="cats"
+            >
+                🐱 القطط
+            </button>
+
+            <button
+                type="button"
+                class="filter"
+                data-category="dogs"
+            >
+                🐶 الكلاب
+            </button>
+
+            <button
+                type="button"
+                class="filter"
+                data-category="birds"
+            >
+                🐦 الطيور
+            </button>
+
+            <button
+                type="button"
+                class="filter"
+                data-category="small"
+            >
+                🐰 الحيوانات الصغيرة
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div
+            class="grid"
+            id="productGrid"
+            aria-live="polite"
+        >
+
+
+            <!-- PRODUCT 1 -->
+
+            <article
+                class="product card"
+                data-id="cat-food"
+                data-category="cats"
+                data-name="طعام القطط"
+                data-price="75"
+                data-rating="5"
+            >
+
+                <button
+                    type="button"
+                    class="wishlist"
+                    aria-label="إضافة إلى المفضلة"
+                    data-wishlist="cat-food"
+                >
+                    ♡
+                </button>
+
+                <div class="pic">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=900&q=80"
+                        alt="طعام القطط"
+                        loading="lazy"
+                    >
+
+                    <span class="tag">
+                        🐱 القطط
+                    </span>
+
+                </div>
+
+                <div class="body">
+
+                    <h3>
+                        طعام القطط
+                    </h3>
+
+                    <p class="desc">
+                        طعام مناسب للقطط بمذاق شهي
+                        ومناسب للاستخدام اليومي.
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="product-meta">
+
+                        <div class="price">
+                            75 MAD
+                        </div>
+
+                        <span class="mini-badge">
+                            اقتصادي
+                        </span>
+
+                    </div>
+
+                    <div class="stock">
+                        ✓ متوفر
+                    </div>
+
+                    <div class="shipping-note">
+                        🚚 متاح للطلب
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn add-product"
+                        data-id="cat-food"
+                    >
+                        🛒 أضف إلى السلة
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn secondary quick-view-btn"
+                        data-id="cat-food"
+                    >
+                        👁️ عرض التفاصيل
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 2 -->
+
+            <article
+                class="product card"
+                data-id="cat-toy"
+                data-category="cats"
+                data-name="لعبة للقطط"
+                data-price="45"
+                data-rating="4.8"
+            >
+
+                <button
+                    type="button"
+                    class="wishlist"
+                    aria-label="إضافة إلى المفضلة"
+                    data-wishlist="cat-toy"
+                >
+                    ♡
+                </button>
+
+                <div class="pic">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
+                        alt="لعبة للقطط"
+                        loading="lazy"
+                    >
+
+                    <span class="tag">
+                        🐱 القطط
+                    </span>
+
+                </div>
+
+                <div class="body">
+
+                    <h3>
+                        لعبة للقطط
+                    </h3>
+
+                    <p class="desc">
+                        لعبة ترفيهية تساعد على إبقاء قطتك
+                        نشيطة ومشغولة.
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="product-meta">
+
+                        <div class="price">
+                            45 MAD
+                        </div>
+
+                        <span class="mini-badge">
+                            عرض
+                        </span>
+
+                    </div>
+
+                    <div class="stock">
+                        ✓ متوفر
+                    </div>
+
+                    <div class="shipping-note">
+                        🚚 متاح للطلب
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn add-product"
+                        data-id="cat-toy"
+                    >
+                        🛒 أضف إلى السلة
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn secondary quick-view-btn"
+                        data-id="cat-toy"
+                    >
+                        👁️ عرض التفاصيل
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 3 -->
+
+            <article
+                class="product card"
+                data-id="cat-litter"
+                data-category="cats"
+                data-name="رمل القطط"
+                data-price="60"
+                data-rating="4.9"
+            >
+
+                <button
+                    type="button"
+                    class="wishlist"
+                    aria-label="إضافة إلى المفضلة"
+                    data-wishlist="cat-litter"
+                >
+                    ♡
+                </button>
+
+                <div class="pic">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=80"
+                        alt="رمل القطط"
+                        loading="lazy"
+                    >
+
+                    <span class="tag">
+                        🐱 القطط
+                    </span>
+
+                </div>
+
+                <div class="body">
+
+                    <h3>
+                        رمل القطط
+                    </h3>
+
+                    <p class="desc">
+                        رمل عملي للاستخدام اليومي
+                        والمساعدة في الحفاظ على النظافة.
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="product-meta">
+
+                        <div class="price">
+                            60 MAD
+                        </div>
+
+                        <span class="mini-badge">
+                            مفضل
+                        </span>
+
+                    </div>
+
+                    <div class="stock">
+                        ✓ متوفر
+                    </div>
+
+                    <div class="shipping-note">
+                        🚚 متاح للطلب
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn add-product"
+                        data-id="cat-litter"
+                    >
+                        🛒 أضف إلى السلة
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn secondary quick-view-btn"
+                        data-id="cat-litter"
+                    >
+                        👁️ عرض التفاصيل
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 4 -->
+
+            <article
+                class="product card"
+                data-id="dog-food"
+                data-category="dogs"
+                data-name="طعام الكلاب"
+                data-price="95"
+                data-rating="4.9"
+            >
+
+                <button
+                    type="button"
+                    class="wishlist"
+                    aria-label="إضافة إلى المفضلة"
+                    data-wishlist="dog-food"
+                >
+                    ♡
+                </button>
+
+                <div class="pic">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=900&q=80"
+                        alt="طعام الكلاب"
+                        loading="lazy"
+                    >
+
+                    <span class="tag">
+                        🐶 الكلاب
+                    </span>
+
+                </div>
+
+                <div class="body">
+
+                    <h3>
+                        طعام الكلاب
+                    </h3>
+
+                    <p class="desc">
+                        طعام مناسب للكلاب للاستخدام
+                        اليومي وبسعر اقتصادي.
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="product-meta">
+
+                        <div class="price">
+                            95 MAD
+                        </div>
+
+                        <span class="mini-badge">
+                            اقتصادي
+                        </span>
+
+                    </div>
+
+                    <div class="stock">
+                        ✓ متوفر
+                    </div>
+
+                    <div class="shipping-note">
+                        🚚 متاح للطلب
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn add-product"
+                        data-id="dog-food"
+                    >
+                        🛒 أضف إلى السلة
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn secondary quick-view-btn"
+                        data-id="dog-food"
+                    >
+                        👁️ عرض التفاصيل
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 5 -->
+
+            <article
+                class="product card"
+                data-id="dog-toy"
+                data-category="dogs"
+                data-name="لعبة للكلاب"
+                data-price="55"
+                data-rating="4.7"
+            >
+
+                <button
+                    type="button"
+                    class="wishlist"
+                    aria-label="إضافة إلى المفضلة"
+                    data-wishlist="dog-toy"
+                >
+                    ♡
+                </button>
+
+                <div class="pic">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80"
+                        alt="لعبة للكلاب"
+                        loading="lazy"
+                    >
+
+                    <span class="tag">
+                        🐶 الكلاب
+                    </span>
+
+                </div>
+
+                <div class="body">
+
+                    <h3>
+                        لعبة للكلاب
+                    </h3>
+
+                    <p class="desc">
+                        لعبة مناسبة للترفيه
+                        والنشاط اليومي.
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="product-meta">
+
+                        <div class="price">
+                            55 MAD
+                        </div>
+
+                        <span class="mini-badge">
+                            جديد
+                        </span>
+
+                    </div>
+
+                    <div class="stock">
+                        ✓ متوفر
+                    </div>
+
+                    <div class="shipping-note">
+                        🚚 متاح للطلب
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn add-product"
+                        data-id="dog-toy"
+                    >
+                        🛒 أضف إلى السلة
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn secondary quick-view-btn"
+                        data-id="dog-toy"
+                    >
+                        👁️ عرض التفاصيل
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 6 -->
+
+            <article
+                class="product card"
+                data-id="bird-food"
+                data-category="birds"
+                data-name="طعام الطيور"
+                data-price="50"
+                data-rating="4.8"
+            >
+
+                <button
+                    type="button"
+                    class="wishlist"
+                    aria-label="إضافة إلى المفضلة"
+                    data-wishlist="bird-food"
+               <script>
+/* =========================================================
+   PawCasa — الجزء 4
+   JavaScript: المنتجات + البحث + الفلاتر + السلة
+   ========================================================= */
+
+"use strict";
+
+/* ---------------------------------------------------------
+   إعدادات المتجر
+   --------------------------------------------------------- */
+
+const WHATSAPP_NUMBER = "212684424055";
+
+const STORAGE_CART = "pawcasa_cart_v1";
+const STORAGE_THEME = "pawcasa_theme_v1";
+const STORAGE_WISHLIST = "pawcasa_wishlist_v1";
+
+
+/* ---------------------------------------------------------
+   المنتجات
+   --------------------------------------------------------- */
+
+const products = [
+    {
+        id: 1,
+        name: "طعام القطط",
+        category: "cats",
+        price: 75,
+        oldPrice: 90,
+        rating: 5,
+        emoji: "🐱",
+        description: "طعام مناسب للقطط بمذاق شهي."
+    },
+    {
+        id: 2,
+        name: "رمل القطط",
+        category: "cats",
+        price: 55,
+        oldPrice: 65,
+        rating: 4.8,
+        emoji: "🐾",
+        description: "رمل عملي للمحافظة على نظافة المكان."
+    },
+    {
+        id: 3,
+        name: "لعبة للقطط",
+        category: "cats",
+        price: 35,
+        oldPrice: 45,
+        rating: 4.9,
+        emoji: "🧶",
+        description: "لعبة ممتعة تساعد قطتك على النشاط."
+    },
+    {
+        id: 4,
+        name: "طعام الكلاب",
+        category: "dogs",
+        price: 95,
+        oldPrice: 110,
+        rating: 4.9,
+        emoji: "🐶",
+        description: "غذاء مناسب للكلاب بمكونات مختارة."
+    },
+    {
+        id: 5,
+        name: "طوق للكلاب",
+        category: "dogs",
+        price: 45,
+        oldPrice: 55,
+        rating: 4.7,
+        emoji: "🦮",
+        description: "طوق مريح وعملي للاستخدام اليومي."
+    },
+    {
+        id: 6,
+        name: "لعبة للكلاب",
+        category: "dogs",
+        price: 40,
+        oldPrice: 50,
+        rating: 4.8,
+        emoji: "🦴",
+        description: "لعبة مناسبة للترفيه والنشاط."
+    },
+    {
+        id: 7,
+        name: "طعام الطيور",
+        category: "birds",
+        price: 30,
+        oldPrice: 38,
+        rating: 4.8,
+        emoji: "🐦",
+        description: "غذاء مناسب للطيور المنزلية."
+    },
+    {
+        id: 8,
+        name: "قفص طيور",
+        category: "birds",
+        price: 150,
+        oldPrice: 180,
+        rating: 4.7,
+        emoji: "🪶",
+        description: "قفص عملي ومناسب للطيور الصغيرة."
+    },
+    {
+        id: 9,
+        name: "بيت الأرانب",
+        category: "rabbits",
+        price: 120,
+        oldPrice: 145,
+        rating: 4.8,
+        emoji: "🐰",
+        description: "مساحة مريحة وآمنة للأرانب."
+    },
+    {
+        id: 10,
+        name: "طعام الأرانب",
+        category: "rabbits",
+        price: 45,
+        oldPrice: 55,
+        rating: 4.9,
+        emoji: "🥕",
+        description: "غذاء مناسب للأرانب المنزلية."
+    }
+];
+
+
+/* ---------------------------------------------------------
+   حالة المتجر
+   --------------------------------------------------------- */
+
+let cart = loadJSON(STORAGE_CART, []);
+let wishlist = loadJSON(STORAGE_WISHLIST, []);
+
+let currentCategory = "all";
+let currentSearch = "";
+let currentSort = "default";
+
+
+/* ---------------------------------------------------------
+   أدوات التخزين الآمن
+   --------------------------------------------------------- */
+
+function loadJSON(key, fallback) {
+
+    try {
+
+        const value = localStorage.getItem(key);
+
+        if (!value) {
+            return fallback;
+        }
+
+        const parsed = JSON.parse(value);
+
+        return parsed;
+
+    } catch (error) {
+
+        console.warn("PawCasa storage error:", error);
+
+        return fallback;
+    }
+}
+
+
+function saveJSON(key, value) {
+
+    try {
+
+        localStorage.setItem(
+            key,
+            JSON.stringify(value)
+        );
+
+    } catch (error) {
+
+        console.warn("PawCasa save error:", error);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   حماية النصوص عند إنشاء HTML
+   --------------------------------------------------------- */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* ---------------------------------------------------------
+   البحث عن المنتج بواسطة ID
+   --------------------------------------------------------- */
+
+function getProduct(id) {
+
+    return products.find(
+        product => product.id === Number(id)
+    );
+}
+
+
+/* ---------------------------------------------------------
+   تنسيق السعر
+   --------------------------------------------------------- */
+
+function formatPrice(price) {
+
+    return `${Number(price).toLocaleString("fr-MA")} درهم`;
+}
+
+
+/* ---------------------------------------------------------
+   Toast
+   --------------------------------------------------------- */
+
+let toastTimer = null;
+
+function showToast(message) {
+
+    const toast = document.getElementById("toast");
+
+    if (!toast) {
+        return;
+    }
+
+    toast.textContent = message;
+
+    toast.style.display = "block";
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+
+        toast.style.display = "none";
+
+    }, 2500);
+}
+
+
+/* ---------------------------------------------------------
+   رسم المنتجات
+   --------------------------------------------------------- */
+
+function renderProducts() {
+
+    const grid = document.getElementById("productGrid");
+
+    if (!grid) {
+        return;
+    }
+
+    let list = [...products];
+
+
+    /* البحث */
+
+    if (currentSearch.trim()) {
+
+        const query =
+            currentSearch
+                .trim()
+                .toLocaleLowerCase("ar");
+
+        list = list.filter(product => {
+
+            const text = `
+                ${product.name}
+                ${product.description}
+                ${product.category}
+            `.toLocaleLowerCase("ar");
+
+            return text.includes(query);
+        });
+    }
+
+
+    /* التصنيف */
+
+    if (currentCategory !== "all") {
+
+        list = list.filter(
+            product =>
+                product.category === currentCategory
+        );
+    }
+
+
+    /* الترتيب */
+
+    if (currentSort === "low") {
+
+        list.sort(
+            (a, b) => a.price - b.price
+        );
+
+    } else if (currentSort === "high") {
+
+        list.sort(
+            (a, b) => b.price - a.price
+        );
+
+    } else if (currentSort === "rating") {
+
+        list.sort(
+            (a, b) => b.rating - a.rating
+        );
+    }
+
+
+    /* تنظيف */
+
+    grid.innerHTML = "";
+
+
+    /* لا توجد نتائج */
+
+    if (list.length === 0) {
+
+        grid.innerHTML = `
+            <div
+                class="empty-state"
+                style="display:block;grid-column:1/-1"
+            >
+                <div style="font-size:45px;margin-bottom:10px">
+                    🔎
+                </div>
+
+                <strong>
+                    لم نجد أي منتج مطابق.
+                </strong>
+
+                <p style="margin:8px 0 0">
+                    جرّب كلمة بحث أخرى أو غيّر التصنيف.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* المنتجات */
+
+    list.forEach((product, index) => {
+
+        const card = document.createElement("article");
+
+        card.className =
+            `card product ${escapeHTML(product.category)}`;
+
+        card.dataset.id = product.id;
+
+        card.style.animationDelay =
+            `${Math.min(index * 0.03, 0.3)}s`;
+
+        const wished =
+            wishlist.includes(product.id);
+
+        card.innerHTML = `
+
+            <button
+                type="button"
+                class="wishlist ${wished ? "active" : ""}"
+                onclick="toggleWishlist(${product.id})"
+                aria-label="إضافة إلى المفضلة"
+                aria-pressed="${wished}"
+            >
+                ${wished ? "❤️" : "♡"}
+            </button>
+
+            <div class="pic">
+
+                <div
+                    style="
+                        width:100%;
+                        height:100%;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:90px;
+                    "
+                    aria-label="${escapeHTML(product.name)}"
+                >
+                    ${product.emoji}
+                </div>
+
+                <span class="tag">
+                    ${escapeHTML(categoryName(product.category))}
+                </span>
+
+            </div>
+
+            <div class="body">
+
+                <h3>
+                    ${escapeHTML(product.name)}
+                </h3>
+
+                <p class="desc">
+                    ${escapeHTML(product.description)}
+                </p>
+
+                <div class="rating">
+                    ${ratingStars(product.rating)}
+                    <small>
+                        (${Number(product.rating).toFixed(1)})
+                    </small>
+                </div>
+
+                <div class="product-meta">
+
+                    <div class="price">
+                        ${formatPrice(product.price)}
+                    </div>
+
+                    ${
+                        product.oldPrice
+                        ? `
+                            <span class="old">
+                                ${formatPrice(product.oldPrice)}
+                            </span>
+                        `
+                        : ""
+                    }
+
+                </div>
+
+                <div class="stock">
+                    ✓ متوفر
+                </div>
+
+                <div class="shipping-note">
+                    🚚 التوصيل حسب المنطقة
+                </div>
+
+                <button
+                    type="button"
+                    class="btn"
+                    onclick="addToCart(${product.id})"
+                >
+                    🛒 أضف إلى السلة
+                </button>
+
+                <button
+                    type="button"
+                    class="btn secondary"
+                    onclick="quickView(${product.id})"
+                >
+                    👁️ عرض التفاصيل
+                </button>
+
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+
+/* ---------------------------------------------------------
+   أسماء التصنيفات
+   --------------------------------------------------------- */
+
+function categoryName(category) {
+
+    const names = {
+
+        cats: "قطط",
+        dogs: "كلاب",
+        birds: "طيور",
+        rabbits: "أرانب"
+
+    };
+
+    return names[category] || "حيوانات";
+}
+
+
+/* ---------------------------------------------------------
+   النجوم
+   --------------------------------------------------------- */
+
+function ratingStars(rating) {
+
+    const rounded =
+        Math.round(Number(rating));
+
+    return "★".repeat(
+        Math.max(0, Math.min(5, rounded))
+    );
+}
+
+
+/* ---------------------------------------------------------
+   البحث
+   --------------------------------------------------------- */
+
+function searchProducts() {
+
+    const input =
+        document.getElementById("searchBox");
+
+    currentSearch =
+        input ? input.value : "";
+
+    renderProducts();
+}
+
+
+/* ---------------------------------------------------------
+   الترتيب
+   --------------------------------------------------------- */
+
+function sortProducts() {
+
+    const select =
+        document.getElementById("sortBox");
+
+    currentSort =
+        select ? select.value : "default";
+
+    renderProducts();
+}
+
+
+/* ---------------------------------------------------------
+   الفلترة
+   --------------------------------------------------------- */
+
+function filterProducts(category, button) {
+
+    currentCategory = category;
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(item => {
+
+            item.classList.remove("active");
+        });
+
+    if (button) {
+
+        button.classList.add("active");
+    }
+
+    renderProducts();
+}
+
+
+/* ---------------------------------------------------------
+   إضافة للسلة
+   --------------------------------------------------------- */
+
+function addToCart(productId) {
+
+    const product =
+        getProduct(productId);
+
+    if (!product) {
+        return;
+    }
+
+    const existing =
+        cart.find(
+            item => item.id === product.id
+        );
+
+    if (existing) {
+
+        existing.qty =
+            Math.min(
+                Number(existing.qty) + 1,
+                99
+            );
+
+    } else {
+
+        cart.push({
+
+            id: product.id,
+
+            qty: 1
+
+        });
+    }
+
+    saveJSON(STORAGE_CART, cart);
+
+    updateCartCount();
+
+    showToast(
+        `تمت إضافة ${product.name} إلى السلة 🛒`
+    );
+}
+
+
+/* ---------------------------------------------------------
+   توافق مع الدوال القديمة
+   --------------------------------------------------------- */
+
+function add(name, price, id = null) {
+
+    let product = null;
+
+    if (id !== null) {
+
+        product = getProduct(id);
+    }
+
+    if (!product) {
+
+        product =
+            products.find(
+                item =>
+                    item.name === name &&
+                    Number(item.price) === Number(price)
+            );
+    }
+
+    if (!product) {
+
+        product = {
+
+            id:
+                Date.now(),
+
+            name:
+                String(name),
+
+            price:
+                Number(price) || 0,
+
+            qty: 1
+        };
+
+        cart.push(product);
+
+    } else {
+
+        addToCart(product.id);
+
+        return;
+    }
+
+    saveJSON(STORAGE_CART, cart);
+
+    updateCartCount();
+
+    showToast(
+        `تمت إضافة ${name} إلى السلة 🛒`
+    );
+}
+
+
+/* ---------------------------------------------------------
+   كمية السلة
+   --------------------------------------------------------- */
+
+function getCartCount() {
+
+    return cart.reduce(
+        (total, item) =>
+            total + Math.max(
+                0,
+                Number(item.qty) || 0
+            ),
+        0
+    );
+}
+
+
+/* ---------------------------------------------------------
+   إجمالي السلة
+   --------------------------------------------------------- */
+
+function getCartTotal() {
+
+    return cart.reduce(
+        (total, item) => {
+
+            const product =
+                getProduct(item.id);
+
+            if (product) {
+
+                return total +
+                    product.price *
+                    Math.max(
+                        0,
+                        Number(item.qty) || 0
+                    );
+            }
+
+            return total;
+
+        },
+        0
+    );
+}
+
+
+/* ---------------------------------------------------------
+   تحديث عداد السلة
+   --------------------------------------------------------- */
+
+function updateCartCount() {
+
+    const count =
+        document.getElementById("count");
+
+    if (!count) {
+        return;
+    }
+
+    count.textContent =
+        getCartCount();
+
+    count.setAttribute(
+        "aria-label",
+        `${getCartCount()} منتجات في السلة`
+    );
+}
+
+
+/* ---------------------------------------------------------
+   تعديل كمية المنتج
+   --------------------------------------------------------- */
+
+function changeQuantity(productId, amount) {
+
+    const item =
+        cart.find(
+            row =>
+                Number(row.id) === Number(productId)
+        );
+
+    if (!item) {
+        return;
+    }
+
+    item.qty =
+        Math.max(
+            0,
+            Math.min(
+                99,
+                Number(item.qty) + Number(amount)
+            )
+        );
+
+    if (item.qty <= 0) {
+
+        cart =
+            cart.filter(
+                row =>
+                    Number(row.id) !== Number(productId)
+            );
+    }
+
+    saveJSON(STORAGE_CART, cart);
+
+    updateCartCount();
+
+    renderCart();
+}
+
+
+/* ---------------------------------------------------------
+   حذف منتج
+   --------------------------------------------------------- */
+
+function removeFromCart(productId) {
+
+    cart =
+        cart.filter(
+            item =>
+                Number(item.id) !== Number(productId)
+        );
+
+    saveJSON(STORAGE_CART, cart);
+
+    updateCartCount();
+
+    renderCart();
+
+    showToast("تم حذف المنتج من السلة");
+}
+
+
+/* ---------------------------------------------------------
+   تفريغ السلة
+   --------------------------------------------------------- */
+
+function clearCart() {
+
+    if (!cart.length) {
+
+        showToast("السلة فارغة بالفعل");
+
+        return;
+    }
+
+    const confirmed =
+        window.confirm(
+            "هل تريد حذف جميع المنتجات من السلة؟"
+        );
+
+    if (!confirmed) {
+        return;
+    }
+
+    cart = [];
+
+    saveJSON(STORAGE_CART, cart);
+
+    updateCartCount();
+
+    renderCart();
+
+    showToast("تم إفراغ السلة");
+}
+
+
+/* ---------------------------------------------------------
+   فتح السلة
+   --------------------------------------------------------- */
+
+function openCart() {
+
+    const modal =
+        document.getElementById("cartModal");
+
+    if (!modal) {
+        return;
+    }
+
+    renderCart();
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* ---------------------------------------------------------
+   إغلاق السلة
+   --------------------------------------------------------- */
+
+function closeCart() {
+
+    const modal =
+        document.getElementById("cartModal");
+
+    if (!modal) {
+        return;
+    }
+
+    modal.style.display = "none";
+
+    restoreBodyScroll();
+}
+
+
+/* ---------------------------------------------------------
+   رسم محتوى السلة
+   --------------------------------------------------------- */
+
+function renderCart() {
+
+    const container =
+        document.getElementById("cartItems");
+
+    const total =
+        document.getElementById("cartTotal");
+
+    if (!container) {
+        return;
+    }
+
+    container.innerHTML = "";
+
+
+    if (!cart.length) {
+
+        container.innerHTML = `
+
+            <div
+                style="
+                    text-align:center;
+                    padding:25px 10px;
+                    color:var(--muted);
+                "
+            >
+
+                <div style="font-size:55px">
+                    🛒
+                </div>
+
+                <strong>
+                    السلة فارغة
+                </strong>
+
+                <p style="margin-top:8px">
+                    أضف بعض المنتجات للمتابعة.
+                </p>
+
+            </div>
+        `;
+
+    } else {
+
+        cart.forEach(item => {
+
+            const product =
+                getProduct(item.id);
+
+            if (!product) {
+                return;
+            }
+
+            const row =
+                document.createElement("div");
+
+            row.className = "cartrow";
+
+            row.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${escapeHTML(product.name)}
+                    </strong>
+
+                    <div class="small-note">
+                        ${formatPrice(product.price)}
+                    </div>
+
+                </div>
+
+                <div
+                    class="qty"
+                    style="
+                        display:flex;
+                        align-items:center;
+                        gap:5px;
+                    "
+                >
+
+                    <button
+                        type="button"
+                        onclick="changeQuantity(${product.id}, -1)"
+                        aria-label="إنقاص الكمية"
+                    >
+                        −
+                    </button>
+
+                    <strong>
+                        ${Number(item.qty)}
+                    </strong>
+
+                    <button
+                        type="button"
+                        onclick="changeQuantity(${product.id}, 1)"
+                        aria-label="زيادة الكمية"
+                    >
+                        +
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="removeFrom
+                        <!-- =========================================================
+     PawCasa — الجزء 5
+     Checkout + WhatsApp + النوافذ + Footer + التهيئة النهائية
+     ========================================================= -->
+
+<!-- =========================================================
+     نافذة السلة
+     ========================================================= -->
+
+<div
+    class="modal"
+    id="cartModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cartTitle"
+>
+
+    <div class="box">
+
+        <button
+            type="button"
+            class="close"
+            onclick="closeCart()"
+            aria-label="إغلاق"
+        >
+            ×
+        </button>
+
+        <h2 id="cartTitle">
+            🛒 سلة المشتريات
+        </h2>
+
+        <div
+            id="cartItems"
+            style="margin-top:15px"
+        ></div>
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                border-top:1px solid var(--line);
+                padding-top:15px;
+                margin-top:10px;
+                font-weight:900;
+                font-size:19px;
+            "
+        >
+
+            <span>
+                المجموع:
+            </span>
+
+            <span
+                id="cartTotal"
+                style="color:var(--green)"
+            >
+                0 درهم
+            </span>
+
+        </div>
+
+        <div
+            class="checkout-note"
+            style="margin-top:15px"
+        >
+            📦 بعد تأكيد الطلب سيتم تجهيز رسالة
+            تحتوي على المنتجات وبياناتك وإرسالها
+            عبر WhatsApp.
+        </div>
+
+        <div
+            class="cart-actions"
+            style="margin-top:12px"
+        >
+
+            <button
+                type="button"
+                class="btn"
+                onclick="openCheckout()"
+            >
+                إتمام الطلب
+            </button>
+
+            <button
+                type="button"
+                class="btn secondary"
+                onclick="clearCart()"
+            >
+                🗑️ إفراغ السلة
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     نافذة العرض السريع
+     ========================================================= -->
+
+<div
+    class="modal"
+    id="quickModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quickTitle"
+>
+
+    <div class="box">
+
+        <button
+            type="button"
+            class="close"
+            onclick="closeQuickView()"
+            aria-label="إغلاق"
+        >
+            ×
+        </button>
+
+        <div
+            id="quickContent"
+            style="padding-top:8px"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     نافذة إتمام الطلب
+     ========================================================= -->
+
+<div
+    class="modal"
+    id="checkoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="checkoutTitle"
+>
+
+    <div class="box">
+
+        <button
+            type="button"
+            class="close"
+            onclick="closeCheckout()"
+            aria-label="إغلاق"
+        >
+            ×
+        </button>
+
+        <h2 id="checkoutTitle">
+            📦 إتمام الطلب
+        </h2>
+
+        <p
+            class="small-note"
+            style="margin:8px 0 15px"
+        >
+            أدخل معلوماتك، ثم اضغط على زر
+            إرسال الطلب عبر WhatsApp.
+        </p>
+
+
+        <!-- اسم العميل -->
+
+        <label for="customerName">
+            الاسم الكامل
+        </label>
+
+        <input
+            id="customerName"
+            type="text"
+            maxlength="80"
+            autocomplete="name"
+            placeholder="مثال: محمد العلوي"
+        >
+
+
+        <!-- الهاتف -->
+
+        <label for="customerPhone">
+            رقم الهاتف
+        </label>
+
+        <input
+            id="customerPhone"
+            type="tel"
+            maxlength="25"
+            autocomplete="tel"
+            inputmode="tel"
+            placeholder="مثال: 06XXXXXXXX"
+        >
+
+
+        <!-- المدينة -->
+
+        <label for="customerCity">
+            المدينة
+        </label>
+
+        <input
+            id="customerCity"
+            type="text"
+            maxlength="60"
+            autocomplete="address-level2"
+            placeholder="مثال: الدار البيضاء"
+        >
+
+
+        <!-- العنوان -->
+
+        <label for="customerAddress">
+            العنوان
+        </label>
+
+        <textarea
+            id="customerAddress"
+            maxlength="250"
+            autocomplete="street-address"
+            placeholder="الحي، الشارع، رقم المنزل..."
+        ></textarea>
+
+
+        <!-- ملاحظات -->
+
+        <label for="customerNotes">
+            ملاحظات إضافية
+        </label>
+
+        <textarea
+            id="customerNotes"
+            maxlength="300"
+            placeholder="مثال: الاتصال قبل التوصيل"
+        ></textarea>
+
+
+        <!-- طريقة الدفع -->
+
+        <label for="paymentMethod">
+            طريقة الدفع
+        </label>
+
+        <select id="paymentMethod">
+
+            <option value="cash">
+                الدفع عند الاستلام
+            </option>
+
+            <option value="other">
+                سيتم الاتفاق عبر WhatsApp
+            </option>
+
+        </select>
+
+
+        <!-- ملخص الطلب -->
+
+        <div
+            id="checkoutSummary"
+            class="order-summary"
+        ></div>
+
+
+        <!-- الموافقة -->
+
+        <label class="consent">
+
+            <input
+                id="customerConsent"
+                type="checkbox"
+            >
+
+            <span>
+                أؤكد أن المعلومات المدخلة صحيحة
+                وأرغب في إرسال طلب الشراء عبر WhatsApp.
+            </span>
+
+        </label>
+
+
+        <button
+            type="button"
+            class="btn"
+            style="width:100%"
+            onclick="sendOrderToWhatsApp()"
+        >
+            💬 إرسال الطلب عبر WhatsApp
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     قسم الأسئلة الشائعة
+     ========================================================= -->
+
+<section
+    class="faq"
+    id="faq"
+>
+
+    <div class="section-title">
+
+        <h2>
+            الأسئلة الشائعة
+        </h2>
+
+        <p style="color:var(--muted)">
+            معلومات سريعة حول الطلب والتوصيل.
+        </p>
+
+    </div>
+
+    <details>
+
+        <summary>
+            كيف أطلب منتجًا؟
+        </summary>
+
+        <p>
+            أضف المنتجات إلى السلة، ثم افتح السلة
+            واضغط على "إتمام الطلب"، وبعد إدخال
+            معلوماتك اضغط على إرسال الطلب عبر WhatsApp.
+        </p>
+
+    </details>
+
+    <details>
+
+        <summary>
+            كيف يتم تأكيد الطلب؟
+        </summary>
+
+        <p>
+            بعد إرسال الطلب عبر WhatsApp سيتم التواصل
+            معك لتأكيد المنتجات والعنوان وتفاصيل التوصيل.
+        </p>
+
+    </details>
+
+    <details>
+
+        <summary>
+            هل يمكنني تغيير طلبي؟
+        </summary>
+
+        <p>
+            يمكنك التواصل معنا عبر WhatsApp في أقرب وقت
+            ممكن لطلب تعديل الطلب قبل تجهيزه.
+        </p>
+
+    </details>
+
+</section>
+
+
+<!-- =========================================================
+     معلومات المتجر
+     ========================================================= -->
+
+<section id="about">
+
+    <div class="info">
+
+        <div class="info-grid">
+
+            <div>
+
+                <h2>
+                    🐾 عن PawCasa
+                </h2>
+
+                <p>
+                    PawCasa متجر إلكتروني لمستلزمات
+                    الحيوانات الأليفة، يهدف إلى توفير
+                    منتجات عملية وبأسعار مناسبة لمحبي
+                    الحيوانات في الدار البيضاء والمغرب.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    📍 نطاق الخدمة
+                </h2>
+
+                <ul class="list">
+
+                    <li>
+                        الدار البيضاء
+                    </li>
+
+                    <li>
+                        المغرب
+                    </li>
+
+                    <li>
+                        الطلب عبر WhatsApp
+                    </li>
+
+                    <li>
+                        تأكيد الطلب قبل التوصيل
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>
+                🐾 PawCasa
+            </h3>
+
+            <p>
+                متجر مستلزمات الحيوانات الأليفة
+                في المغرب.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                روابط سريعة
+            </h3>
+
+            <a href="#top">
+                الرئيسية
+            </a>
+
+            <a href="#products">
+                المنتجات
+            </a>
+
+            <a href="#faq">
+                الأسئلة الشائعة
+            </a>
+
+            <a href="#about">
+                عن المتجر
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                التواصل
+            </h3>
+
+            <a
+                href="https://wa.me/212684424055"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 WhatsApp
+            </a>
+
+            <p>
+                الدار البيضاء - المغرب
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="year"></span>
+            PawCasa — جميع الحقوق محفوظة.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     زر الهاتف
+     ========================================================= -->
+
+<div class="mobile-cta">
+
+    <button
+        type="button"
+        onclick="openCart()"
+    >
+        🛒 السلة
+    </button>
+
+    <button
+        type="button"
+        class="secondary"
+        onclick="scrollToProducts()"
+    >
+        🐾 المنتجات
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     Toast
+     ========================================================= -->
+
+<div
+    id="toast"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<script>
+
+/* =========================================================
+   PawCasa — الجزء 5
+   وظائف Checkout و WhatsApp
+   ========================================================= */
+
+"use strict";
+
+
+/* ---------------------------------------------------------
+   فتح Checkout
+   --------------------------------------------------------- */
+
+function openCheckout() {
+
+    if (!Array.isArray(cart) || cart.length === 0) {
+
+        showToast(
+            "السلة فارغة. أضف منتجًا أولًا."
+        );
+
+        return;
+    }
+
+    const modal =
+        document.getElementById("checkoutModal");
+
+    if (!modal) {
+        return;
+    }
+
+    renderCheckoutSummary();
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* ---------------------------------------------------------
+   إغلاق Checkout
+   --------------------------------------------------------- */
+
+function closeCheckout() {
+
+    const modal =
+        document.getElementById("checkoutModal");
+
+    if (!modal) {
+        return;
+    }
+
+    modal.style.display = "none";
+
+    restoreBodyScroll();
+}
+
+
+/* ---------------------------------------------------------
+   ملخص Checkout
+   --------------------------------------------------------- */
+
+function renderCheckoutSummary() {
+
+    const summary =
+        document.getElementById("checkoutSummary");
+
+    if (!summary) {
+        return;
+    }
+
+    if (!cart.length) {
+
+        summary.innerHTML =
+            "السلة فارغة.";
+
+        return;
+    }
+
+    let html = "";
+
+    cart.forEach(item => {
+
+        const product =
+            getProduct(item.id);
+
+        if (!product) {
+            return;
+        }
+
+        const qty =
+            Math.max(
+                1,
+                Number(item.qty) || 1
+            );
+
+        const subtotal =
+            product.price * qty;
+
+        html += `
+            <div
+                style="
+                    display:flex;
+                    justify-content:space-between;
+                    gap:10px;
+                    margin:5px 0;
+                "
+            >
+                <span>
+                    ${escapeHTML(product.name)}
+                    × ${qty}
+                </span>
+
+                <strong>
+                    ${formatPrice(subtotal)}
+                </strong>
+            </div>
+        `;
+    });
+
+    html += `
+        <hr
+            style="
+                border:0;
+                border-top:1px solid var(--line);
+                margin:10px 0;
+            "
+        >
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                font-weight:900;
+            "
+        >
+            <span>
+                الإجمالي
+            </span>
+
+            <span style="color:var(--green)">
+                ${formatPrice(getCartTotal())}
+            </span>
+        </div>
+    `;
+
+    summary.innerHTML = html;
+}
+
+
+/* ---------------------------------------------------------
+   تنظيف وتحقق من البيانات
+   --------------------------------------------------------- */
+
+function cleanInput(value, maxLength) {
+
+    return String(value || "")
+        .trim()
+        .replace(/\s+/g, " ")
+        .slice(0, maxLength);
+}
+
+
+function validatePhone(phone) {
+
+    /*
+       يسمح بأرقام المغرب بالشكل:
+       06xxxxxxxx
+       07xxxxxxxx
+       +2126xxxxxxxx
+       +2127xxxxxxxx
+       2126xxxxxxxx
+       2127xxxxxxxx
+    */
+
+    const normalized =
+        phone
+            .replace(/[\s()-]/g, "")
+            .replace(/^00/, "+");
+
+    const moroccanPattern =
+        /^(?:0[5-7]\d{8}|\+212[5-7]\d{8}|212[5-7]\d{8})$/;
+
+    return moroccanPattern.test(
+        normalized
+    );
+}
+
+
+/* ---------------------------------------------------------
+   تحويل رقم الهاتف إلى صيغة WhatsApp
+   --------------------------------------------------------- */
+
+function normalizeWhatsAppPhone(phone) {
+
+    let value =
+        String(phone || "")
+            .replace(/[^\d+]/g, "");
+
+    if (value.startsWith("00")) {
+
+        value =
+            "+" + value.slice(2);
+    }
+
+    if (value.startsWith("+")) {
+
+        value =
+            value.slice(1);
+    }
+
+    if (value.startsWith("0")) {
+
+        value =
+            "212" + value.slice(1);
+    }
+
+    if (!value.startsWith("212")) {
+
+        value =
+            "212" + value;
+    }
+
+    return value;
+}
+
+
+/* ---------------------------------------------------------
+   إنشاء رسالة WhatsApp
+   --------------------------------------------------------- */
+
+function buildWhatsAppMessage() {
+
+    const name =
+        cleanInput(
+            document.getElementById("customerName")?.value,
+            80
+        );
+
+    const phone =
+        cleanInput(
+            document.getElementById("customerPhone")?.value,
+            25
+        );
+
+    const city =
+        cleanInput(
+            document.getElementById("customerCity")?.value,
+            60
+        );
+
+    const address =
+        cleanInput(
+            document.getElementById("customerAddress")?.value,
+            250
+        );
+
+    const notes =
+        cleanInput(
+            document.getElementById("customerNotes")?.value,
+            300
+        );
+
+    const payment =
+        document.getElementById("paymentMethod")?.value;
+
+    let message =
+`🐾 *طلب جديد من PawCasa*
+
+👤 الاسم: ${name}
+📱 الهاتف: ${phone}
+📍 المدينة: ${city}
+🏠 العنوان: ${address}
+
+🛒 *المنتجات:*`;
+
+    cart.forEach(item => {
+
+        const product =
+            getProduct(item.id);
+
+        if (!product) {
+            return;
+        }
+
+        const qty =
+            Math.max(
+                1,
+                Number(item.qty) || 1
+            );
+
+        const subtotal =
+            product.price * qty;
+
+        message +=
+`
+• ${product.name}
+  الكمية: ${qty}
+  السعر: ${formatPrice(subtotal)}`;
+    });
+
+    message +=
+`
+
+💰 *المجموع: ${formatPrice(getCartTotal())}*
+
+💳 طريقة الدفع:
+${
+    payment === "cash"
+        ? "الدفع عند الاستلام"
+        : "الاتفاق عبر WhatsApp"
+}
+`;
+
+    if (notes) {
+
+        message +=
+`
+📝 ملاحظات:
+${notes}`;
+    }
+
+    message +=
+`
+
+شكراً لاختياركم PawCasa 🐾`;
+
+    return message;
+}
+
+
+/* ---------------------------------------------------------
+   إرسال الطلب إلى WhatsApp
+   --------------------------------------------------------- */
+
+function sendOrderToWhatsApp() {
+
+    if (!Array.isArray(cart) || cart.length === 0) {
+
+        showToast(
+            "لا يمكن إرسال طلب فارغ."
+        );
+
+        return;
+    }
+
+
+    const name =
+        cleanInput(
+            document.getElementById("customerName")?.value,
+            80
+        );
+
+    const phone =
+        cleanInput(
+            document.getElementById("customerPhone")?.value,
+            25
+        );
+
+    const city =
+        cleanInput(
+            document.getElementById("customerCity")?.value,
+            60
+        );
+
+    const address =
+        cleanInput(
+            document.getElementById("customerAddress")?.value,
+            250
+        );
+
+    const consent =
+        document.getElementById("customerConsent");
+
+
+    /* التحقق من الاسم */
+
+    if (name.length < 2) {
+
+        showToast(
+            "يرجى إدخال الاسم الكامل."
+        );
+
+        document
+            .getElementById("customerName")
+            ?.focus();
+
+        return;
+    }
+
+
+    /* التحقق من الهاتف */
+
+    if (!validatePhone(phone)) {
+
+        showToast(
+            "يرجى إدخال رقم هاتف مغربي صحيح."
+        );
+
+        document
+            .getElementById("customerPhone")
+            ?.focus();
+
+        return;
+    }
+
+
+    /* التحقق من المدينة */
+
+    if (city.length < 2) {
+
+        showToast(
+            "يرجى إدخال المدينة."
+        );
+
+        document
+            .getElementById("customerCity")
+            ?.focus();
+
+        return;
+    }
+
+
+    /* التحقق من العنوان */
+
+    if (address.length < 4) {
+
+        showToast(
+            "يرجى إدخال العنوان."
+        );
+
+        document
+            .getElementById("customerAddress")
+            ?.focus();
+
+        return;
+    }
+
+
+    /* الموافقة */
+
+    if (!consent || !consent.checked) {
+
+        showToast(
+            "يرجى تأكيد صحة المعلومات."
+        );
+
+        return;
+    }
+
+
+    /* بناء الرسالة */
+
+    const message =
+        buildWhatsAppMessage();
+
+
+    const encoded =
+        encodeURIComponent(message);
+
+
+    /*
+       رقم المتجر ثابت.
+       لا نستخدم رقم العميل لإنشاء الرابط،
+       حتى لا يتم إرسال الطلب إلى جهة خاطئة.
+    */
+
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+
+    /*
+       فتح WhatsApp في نافذة جديدة.
+       noopener ليس متاحًا مع location،
+       لذلك نستخدم window.open ثم نعزل المرجع.
+    */
+
+    const newWindow =
+        window.open(
+            url,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+
+    /*
+       بعض المتصفحات تمنع window.open.
+       في هذه الحالة نستخدم location كحل بديل.
+    */
+
+    if (!newWindow) {
+
+        window.location.href = url;
+
+        return;
+    }
+
+
+    try {
+
+        newWindow.opener = null;
+
+    } catch (error) {
+
+        console.warn(
+            "Could not clear opener:",
+            error
+        );
+    }
+
+
+    showToast(
+        "تم تجهيز الطلب لفتحه في WhatsApp 💬"
+    );
+}
+
+
+/* ---------------------------------------------------------
+   رقم السنة
+   --------------------------------------------------------- */
+
+function updateYear() {
+
+    const year =
+        document.getElementById("year");
+
+    if (year) {
+
+        year.textContent =
+            new Date().getFullYear();
+    }
+}
+
+
+/* ---------------------------------------------------------
+   تحديث checkout عند فتح السلة
+   --------------------------------------------------------- */
+
+const originalOpenCart =
+    window.openCart;
+
+wind
