@@ -1,9 +1,14 @@
 <script>
+"use strict";
+
 /* =========================================================
-   PawCasa - Main JavaScript - Fixed Version
+   PawCasa - Main JavaScript
+   Fixed & Clean Version
    ========================================================= */
 
 const WHATSAPP_NUMBER = "212684424055";
+const CART_STORAGE_KEY = "pawCasaCart";
+const THEME_STORAGE_KEY = "pawCasaDark";
 
 let cart = [];
 let currentCategory = "all";
@@ -11,33 +16,33 @@ let toastTimer = null;
 
 
 /* =========================================================
-   Helpers
+   HELPER
    ========================================================= */
 
 function $(id) {
     return document.getElementById(id);
 }
 
-function showToast(message) {
-    const toast = $("toast");
 
-    if (!toast) {
-        alert(message);
-        return;
-    }
+/* =========================================================
+   SAFE NUMBER
+   ========================================================= */
 
-    toast.textContent = message;
-    toast.style.display = "block";
+function safeNumber(value, fallback = 0) {
+    const number = Number(value);
 
-    clearTimeout(toastTimer);
-
-    toastTimer = setTimeout(() => {
-        toast.style.display = "none";
-    }, 2500);
+    return Number.isFinite(number)
+        ? number
+        : fallback;
 }
 
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
 function escapeHtml(value) {
-    return String(value)
+    return String(value ?? "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -47,42 +52,96 @@ function escapeHtml(value) {
 
 
 /* =========================================================
-   CART - LOAD
+   TOAST
+   ========================================================= */
+
+function showToast(message) {
+    const toast = $("toast");
+
+    if (!toast) {
+        console.log(message);
+        return;
+    }
+
+    toast.textContent = String(message);
+    toast.style.display = "block";
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.style.display = "none";
+    }, 2500);
+}
+
+
+/* =========================================================
+   CART VALIDATION
+   ========================================================= */
+
+function normalizeCart(data) {
+    if (!Array.isArray(data)) {
+        return [];
+    }
+
+    return data
+        .filter(item => {
+            return (
+                item &&
+                typeof item.name === "string" &&
+                item.name.trim() !== "" &&
+                Number.isFinite(Number(item.price))
+            );
+        })
+        .map(item => {
+            return {
+                name: item.name.trim(),
+                price: Math.max(0, Number(item.price)),
+                qty: Math.min(
+                    99,
+                    Math.max(
+                        1,
+                        Math.floor(
+                            safeNumber(item.qty, 1)
+                        )
+                    )
+                )
+            };
+        });
+}
+
+
+/* =========================================================
+   LOAD CART
    ========================================================= */
 
 function loadCart() {
+    cart = [];
+
     try {
-        const saved = localStorage.getItem("pawCasaCart");
+        const saved =
+            localStorage.getItem(
+                CART_STORAGE_KEY
+            );
 
-        if (!saved) {
-            cart = [];
-            updateCart();
-            return;
+        if (saved) {
+            cart = normalizeCart(
+                JSON.parse(saved)
+            );
         }
-
-        const data = JSON.parse(saved);
-
-        if (!Array.isArray(data)) {
-            cart = [];
-            updateCart();
-            return;
-        }
-
-        cart = data
-            .filter(item =>
-                item &&
-                typeof item.name === "string" &&
-                Number.isFinite(Number(item.price))
-            )
-            .map(item => ({
-                name: item.name,
-                price: Number(item.price),
-                qty: Math.max(1, Number(item.qty) || 1)
-            }));
 
     } catch (error) {
-        console.error("Cart loading error:", error);
+        console.warn(
+            "PawCasa: Cart loading error",
+            error
+        );
+
         cart = [];
+
+        try {
+            localStorage.removeItem(
+                CART_STORAGE_KEY
+            );
+        } catch (_) {}
     }
 
     updateCart();
@@ -90,17 +149,20 @@ function loadCart() {
 
 
 /* =========================================================
-   CART - SAVE
+   SAVE CART
    ========================================================= */
 
 function saveCart() {
     try {
         localStorage.setItem(
-            "pawCasaCart",
+            CART_STORAGE_KEY,
             JSON.stringify(cart)
         );
     } catch (error) {
-        console.error("Cart saving error:", error);
+        console.warn(
+            "PawCasa: Cart saving error",
+            error
+        );
     }
 }
 
@@ -110,30 +172,44 @@ function saveCart() {
    ========================================================= */
 
 function add(name, price) {
+    const productName =
+        String(name ?? "").trim();
 
-    name = String(name || "").trim();
-    price = Number(price);
+    const productPrice =
+        Number(price);
 
-    if (!name) {
-        showToast("اسم المنتج غير صحيح.");
-        return;
+    if (!productName) {
+        showToast(
+            "اسم المنتج غير صحيح."
+        );
+        return false;
     }
 
-    if (!Number.isFinite(price)) {
-        showToast("سعر المنتج غير صحيح.");
-        return;
+    if (
+        !Number.isFinite(productPrice) ||
+        productPrice < 0
+    ) {
+        showToast(
+            "سعر المنتج غير صحيح."
+        );
+        return false;
     }
 
-    const existing = cart.find(
-        item => item.name === name
-    );
+    const existing =
+        cart.find(
+            item =>
+                item.name === productName
+        );
 
     if (existing) {
-        existing.qty += 1;
+        existing.qty = Math.min(
+            99,
+            existing.qty + 1
+        );
     } else {
         cart.push({
-            name: name,
-            price: price,
+            name: productName,
+            price: productPrice,
             qty: 1
         });
     }
@@ -141,7 +217,11 @@ function add(name, price) {
     saveCart();
     updateCart();
 
-    showToast("تمت إضافة المنتج إلى السلة 🛒");
+    showToast(
+        "تمت إضافة المنتج إلى السلة 🛒"
+    );
+
+    return true;
 }
 
 
@@ -150,28 +230,34 @@ function add(name, price) {
    ========================================================= */
 
 function updateCart() {
-
     const count = $("count");
     const cartItems = $("cartItems");
     const total = $("total");
 
-    const totalItems = cart.reduce(
-        (sum, item) => sum + item.qty,
-        0
-    );
+    const totalItems =
+        cart.reduce(
+            (sum, item) =>
+                sum + item.qty,
+            0
+        );
 
-    const totalPrice = cart.reduce(
-        (sum, item) =>
-            sum + (item.price * item.qty),
-        0
-    );
+    const totalPrice =
+        cart.reduce(
+            (sum, item) =>
+                sum +
+                item.price *
+                item.qty,
+            0
+        );
 
     if (count) {
-        count.textContent = totalItems;
+        count.textContent =
+            String(totalItems);
     }
 
     if (total) {
-        total.textContent = Math.round(totalPrice);
+        total.textContent =
+            String(Math.round(totalPrice));
     }
 
     if (!cartItems) {
@@ -181,49 +267,59 @@ function updateCart() {
     if (cart.length === 0) {
         cartItems.innerHTML = `
             <div class="small-note">
-                السلة فارغة حاليًا.
+                🛒 السلة فارغة حاليًا.
             </div>
         `;
         return;
     }
 
-    cartItems.innerHTML = cart.map(
-        (item, index) => `
-            <div class="cartrow">
+    cartItems.innerHTML =
+        cart.map((item, index) => {
 
-                <div>
-                    <strong>
-                        ${escapeHtml(item.name)}
-                    </strong>
+            const itemTotal =
+                item.price * item.qty;
 
-                    <br>
+            return `
+                <div class="cartrow">
 
-                    <span class="small-note">
-                        ${item.price} درهم × ${item.qty}
-                    </span>
+                    <div>
+                        <strong>
+                            ${escapeHtml(item.name)}
+                        </strong>
+
+                        <br>
+
+                        <span class="small-note">
+                            ${item.price} درهم × ${item.qty}
+                            = ${itemTotal} درهم
+                        </span>
+                    </div>
+
+                    <div class="qty">
+
+                        <button
+                            type="button"
+                            onclick="changeQty(${index}, -1)"
+                            aria-label="إنقاص الكمية">
+                            −
+                        </button>
+
+                        <span>
+                            ${item.qty}
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="changeQty(${index}, 1)"
+                            aria-label="زيادة الكمية">
+                            +
+                        </button>
+
+                    </div>
+
                 </div>
-
-                <div class="qty">
-
-                    <button
-                        type="button"
-                        onclick="changeQty(${index}, -1)">
-                        −
-                    </button>
-
-                    <span>${item.qty}</span>
-
-                    <button
-                        type="button"
-                        onclick="changeQty(${index}, 1)">
-                        +
-                    </button>
-
-                </div>
-
-            </div>
-        `
-    ).join("");
+            `;
+        }).join("");
 }
 
 
@@ -232,15 +328,29 @@ function updateCart() {
    ========================================================= */
 
 function changeQty(index, amount) {
-
     if (!cart[index]) {
         return;
     }
 
-    cart[index].qty += Number(amount);
+    const change =
+        Math.trunc(
+            safeNumber(amount, 0)
+        );
+
+    if (!change) {
+        return;
+    }
+
+    cart[index].qty += change;
 
     if (cart[index].qty <= 0) {
         cart.splice(index, 1);
+    } else {
+        cart[index].qty =
+            Math.min(
+                99,
+                cart[index].qty
+            );
     }
 
     saveCart();
@@ -253,9 +363,10 @@ function changeQty(index, amount) {
    ========================================================= */
 
 function clearCart() {
-
     if (cart.length === 0) {
-        showToast("السلة فارغة بالفعل.");
+        showToast(
+            "السلة فارغة بالفعل."
+        );
         return;
     }
 
@@ -264,7 +375,9 @@ function clearCart() {
     saveCart();
     updateCart();
 
-    showToast("تم تفريغ السلة.");
+    showToast(
+        "تم تفريغ السلة."
+    );
 }
 
 
@@ -273,17 +386,28 @@ function clearCart() {
    ========================================================= */
 
 function openCart() {
-
     updateCart();
 
-    const modal = $("cartModal");
+    const modal =
+        $("cartModal");
 
     if (!modal) {
-        showToast("تعذر فتح السلة.");
+        console.error(
+            "PawCasa: cartModal غير موجود في HTML."
+        );
+
+        showToast(
+            "تعذر فتح السلة."
+        );
+
         return;
     }
 
     modal.style.display = "flex";
+
+    document.body.classList.add(
+        "modal-open"
+    );
 }
 
 
@@ -292,12 +416,16 @@ function openCart() {
    ========================================================= */
 
 function closeCart() {
-
-    const modal = $("cartModal");
+    const modal =
+        $("cartModal");
 
     if (modal) {
         modal.style.display = "none";
     }
+
+    document.body.classList.remove(
+        "modal-open"
+    );
 }
 
 
@@ -306,20 +434,31 @@ function closeCart() {
    ========================================================= */
 
 function openCheckout() {
-
     if (cart.length === 0) {
-        showToast("السلة فارغة. أضف منتجًا أولًا.");
+        showToast(
+            "السلة فارغة. أضف منتجًا أولًا."
+        );
         return;
     }
 
     updateCheckoutSummary();
     closeCart();
 
-    const modal = $("checkoutModal");
+    const modal =
+        $("checkoutModal");
 
-    if (modal) {
-        modal.style.display = "flex";
+    if (!modal) {
+        showToast(
+            "نموذج الطلب غير موجود."
+        );
+        return;
     }
+
+    modal.style.display = "flex";
+
+    document.body.classList.add(
+        "modal-open"
+    );
 }
 
 
@@ -328,12 +467,16 @@ function openCheckout() {
    ========================================================= */
 
 function closeCheckout() {
-
-    const modal = $("checkoutModal");
+    const modal =
+        $("checkoutModal");
 
     if (modal) {
         modal.style.display = "none";
     }
+
+    document.body.classList.remove(
+        "modal-open"
+    );
 }
 
 
@@ -342,21 +485,24 @@ function closeCheckout() {
    ========================================================= */
 
 function updateCheckoutSummary() {
-
-    const summary = $("checkoutSummary");
+    const summary =
+        $("checkoutSummary");
 
     if (!summary) {
         return;
     }
 
-    const total = cart.reduce(
-        (sum, item) =>
-            sum + item.price * item.qty,
-        0
-    );
+    const total =
+        cart.reduce(
+            (sum, item) =>
+                sum +
+                item.price *
+                item.qty,
+            0
+        );
 
     summary.innerHTML = `
-        <strong>ملخص الطلب</strong>
+        <strong>🛒 ملخص الطلب</strong>
 
         <br><br>
 
@@ -364,50 +510,111 @@ function updateCheckoutSummary() {
             <div>
                 ${escapeHtml(item.name)}
                 × ${item.qty}
-                — ${item.price * item.qty} درهم
+                —
+                ${item.price * item.qty}
+                درهم
             </div>
         `).join("")}
 
         <hr>
 
         <strong>
-            الإجمالي: ${total} درهم
+            💰 الإجمالي:
+            ${Math.round(total)}
+            درهم
         </strong>
     `;
 }
 
 
 /* =========================================================
-   WHATSAPP ORDER
+   NORMALIZE MOROCCAN PHONE
+   ========================================================= */
+
+function normalizeMoroccanPhone(phone) {
+    const value =
+        String(phone ?? "")
+            .trim()
+            .replace(/[\s()-]/g, "");
+
+    if (/^0[67]\d{8}$/.test(value)) {
+        return "212" +
+            value.substring(1);
+    }
+
+    if (/^\+212[67]\d{8}$/.test(value)) {
+        return value.substring(1);
+    }
+
+    if (/^212[67]\d{8}$/.test(value)) {
+        return value;
+    }
+
+    return null;
+}
+
+
+/* =========================================================
+   SEND ORDER
    ========================================================= */
 
 function sendOrder() {
-
     if (cart.length === 0) {
         showToast("السلة فارغة.");
         return;
     }
 
-    const nameEl = $("customerName");
-    const phoneEl = $("customerPhone");
-    const cityEl = $("customerCity");
-    const addressEl = $("customerAddress");
-    const paymentEl = $("paymentMethod");
-    const consentEl = $("privacyConsent");
+    const nameEl =
+        $("customerName");
 
-    if (!nameEl || !phoneEl || !cityEl || !addressEl) {
-        showToast("نموذج الطلب غير مكتمل.");
+    const phoneEl =
+        $("customerPhone");
+
+    const cityEl =
+        $("customerCity");
+
+    const addressEl =
+        $("customerAddress");
+
+    const paymentEl =
+        $("paymentMethod");
+
+    const consentEl =
+        $("privacyConsent");
+
+    if (
+        !nameEl ||
+        !phoneEl ||
+        !cityEl ||
+        !addressEl
+    ) {
+        console.error(
+            "PawCasa: عناصر نموذج الطلب ناقصة."
+        );
+
+        showToast(
+            "نموذج الطلب غير مكتمل."
+        );
+
         return;
     }
 
-    const name = nameEl.value.trim();
-    const phone = phoneEl.value.trim();
-    const city = cityEl.value.trim();
-    const address = addressEl.value.trim();
+    const name =
+        nameEl.value.trim();
 
-    const payment = paymentEl
-        ? paymentEl.value
-        : "الدفع عند الاستلام";
+    const phone =
+        phoneEl.value.trim();
+
+    const city =
+        cityEl.value.trim();
+
+    const address =
+        addressEl.value.trim();
+
+    const payment =
+        paymentEl
+            ? paymentEl.value
+            : "الدفع عند الاستلام";
 
     if (!name) {
         showToast("اكتب اسمك.");
@@ -415,32 +622,13 @@ function sendOrder() {
         return;
     }
 
-    if (!phone) {
-        showToast("اكتب رقم الهاتف.");
-        phoneEl.focus();
-        return;
-    }
+    const normalizedPhone =
+        normalizeMoroccanPhone(phone);
 
-    /*
-       أرقام المغرب المقبولة:
-
-       0612345678
-       0712345678
-       +212612345678
-       +212712345678
-       212612345678
-       212712345678
-    */
-
-    const cleanPhone = phone
-        .replace(/\s+/g, "")
-        .replace(/-/g, "");
-
-    const validMoroccanPhone =
-        /^(0[67]\d{8}|\+212[67]\d{8}|212[67]\d{8})$/;
-
-    if (!validMoroccanPhone.test(cleanPhone)) {
-        showToast("أدخل رقم هاتف مغربي صحيح.");
+    if (!normalizedPhone) {
+        showToast(
+            "أدخل رقم هاتف مغربي صحيح."
+        );
         phoneEl.focus();
         return;
     }
@@ -452,48 +640,46 @@ function sendOrder() {
     }
 
     if (!address) {
-        showToast("اكتب عنوان التوصيل.");
+        showToast(
+            "اكتب عنوان التوصيل."
+        );
         addressEl.focus();
         return;
     }
 
-    if (consentEl && !consentEl.checked) {
-        showToast("يجب الموافقة على الشروط.");
+    if (
+        consentEl &&
+        !consentEl.checked
+    ) {
+        showToast(
+            "يجب الموافقة على الشروط."
+        );
+        consentEl.focus();
         return;
     }
 
-
-    /* =========================
-       PRODUCTS
-       ========================= */
-
-    const productsText = cart.map(item => {
-        return (
+    const productsText =
+        cart.map(item =>
             "• " +
             item.name +
             " × " +
             item.qty +
             " = " +
-            (item.price * item.qty) +
+            (
+                item.price *
+                item.qty
+            ) +
             " درهم"
+        ).join("\n");
+
+    const total =
+        cart.reduce(
+            (sum, item) =>
+                sum +
+                item.price *
+                item.qty,
+            0
         );
-    }).join("\n");
-
-
-    /* =========================
-       TOTAL
-       ========================= */
-
-    const total = cart.reduce(
-        (sum, item) =>
-            sum + item.price * item.qty,
-        0
-    );
-
-
-    /* =========================
-       MESSAGE
-       ========================= */
 
     const message =
 `🐾 طلب جديد من PawCasa
@@ -507,26 +693,18 @@ function sendOrder() {
 🛒 المنتجات:
 ${productsText}
 
-💰 الإجمالي: ${total} درهم`;
-
-
-    /* =========================
-       WHATSAPP URL
-       ========================= */
+💰 الإجمالي: ${Math.round(total)} درهم`;
 
     const whatsappUrl =
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
-        encodeURIComponent(message);
+        encodeURIComponent(
+            message
+        );
 
-
-    /*
-       استخدام location.href يعمل
-       على Android و iPhone والكمبيوتر.
-    */
-
-    window.location.href = whatsappUrl;
+    window.location.href =
+        whatsappUrl;
 }
 
 
@@ -535,17 +713,15 @@ ${productsText}
    ========================================================= */
 
 function searchProducts() {
-
-    const input = $("searchBox");
-
-    if (!input) {
-        return;
-    }
+    const input =
+        $("searchBox");
 
     const query =
-        input.value
-            .trim()
-            .toLowerCase();
+        input
+            ? input.value
+                .trim()
+                .toLowerCase()
+            : "";
 
     document
         .querySelectorAll(".product")
@@ -566,7 +742,8 @@ function searchProducts() {
                 text.includes(query);
 
             product.style.display =
-                categoryOK && searchOK
+                categoryOK &&
+                searchOK
                     ? ""
                     : "none";
         });
@@ -577,18 +754,25 @@ function searchProducts() {
    FILTER
    ========================================================= */
 
-function filterProducts(category, button) {
-
-    currentCategory = category || "all";
+function filterProducts(
+    category,
+    button
+) {
+    currentCategory =
+        category || "all";
 
     document
         .querySelectorAll(".filter")
         .forEach(item => {
-            item.classList.remove("active");
+            item.classList.remove(
+                "active"
+            );
         });
 
     if (button) {
-        button.classList.add("active");
+        button.classList.add(
+            "active"
+        );
     }
 
     searchProducts();
@@ -600,26 +784,13 @@ function filterProducts(category, button) {
    ========================================================= */
 
 function activateCategory(category) {
-
-    currentCategory = category;
-
-    const buttons =
-        document.querySelectorAll(".filter");
-
-    buttons.forEach(button => {
-
-        const onclick =
-            button.getAttribute("onclick") || "";
-
-        button.classList.toggle(
-            "active",
-            onclick.includes("'" + category + "'")
-        );
-    });
+    currentCategory =
+        category || "all";
 
     searchProducts();
 
-    const products = $("products");
+    const products =
+        $("products");
 
     if (products) {
         products.scrollIntoView({
@@ -635,14 +806,15 @@ function activateCategory(category) {
    ========================================================= */
 
 function sortProducts() {
-
-    const sortBox = $("sortBox");
+    const sortBox =
+        $("sortBox");
 
     if (!sortBox) {
         return;
     }
 
-    const mode = sortBox.value;
+    const mode =
+        sortBox.value;
 
     document
         .querySelectorAll(".grid")
@@ -650,7 +822,9 @@ function sortProducts() {
 
             const products =
                 Array.from(
-                    grid.querySelectorAll(".product")
+                    grid.querySelectorAll(
+                        ".product"
+                    )
                 );
 
             if (mode === "low") {
@@ -687,10 +861,19 @@ function sortProducts() {
 }
 
 
+/* =========================================================
+   PRICE
+   ========================================================= */
+
 function getPrice(product) {
+    if (!product) {
+        return 0;
+    }
 
     const element =
-        product.querySelector(".price");
+        product.querySelector(
+            ".price"
+        );
 
     if (!element) {
         return 0;
@@ -699,7 +882,8 @@ function getPrice(product) {
     const value =
         parseFloat(
             element.textContent
-                .replace(/[^\d.]/g, "")
+                .replace(/[^\d.,]/g, "")
+                .replace(",", ".")
         );
 
     return Number.isFinite(value)
@@ -708,17 +892,27 @@ function getPrice(product) {
 }
 
 
+/* =========================================================
+   RATING
+   ========================================================= */
+
 function getRating(product) {
+    if (!product) {
+        return 0;
+    }
 
     const element =
-        product.querySelector(".rating");
+        product.querySelector(
+            ".rating"
+        );
 
     if (!element) {
         return 0;
     }
 
     return (
-        element.textContent.match(/★/g) || []
+        element.textContent
+            .match(/★/g) || []
     ).length;
 }
 
@@ -728,15 +922,18 @@ function getRating(product) {
    ========================================================= */
 
 function toggleTheme() {
-
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle(
+        "dark"
+    );
 
     const dark =
-        document.body.classList.contains("dark");
+        document.body.classList.contains(
+            "dark"
+        );
 
     try {
         localStorage.setItem(
-            "pawCasaDark",
+            THEME_STORAGE_KEY,
             dark ? "1" : "0"
         );
     } catch (error) {
@@ -745,16 +942,21 @@ function toggleTheme() {
 }
 
 
+/* =========================================================
+   LOAD THEME
+   ========================================================= */
+
 function loadTheme() {
-
     try {
-
         if (
-            localStorage.getItem("pawCasaDark") === "1"
+            localStorage.getItem(
+                THEME_STORAGE_KEY
+            ) === "1"
         ) {
-            document.body.classList.add("dark");
+            document.body.classList.add(
+                "dark"
+            );
         }
-
     } catch (error) {
         console.warn(error);
     }
@@ -762,163 +964,45 @@ function loadTheme() {
 
 
 /* =========================================================
-   MEDIA / PRODUCT IMAGE
+   MEDIA
    ========================================================= */
 
 function openMedia(button) {
-
     if (!button) {
         return;
     }
 
     const url =
-        button.dataset.media;
+        button.dataset
+            ? button.dataset.media
+            : "";
 
     if (!url) {
-        showToast("لا توجد صورة لهذا المنتج.");
+        showToast(
+            "لا توجد صورة لهذا المنتج."
+        );
         return;
     }
 
-    const modal = $("mediaModal");
-    const image = $("mediaImage");
-    const caption = $("mediaCaption");
+    const modal =
+        $("mediaModal");
+
+    const image =
+        $("mediaImage");
+
+    const caption =
+        $("mediaCaption");
 
     if (!modal || !image) {
+        showToast(
+            "نافذة الصورة غير موجودة."
+        );
         return;
     }
 
     image.src = url;
-
     image.alt = "صورة المنتج";
 
     if (caption) {
-
         const card =
-            button.closest(".card");
-
-        const title =
-            card
-                ? card.querySelector("h3")
-                : null;
-
-        caption.textContent =
-            title
-                ? title.textContent.trim()
-                : "صورة المنتج";
-    }
-
-    modal.style.display = "flex";
-}
-
-
-function closeMedia() {
-
-    const modal = $("mediaModal");
-
-    if (modal) {
-        modal.style.display = "none";
-    }
-
-    const image = $("mediaImage");
-
-    if (image) {
-        image.src = "";
-    }
-}
-
-
-/* =========================================================
-   CLOSE MODALS WHEN CLICKING OUTSIDE
-   ========================================================= */
-
-window.addEventListener("click", event => {
-
-    const cartModal = $("cartModal");
-    const checkoutModal = $("checkoutModal");
-    const mediaModal = $("mediaModal");
-
-    if (
-        cartModal &&
-        event.target === cartModal
-    ) {
-        closeCart();
-    }
-
-    if (
-        checkoutModal &&
-        event.target === checkoutModal
-    ) {
-        closeCheckout();
-    }
-
-    if (
-        mediaModal &&
-        event.target === mediaModal
-    ) {
-        closeMedia();
-    }
-});
-
-
-/* =========================================================
-   ESC KEY
-   ========================================================= */
-
-window.addEventListener("keydown", event => {
-
-    if (event.key !== "Escape") {
-        return;
-    }
-
-    closeCart();
-    closeCheckout();
-    closeMedia();
-});
-
-
-/* =========================================================
-   INITIALIZATION
-   ========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        loadCart();
-        loadTheme();
-        searchProducts();
-
-        console.log(
-            "PawCasa JavaScript loaded successfully."
-        );
-    }
-);
-
-
-/* =========================================================
-   GLOBAL SAFETY
-   ========================================================= */
-
-window.add = add;
-window.changeQty = changeQty;
-window.clearCart = clearCart;
-
-window.openCart = openCart;
-window.closeCart = closeCart;
-
-window.openCheckout = openCheckout;
-window.closeCheckout = closeCheckout;
-
-window.sendOrder = sendOrder;
-
-window.searchProducts = searchProducts;
-window.filterProducts = filterProducts;
-window.activateCategory = activateCategory;
-window.sortProducts = sortProducts;
-
-window.toggleTheme = toggleTheme;
-
-window.openMedia = openMedia;
-window.closeMedia = closeMedia;
-
-</script>
+            button.closest
