@@ -1,4455 +1,924 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="google-site-verification" content="N_c3XfpLJcHqfJGi1cxVdoigay20mFdA4z-oPIh5TlQ">
-<meta name="theme-color" content="#3f7d70">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>PawCasa | متجر مستلزمات الحيوانات الأليفة في الدار البيضاء والمغرب</title>
-
-<meta name="description" content="PawCasa — متجر مستلزمات القطط والكلاب والطيور والحيوانات الصغيرة في الدار البيضاء والمغرب. منتجات اقتصادية، سلة مشتريات وطلب سريع عبر WhatsApp.">
-
-<meta name="keywords" content="PawCasa, متجر حيوانات, مستلزمات قطط, مستلزمات كلاب, الدار البيضاء, المغرب, pet shop Casablanca, accessoires animaux Maroc">
-
-<meta name="author" content="PawCasa">
-
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-
-<link rel="canonical" href="https://buffunferox.github.io/pawcasa-animalstor/">
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ar_MA">
-<meta property="og:site_name" content="PawCasa">
-<meta property="og:title" content="PawCasa | متجر مستلزمات الحيوانات الأليفة">
-<meta property="og:description" content="مستلزمات القطط والكلاب والطيور والحيوانات الصغيرة في الدار البيضاء والمغرب، مع طلب سهل عبر WhatsApp.">
-<meta property="og:url" content="https://buffunferox.github.io/pawcasa-animalstor/">
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PawCasa | متجر الحيوانات في المغرب">
-<meta name="twitter:description" content="مستلزمات الحيوانات الأليفة في الدار البيضاء والمغرب مع طلب سريع عبر WhatsApp.">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%233f7d70'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='58'%3E🐾%3C/text%3E%3C/svg%3E">
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"PetStore",
-  "name":"PawCasa",
-  "url":"https://buffunferox.github.io/pawcasa-animalstor/",
-  "description":"متجر مستلزمات الحيوانات الأليفة في الدار البيضاء والمغرب.",
-  "telephone":"+212684424055",
-  "areaServed":{
-    "@type":"City",
-    "name":"Casablanca"
-  },
-  "priceRange":"MAD"
-}
-</script>
-
-<style>
-
-:root{
---bg:#fffaf5;
---card:#fff;
---ink:#263238;
---muted:#68757a;
---green:#3f7d70;
---green2:#dfeee9;
---orange:#ef9b63;
---cream:#f7eadb;
---line:#eadfd4;
---shadow:0 14px 40px #26323812
-}
-
-*{
-box-sizing:border-box
-}
-
-html{
-scroll-behavior:smooth
-}
-
-body{
-margin:0;
-background:var(--bg);
-color:var(--ink);
-font-family:Tahoma,Arial,sans-serif
-}
-
-header{
-position:sticky;
-top:0;
-z-index:50;
-background:#fffffff2;
-backdrop-filter:blur(14px);
-border-bottom:1px solid var(--line)
-}
-
-.nav{
-max-width:1180px;
-margin:auto;
-padding:13px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px
-}
-
-.logo{
-font-size:27px;
-font-weight:900;
-color:var(--green)
-}
-
-nav a{
-text-decoration:none;
-color:var(--ink);
-margin:0 6px;
-font-weight:700
-}
-
-.nav-actions{
-display:flex;
-gap:8px
-}
-
-.iconbtn,
-.cart{
-border:0;
-border-radius:12px;
-padding:10px 13px;
-cursor:pointer
-}
-
-.iconbtn{
-background:var(--cream)
-}
-
-.cart{
-background:var(--green);
-color:#fff
-}
-
-.hero{
-max-width:1180px;
-margin:auto;
-padding:58px 20px 30px;
-display:grid;
-grid-template-columns:1.05fr .95fr;
-gap:35px;
-align-items:center
-}
-
-.badge{
-background:#f8dfca;
-color:#83512f;
-padding:8px 13px;
-border-radius:30px;
-font-weight:800;
-display:inline-block
-}
-
-.hero h1{
-font-size:52px;
-line-height:1.15;
-margin:18px 0 12px
-}
-
-.hero p{
-font-size:18px;
-color:var(--muted);
-line-height:1.9
-}
-
-.hero-buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-top:22px
-}
-
-.btn{
-border:0;
-background:var(--green);
-color:#fff;
-padding:13px 19px;
-border-radius:13px;
-cursor:pointer;
-text-decoration:none;
-font-weight:800;
-transition:.2s
-}
-
-.btn:hover{
-transform:translateY(-2px)
-}
-
-.secondary{
-background:#fff;
-color:var(--green);
-border:1px solid #c9ddd7
-}
-
-.hero-visual{
-height:350px;
-border-radius:35px;
-background:
-radial-gradient(circle at 30% 25%,#fff 0 8%,transparent 9%),
-linear-gradient(145deg,#f6d0b0,#f5e9da);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:125px;
-box-shadow:var(--shadow);
-position:relative;
-overflow:hidden
-}
-
-.bubble{
-position:absolute;
-background:#fff8;
-border-radius:50%;
-padding:14px;
-font-size:24px;
-animation:float 4s infinite ease-in-out
-}
-
-.b1{
-top:25px;
-right:30px
-}
-
-.b2{
-bottom:35px;
-left:35px;
-animation-delay:1s
-}
-
-@keyframes float{
-50%{
-transform:translateY(-9px)
-}
-}
-
-section{
-max-width:1180px;
-margin:22px auto;
-padding:20px
-}
-
-.section-title{
-text-align:center;
-margin-bottom:25px
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px
-}
-
-.feature{
-background:var(--card);
-border:1px solid var(--line);
-padding:20px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 5px 20px #00000008
-}
-
-.feature b{
-display:block;
-margin:8px 0
-}
-
-.filter{
-background:#fff;
-border:1px solid var(--line);
-padding:9px 16px;
-border-radius:22px;
-cursor:pointer;
-margin:4px
-}
-
-.filter.active{
-background:var(--green);
-color:#fff
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:17px
-}
-
-.card{
-background:#fff;
-border:1px solid var(--line);
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 7px 25px #00000009;
-transition:.25s
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:var(--shadow)
-}
-
-.pic{
-height:190px;
-background:#f4eee7;
-position:relative;
-overflow:hidden
-}
-
-.pic img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.4s
-}
-
-.card:hover img{
-transform:scale(1.05)
-}
-
-.tag{
-position:absolute;
-top:10px;
-right:10px;
-background:#fff;
-padding:6px 9px;
-border-radius:20px;
-font-size:12px;
-font-weight:800
-}
-
-.body{
-padding:15px
-}
-
-.body h3{
-margin:0 0 8px
-}
-
-.desc{
-font-size:13px;
-color:var(--muted);
-line-height:1.6;
-min-height:42px
-}
-
-.price{
-color:var(--green);
-font-size:21px;
-font-weight:900
-}
-
-.old{
-color:#aaa;
-text-decoration:line-through;
-font-size:13px;
-margin-right:7px
-}
-
-.rating{
-color:#e79a4f;
-font-size:14px
-}
-
-.body .btn{
-width:100%;
-margin-top:9px
-}
-
-.body .secondary{
-background:#fff;
-color:var(--green);
-border:1px solid #c9ddd7
-}
-
-.info{
-background:var(--green2);
-border-radius:25px;
-padding:30px;
-line-height:1.9
-}
-
-.info-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px
-}
-
-.list{
-padding-right:20px
-}
-
-.list li{
-margin:8px 0
-}
-
-.faq details{
-background:#fff;
-border:1px solid var(--line);
-border-radius:14px;
-padding:15px;
-margin:9px 0
-}
-
-.faq summary{
-cursor:pointer;
-font-weight:800
-}
-
-footer{
-background:#263238;
-color:#fff;
-text-align:center;
-padding:35px;
-margin-top:40px
-}
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:#0009;
-z-index:100;
-align-items:center;
-justify-content:center;
-padding:18px
-}
-
-.box{
-background:#fff;
-border-radius:22px;
-padding:25px;
-width:min(480px,100%);
-max-height:90vh;
-overflow:auto
-}
-
-.close{
-float:left;
-font-size:28px;
-cursor:pointer
-}
-
-input,
-textarea,
-select{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:10px;
-margin:6px 0 12px;
-font-family:inherit
-}
-
-.cartrow{
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid #eee;
-padding:10px 0
-}
-
-.qty button{
-border:1px solid #ddd;
-background:#fff;
-border-radius:7px;
-padding:3px 8px;
-cursor:pointer
-}
-
-#toast{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#263238;
-color:#fff;
-padding:13px 18px;
-border-radius:12px;
-display:none;
-z-index:200
-}
-
-.shop-tools{
-display:flex;
-gap:10px;
-max-width:760px;
-margin:0 auto 16px
-}
-
-.search,
-.shop-tools select{
-margin:0;
-background:#fff;
-border:1px solid var(--line);
-padding:13px 15px;
-border-radius:13px;
-font-family:inherit
-}
-
-.search{
-flex:1
-}
-
-.shop-tools select{
-min-width:210px
-}
-
-.promo{
-background:linear-gradient(135deg,#dfeee9,#fff1df);
-text-align:center
-}
-
-.promo-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin-top:16px
-}
-
-.promo-grid div{
-background:#ffffffaa;
-padding:13px;
-border-radius:14px;
-font-weight:700
-}
-
-.dark{
---bg:#172022;
---card:#202b2e;
---ink:#f2f5f4;
---muted:#b8c4c4;
---line:#344346;
---cream:#29383a
-}
-
-.dark header{
-background:#172022ee
-}
-
-.dark .search,
-.dark .shop-tools select,
-.dark .secondary,
-.dark .filter:not(.active),
-.dark .box{
-background:#202b2e;
-color:var(--ink)
-}
-
-@media(max-width:900px){
-
-.grid{
-grid-template-columns:repeat(2,1fr)
-}
-
-.features{
-grid-template-columns:repeat(2,1fr)
-}
-
-}
-
-@media(max-width:720px){
-
-nav{
-display:none
-}
-
-.hero{
-grid-template-columns:1fr;
-text-align:center
-}
-
-.hero h1{
-font-size:38px
-}
-
-.hero-buttons{
-justify-content:center
-}
-
-.info-grid{
-grid-template-columns:1fr
-}
-
-.shop-tools{
-flex-direction:column
-}
-
-.promo-grid{
-grid-template-columns:1fr 1fr
-}
-
-.shop-tools select{
-min-width:0
-}
-
-}
-
-@media(max-width:480px){
-
-.grid{
-grid-template-columns:1fr
-}
-
-.features{
-grid-template-columns:1fr 1fr
-}
-
-.hero-visual{
-height:250px;
-font-size:90px
-}
-
-}
-
-:root{
---accent:#ef9b63;
---success:#3f7d70
-}
-
-*{
-scrollbar-width:thin
-}
-
-::selection{
-background:#dfeee9;
-color:#263238
-}
-
-a{
-transition:.2s
-}
-
-.badge{
-box-shadow:0 6px 18px #ef9b6322
-}
-
-.hero-visual:after{
-content:"";
-position:absolute;
-inset:auto -10% -45% -10%;
-height:180px;
-background:#ffffff35;
-border-radius:50%
-}
-
-.product{
-position:relative
-}
-
-.product .wishlist{
-position:absolute;
-top:12px;
-left:12px;
-z-index:3;
-border:0;
-background:#fff;
-border-radius:50%;
-width:38px;
-height:38px;
-cursor:pointer;
-font-size:18px;
-box-shadow:0 5px 15px #0001
-}
-
-.product .wishlist.active{
-background:#f8dfca
-}
-
-.stock{
-font-size:12px;
-color:var(--green);
-font-weight:800;
-margin-top:5px
-}
-
-.shipping-note{
-font-size:12px;
-color:var(--muted);
-margin-top:5px
-}
-
-.modal .box h2{
-color:var(--green)
-}
-
-.checkout-note{
-background:#f7eadb;
-padding:12px;
-border-radius:12px;
-font-size:13px;
-line-height:1.7;
-margin:10px 0
-}
-
-.order-summary{
-background:#f7f3ef;
-border-radius:13px;
-padding:12px;
-margin:10px 0;
-font-size:13px
-}
-
-.dark .order-summary,
-.dark .checkout-note{
-background:#29383a
-}
-
-.footer-grid{
-max-width:1000px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-text-align:right
-}
-
-.footer-grid h3{
-margin-top:0
-}
-
-.footer-grid a{
-color:#fff;
-text-decoration:none;
-display:block;
-margin:7px 0;
-opacity:.88
-}
-
-.footer-bottom{
-border-top:1px solid #ffffff22;
-margin-top:22px;
-padding-top:18px
-}
-
-@media(max-width:650px){
-
-.footer-grid{
-grid-template-columns:1fr;
-text-align:center
-}
-
-.hero-visual{
-height:270px
-}
-
-}
-
-.budget-banner{
-background:linear-gradient(135deg,#fff0df,#e5f1ed);
-border:1px solid var(--line);
-border-radius:20px;
-padding:18px 20px;
-margin:0 auto 18px;
-text-align:center
-}
-
-.budget-banner h3{
-margin:0 0 6px;
-color:var(--green);
-font-size:22px
-}
-
-.budget-banner p{
-margin:0;
-color:var(--muted)
-}
-
-.section-subtitle{
-text-align:center;
-margin:30px 0 16px;
-color:var(--green)
-}
-
-.budget-grid{
-grid-template-columns:repeat(4,1fr)
-}
-
-@media(max-width:900px){
-
-.budget-grid{
-grid-template-columns:repeat(2,1fr)
-}
-
-}
-
-@media(max-width:480px){
-
-.budget-grid{
-grid-template-columns:1fr
-}
-
-}
-
-/* PawCasa v8 — richer categories, better product media, UX polish */
-
-:root{
---radius:22px
-}
-
-.product .pic{
-background:linear-gradient(135deg,#f6eee5,#e7f1ee);
-height:220px
-}
-
-.product .pic img{
-display:block;
-object-position:center;
-filter:saturate(1.04) contrast(1.02)
-}
-
-.product .pic:after{
-content:"";
-position:absolute;
-inset:auto 0 0;
-height:55px;
-background:linear-gradient(transparent,#0002);
-pointer-events:none
-}
-
-.category-icon{
-font-size:23px;
-margin-left:5px
-}
-
-.filter{
-transition:.2s;
-box-shadow:0 2px 8px #00000008
-}
-
-.filter:hover{
-transform:translateY(-2px)
-}
-
-.product{
-animation:cardIn .35s ease both
-}
-
-@keyframes cardIn{
-from{
-opacity:0;
-transform:translateY(8px)
-}
-to{
-opacity:1;
-transform:none
-}
-}
-
-.empty-state{
-display:none;
-text-align:center;
-padding:30px;
-background:#fff;
-border:1px dashed var(--line);
-border-radius:18px;
-color:var(--muted);
-margin-top:15px
-}
-
-.dark .empty-state{
-background:var(--card)
-}
-
-.quick-view{
-display:inline-block;
-margin-top:8px;
-font-size:12px;
-color:var(--green);
-font-weight:800;
-cursor:pointer
-}
-
-.product-meta{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:8px;
-margin-top:7px
-}
-
-.product-meta .price{
-font-size:20px
-}
-
-.mini-badge{
-font-size:11px;
-background:#f7eadb;
-padding:5px 8px;
-border-radius:10px;
-font-weight:800
-}
-
-.cat-intro{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px;
-margin:0 auto 20px
-}
-
-.cat-tile{
-border:1px solid var(--line);
-background:#fff;
-border-radius:17px;
-padding:14px;
-text-align:center;
-cursor:pointer;
-transition:.2s
-}
-
-.cat-tile:hover{
-transform:translateY(-3px);
-box-shadow:var(--shadow)
-}
-
-.cat-tile span{
-display:block;
-font-size:25px;
-margin-bottom:5px
-}
-
-.cat-tile b{
-font-size:13px
-}
-
-.dark .cat-tile{
-background:var(--card)
-}
-
-@media(max-width:900px){
-
-.cat-intro{
-grid-template-columns:repeat(3,1fr)
-}
-
-}
-
-@media(max-width:480px){
-
-.cat-intro{
-grid-template-columns:repeat(2,1fr)
-}
-
-.product .pic{
-height:200px
-}
-
-}
-
-.launch-panel{
-max-width:1180px;
-margin:18px auto 0;
-padding:22px 20px;
-border:1px solid var(--line);
-border-radius:24px;
-background:linear-gradient(135deg,#dfeee9,#fff0df);
-display:flex;
-justify-content:space-between;
-gap:20px;
-align-items:center
-}
-
-.launch-panel h2{
-margin:10px 0 5px;
-font-size:25px
-}
-
-.launch-panel p{
-margin:0;
-color:var(--muted);
-line-height:1.7
-}
-
-.launch-points{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-justify-content:flex-end
-}
-
-.launch-points span{
-background:#ffffffb8;
-padding:9px 12px;
-border-radius:12px;
-font-weight:800;
-font-size:13px
-}
-
-.product .pic{
-background:#f4eee7
-}
-
-.product .body{
-display:flex;
-flex-direction:column
-}
-
-.product .body .btn{
-margin-top:8px
-}
-
-.product .body .secondary{
-margin-top:6px
-}
-
-.product .stock{
-margin-top:7px
-}
-
-.product .shipping-note{
-margin-top:3px
-}
-
-.policy-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px
-}
-
-.policy-card{
-background:#fff;
-border:1px solid var(--line);
-border-radius:18px;
-padding:18px
-}
-
-.policy-card h3{
-margin:0 0 7px
-}
-
-.policy-card p{
-margin:0;
-color:var(--muted);
-line-height:1.7;
-font-size:13px
-}
-
-.dark .policy-card{
-background:var(--card)
-}
-
-.consent{
-display:flex;
-gap:8px;
-align-items:flex-start;
-font-size:12px;
-color:var(--muted);
-margin:8px 0 12px
-}
-
-.consent input{
-width:auto;
-margin:3px 0
-}
-
-.cart-actions{
-display:flex;
-gap:8px;
-flex-wrap:wrap
-}
-
-.cart-actions .btn{
-flex:1
-}
-
-.small-note{
-font-size:12px;
-color:var(--muted);
-line-height:1.6
-}
-
-@media(max-width:720px){
-
-.launch-panel{
-margin:12px 12px 0;
-flex-direction:column;
-align-items:stretch
-}
-
-.launch-points{
-justify-content:flex-start
-}
-
-.policy-grid{
-grid-template-columns:1fr
-}
-
-}
-
-.mobile-cta{
-display:none
-}
-
-@media(max-width:650px){
-
-.mobile-cta{
-display:flex;
-position:fixed;
-bottom:10px;
-left:10px;
-right:10px;
-z-index:80;
-background:#fffffff2;
-backdrop-filter:blur(12px);
-border:1px solid var(--line);
-border-radius:16px;
-padding:8px;
-gap:8px;
-box-shadow:0 10px 30px #0002
-}
-
-.mobile-cta button{
-flex:1;
-border:0;
-border-radius:12px;
-padding:11px;
-font-family:inherit;
-font-weight:800;
-background:var(--green);
-color:#fff
-}
-
-.mobile-cta button.secondary{
-background:#fff;
-color:var(--green);
-border:1px solid #c9ddd7
-}
-
-body{
-padding-bottom:75px
-}
-
-.dark .mobile-cta{
-background:#172022ee
-}
-
-.dark .mobile-cta button.secondary{
-background:#202b2e;
-color:#fff
-}
-
-}
-
-.legal-box{
-background:#fff;
-border:1px solid var(--line);
-border-radius:18px;
-padding:18px;
-line-height:1.85
-}
-
-.legal-box h3{
-color:var(--green);
-margin:0 0 8px
-}
-
-.legal-box p,
-.legal-box li{
-font-size:13px;
-color:var(--muted)
-}
-
-.legal-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px
-}
-
-.legal-warning{
-border-right:4px solid #e2a45d;
-background:#fff8ef;
-padding:12px 14px;
-border-radius:12px;
-font-size:13px;
-line-height:1.7
-}
-
-.dark .legal-box{
-background:var(--card)
-}
-
-.dark .legal-warning{
-background:#332b22
-}
-
-@media(max-width:700px){
-
-.legal-grid{
-grid-template-columns:1fr
-}
-
-}
-
-.legal-nav{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-justify-content:center;
-margin:12px auto 24px
-}
-
-.legal-nav a{
-padding:9px 13px;
-border:1px solid var(--line);
-border-radius:12px;
-text-decoration:none;
-color:var(--green);
-background:#fff;
-font-weight:800;
-font-size:13px
-}
-
-.dark .legal-nav a{
-background:var(--card)
-}
-
-.legal-page{
-max-width:1000px;
-margin:0 auto 28px;
-background:#fff;
-border:1px solid var(--line);
-border-radius:22px;
-padding:24px;
-box-shadow:var(--shadow)
-}
-
-.dark .legal-page{
-background:var(--card)
-}
-
-.legal-page h2{
-color:var(--green);
-margin-top:0
-}
-
-.legal-page h3{
-margin-top:24px
-}
-
-.legal-page p,
-.legal-page li{
-line-height:1.9;
-color:var(--muted);
-font-size:14px
-}
-
-.legal-page ul{
-padding-right:22px
-}
-
-.legal-meta{
-background:#f7f3ef;
-border-radius:15px;
-padding:14px;
-margin:14px 0
-}
-
-.dark .legal-meta{
-background:#29383a
-}
-
-.placeholder{
-color:#a86b36;
-font-weight:800
-}
-
-.legal-date{
-font-size:12px;
-color:var(--muted)
-}
-
-:focus-visible{
-outline:3px solid #ef9b63;
-outline-offset:3px
-}
-
-button:disabled{
-opacity:.55;
-cursor:not-allowed
-}
-
-@media(prefers-reduced-motion:reduce){
-
-*,
-*::before,
-*::after{
-scroll-behavior:auto!important;
-animation-duration:.01ms!important;
-transition-duration:.01ms!important
-}
-
-}
-
-.product-media{
-position:relative;
-width:100%;
-height:100%
-}
-
-.product-media img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block
-}
-
-.media-open{
-position:absolute;
-bottom:10px;
-left:10px;
-border:0;
-border-radius:12px;
-padding:8px 11px;
-background:#ffffffdd;
-color:#263238;
-font-family:inherit;
-font-weight:800;
-cursor:pointer;
-box-shadow:0 5px 16px #0002
-}
-
-.media-open:hover{
-transform:translateY(-1px)
-}
-
-.media-modal .box{
-width:min(900px,96vw);
-padding:12px
-}
-
-.media-stage{
-background:#111;
-border-radius:16px;
-overflow:hidden;
-aspect-ratio:16/10
-}
-
-.media-stage img{
-width:100%;
-height:100%;
-object-fit:contain;
-display:block
-}
-
-.media-caption{
-text-align:center;
-padding:10px 4px 2px;
-color:var(--muted);
-font-weight:700
-}
-
-.media-note{
-text-align:center;
-font-size:12px;
-color:var(--muted);
-margin-top:4px
-}
-
-.wa-float{
-position:fixed;
-right:18px;
-bottom:18px;
-z-index:90;
-display:flex;
-align-items:center;
-gap:8px;
-background:#25D366;
-color:#fff;
-text-decoration:none;
-padding:12px 16px;
-border-radius:999px;
-font-weight:900;
-box-shadow:0 10px 28px #0003;
-transition:.2s
-}
-
-.wa-float:hover{
-transform:translateY(-3px);
-box-shadow:0 14px 34px #0004
-}
-
-.wa-float span{
-font-size:13px
-}
-
-@media(max-width:650px){
-
-.wa-float{
-right:12px;
-bottom:88px;
-padding:12px;
-width:48px;
-height:48px;
-justify-content:center
-}
-
-.wa-float span{
-display:none
-}
-
-}
-
-button,
-a,
-input,
-select,
-textarea{
-touch-action:manipulation
-}
-
-.btn:focus-visible,
-.iconbtn:focus-visible,
-.cart:focus-visible,
-.filter:focus-visible,
-.wa-float:focus-visible{
-outline:3px solid #ef9b63;
-outline-offset:2px
-}
-
-.launch-status{
-max-width:1180px;
-margin:10px auto;
-padding:10px 14px;
-border:1px solid var(--line);
-border-radius:13px;
-background:#f7fbfa;
-text-align:center;
-font-size:12px;
-color:var(--muted)
-}
-
- </style>
- </style>
-</head>
-
-<body>
-
-<header>
-
-<div class="nav">
-
-<div class="logo">
-🐾 PawCasa
-</div>
-
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#products">المنتجات</a>
-<a href="#guide">دليل العناية</a>
-<a href="#faq">الأسئلة الشائعة</a>
-</nav>
-
-<div class="nav-actions">
-
-<button
-class="iconbtn"
-type="button"
-onclick="toggleTheme()"
-aria-label="تغيير الوضع">
-🌙
-</button>
-
-<button
-class="cart"
-type="button"
-onclick="openCart()">
-🛒 السلة
-(<span id="count">0</span>)
-</button>
-
-</div>
-
-</div>
-
-</header>
-
-<main id="home">
-
-<div class="hero">
-
-<div>
-
-<span class="badge">
-🇲🇦 أسعار محسوبة من السوق المغربي
-</span>
-
-<h1>
-كل ما يحتاجه صديقك، في مكان واحد 🐾
-</h1>
-
-<p>
-منتجات عملية للقطط والكلاب بأسعار قريبة من أسعار متاجر الحيوانات المغربية،
-مع طلب سهل ومعلومات واضحة عن كل منتج.
-</p>
-
-<div class="hero-buttons">
-
-<a
-class="btn"
-href="#products">
-🛍️ اكتشف المنتجات
-</a>
-
-<a
-class="btn secondary"
-href="#guide">
-📚 دليل العناية
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-visual">
-
-🐱 🐶
-
-<span class="bubble b1">
-❤️
-</span>
-
-<span class="bubble b2">
-🐾
-</span>
-
-</div>
-
-</div>
-
-<section class="launch-panel">
-
-<div>
-
-<span class="badge">
-✨ PawCasa
-</span>
-
-<h2>
-متجر بسيط، واضح، ومناسب للشراء من الهاتف
-</h2>
-
-<p>
-منتجات للحيوانات الأليفة بأسعار اقتصادية،
-تصفح سريع، سلة مشتريات، وطلب عبر WhatsApp.
-</p>
-
-</div>
-
-<div class="launch-points">
-
-<span>🇲🇦 المغرب</span>
-<span>💵 الدفع عند الاستلام</span>
-<span>📦 توصيل حسب المدينة</span>
-
-</div>
-
-</section>
-
-<nav
-class="legal-nav"
-aria-label="الصفحات القانونية">
-
-<a href="#terms">
-الشروط والأحكام
-</a>
-
-<a href="#privacy">
-الخصوصية
-</a>
-
-<a href="#returns">
-الإرجاع والاستبدال
-</a>
-
-<a href="#shipping">
-التوصيل
-</a>
-
-<a href="#legal-notice">
-البيانات القانونية
-</a>
-
-</nav>
-
-<section class="trust-strip">
-
-<div class="features">
-
-<div class="feature">
-🔐
-<b>طلب آمن</b>
-<span>
-بياناتك تُستخدم لإتمام الطلب فقط.
-</span>
-</div>
-
-<div class="feature">
-📞
-<b>تأكيد الطلب</b>
-<span>
-نتواصل لتأكيد التفاصيل قبل الشحن.
-</span>
-</div>
-
-<div class="feature">
-📦
-<b>تغليف مناسب</b>
-<span>
-نجهز المنتجات بعناية قبل الإرسال.
-</span>
-</div>
-
-<div class="feature">
-🇲🇦
-<b>المغرب</b>
-<span>
-متجر محلي موجه للعملاء داخل المغرب.
-</span>
-</div>
-
-</div>
-
-</section>
-
-<section id="why">
-
-<h2 class="section-title">
-لماذا PawCasa؟
-</h2>
-
-<div class="features">
-
-<div class="feature">
-🚚
-<b>توصيل داخل المغرب</b>
-<span>
-نجهز الطلب للتوصيل حسب المدينة.
-</span>
-</div>
-
-<div class="feature">
-💰
-<b>أسعار واقعية</b>
-<span>
-نقارن أسعار السوق قبل تحديد السعر.
-</span>
-</div>
-
-<div class="feature">
-🔒
-<b>طلب بسيط</b>
-<span>
-السلة ثم إرسال التفاصيل عبر WhatsApp.
-</span>
-</div>
-
-<div class="feature">
-🐾
-<b>منتجات مختارة</b>
-<span>
-نركز على الإكسسوارات والمستلزمات العملية.
-</span>
-</div>
-
-</div>
-
-</section>
-
-<section id="products">
-
-<h2 class="section-title">
-🛍️ متجر PawCasa
-</h2>
-
-<div class="shop-tools">
-
-<input
-id="searchBox"
-class="search"
-placeholder="🔎 ابحث عن منتج..."
-oninput="searchProducts()">
-
-<select
-id="sortBox"
-onchange="sortProducts()">
-
-<option value="default">
-ترتيب المنتجات
-</option>
-
-<option value="low">
-السعر: من الأقل للأعلى
-</option>
-
-<option value="high">
-السعر: من الأعلى للأقل
-</option>
-
-<option value="rating">
-الأعلى تقييماً
-</option>
-
-</select>
-
-</div>
-
-<div class="cat-intro">
-
-<div
-class="cat-tile"
-onclick="activateCategory('cat')">
-
-<span>🐱</span>
-<b>القطط</b>
-
-</div>
-
-<div
-class="cat-tile"
-onclick="activateCategory('dog')">
-
-<span>🐶</span>
-<b>الكلاب</b>
-
-</div>
-
-<div
-class="cat-tile"
-onclick="activateCategory('bird')">
-
-<span>🦜</span>
-<b>الطيور</b>
-
-</div>
-
-<div
-class="cat-tile"
-onclick="activateCategory('fish')">
-
-<span>🐠</span>
-<b>الأسماك</b>
-
-</div>
-
-<div
-class="cat-tile"
-onclick="activateCategory('small')">
-
-<span>🐰</span>
-<b>الحيوانات الصغيرة</b>
-
-</div>
-
-</div>
-
-<div class="filters">
-
-<button
-class="filter active"
-onclick="filterProducts('all',this)">
-الكل
-</button>
-
-<button
-class="filter"
-onclick="filterProducts('cat',this)">
-🐱 قطط
-</button>
-
-<button
-class="filter"
-onclick="filterProducts('dog',this)">
-🐶 كلاب
-</button>
-
-<button
-class="filter"
-onclick="filterProducts('bird',this)">
-🦜 طيور
-</button>
-
-<button
-class="filter"
-onclick="filterProducts('fish',this)">
-🐠 أسماك
-</button>
-
-<button
-class="filter"
-onclick="filterProducts('small',this)">
-🐰 صغيرة
-</button>
-
-<button
-class="filter"
-onclick="filterProducts('care',this)">
-🪮 عناية
-</button>
-
-</div>
-
-<div class="budget-banner">
-
-<h3>
-💸 ركن المنتجات الاقتصادية
-</h3>
-
-<p>
-منتجات تبدأ من 20 درهم — خيارات بسيطة لمن يريد شراء مستلزمات مفيدة بميزانية صغيرة.
-</p>
-
-</div>
-
-<div class="grid budget-grid">
-
-<article class="card product cat">
-
-<div class="pic">
-
-<div class="product-media">
-
-<img
-alt="كرة صغيرة للقطط"
-loading="lazy"
-src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=800&q=85">
-
-<button
-type="button"
-class="media-open"
-data-media="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=800&q=85"
-onclick="openMedia(this)">
-🔍 عرض الصورة
-</button>
-
-</div>
-
-<span class="tag">
-🔥 20 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة صغيرة للقطط
-</h3>
-
-<p class="desc">
-لعبة بسيطة وخفيفة للترفيه داخل المنزل.
-</p>
-
-<span class="price">
-20 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('كرة صغيرة للقطط',20)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product cat">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=85"
-alt="طوق قطط اقتصادي">
-
-<span class="tag">
-🔥 25 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-طوق قطط اقتصادي
-</h3>
-
-<p class="desc">
-طوق خفيف للاستخدام اليومي مع تصميم بسيط.
-</p>
-
-<span class="price">
-25 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('طوق قطط اقتصادي',25)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product cat">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=85"
-alt="كرة ريش للقطط">
-
-<span class="tag">
-🔥 29 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة ريش للقطط
-</h3>
-
-<p class="desc">
-لعبة صغيرة للتفاعل والحركة اليومية.
-</p>
-
-<span class="price">
-29 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('كرة ريش للقطط',29)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product care">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=800&q=85"
-alt="مشط صغير للعناية">
-
-<span class="tag">
-🔥 35 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-مشط صغير للعناية
-</h3>
-
-<p class="desc">
-أداة اقتصادية للعناية المنتظمة بالفرو.
-</p>
-
-<span class="price">
-35 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('مشط صغير للعناية',35)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product dog">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=85"
-alt="كرة لعب للكلاب">
-
-<span class="tag">
-🔥 39 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة لعب للكلاب
-</h3>
-
-<p class="desc">
-كرة بسيطة للعب الخفيف والتفاعل اليومي.
-</p>
-
-<span class="price">
-39 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('كرة لعب للكلاب',39)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product dog">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=85"
-alt="حبل لعب اقتصادي">
-
-<span class="tag">
-🔥 45 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-حبل لعب اقتصادي
-</h3>
-
-<p class="desc">
-حبل خفيف للعب والتفاعل مع الكلب.
-</p>
-
-<span class="price">
-45 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('حبل لعب اقتصادي',45)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product cat dog">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=85"
-alt="وعاء بلاستيكي خفيف">
-
-<span class="tag">
-🔥 45 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-وعاء بلاستيكي خفيف
-</h3>
-
-<p class="desc">
-وعاء اقتصادي للماء أو الطعام وسهل التنظيف.
-</p>
-
-<span class="price">
-45 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('وعاء بلاستيكي خفيف',45)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product cat dog">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?auto=format&fit=crop&w=800&q=85"
-alt="كرة تفاعلية بسيطة">
-
-<span class="tag">
-🔥 49 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة تفاعلية بسيطة
-</h3>
-
-<p class="desc">
-خيار اقتصادي للعب وتحفيز النشاط.
-</p>
-
-<span class="price">
-49 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('كرة تفاعلية بسيطة',49)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-</div>
-
-<div class="grid budget-grid">
-
-<article class="card product bird">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=900&q=90"
-alt="لعبة حبل للطيور">
-
-<span class="tag">
-طيور
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★★
-</div>
-
-<h3>
-لعبة حبل للطيور
-</h3>
-
-<p class="desc">
-إكسسوار ترفيهي بسيط للطيور الصغيرة داخل القفص.
-</p>
-
-<div class="product-meta">
-
-<span class="price">
-29 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
-</span>
-
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('لعبة حبل للطيور',29)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product bird">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=900&q=90"
-alt="مجثم خشبي للطيور">
-
-<span class="tag">
-طيور
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-مجثم خشبي للطيور
-</h3>
-
-<p class="desc">
-مجثم بسيط لمساعدة الطائر على الوقوف والحركة داخل القفص.
-</p>
-
-<div class="product-meta">
-
-<span class="price">
-35 درهم
-</span>
-
-<span class="mini-badge">
-شائع
-</span>
-
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('مجثم خشبي للطيور',35)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product bird">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=900&q=90"
-alt="لعبة معلقة للطيور">
-
-<span class="tag">
-جديد
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-لعبة معلقة للطيور
-</h3>
-
-<p class="desc">
-لعبة خفيفة للتسلية والتفاعل داخل القفص.
-</p>
-
-<div class="product-meta">
-
-<span class="price">
-45 درهم
-</span>
-
-<span class="mini-badge">
-قيمة جيدة
-</span>
-
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('لعبة معلقة للطيور',45)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product fish">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=900&q=90"
-alt="زينة صغيرة للحوض">
-
-<span class="tag">
-أسماك
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-زينة صغيرة للحوض
-</h3>
-
-<p class="desc">
-زينة بسيطة لإضافة لمسة جمالية إلى حوض السمك.
-</p>
-
-<div class="product-meta">
-
-<span class="price">
-25 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
-</span>
-
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('زينة صغيرة للحوض',25)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product fish">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=90"
-alt="شبكة صغيرة للحوض">
-
-<span class="tag">
-أسماك
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-شبكة صغيرة للحوض
-</h3>
-
-<p class="desc">
-شبكة خفيفة للمساعدة في تنظيف الحوض والعناية اليومية.
-</p>
-
-<div class="product-meta">
-
-<span class="price">
-29 درهم
-</span>
-
-<span class="mini-badge">
-عملي
-</span>
-
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn"
-onclick="add('شبكة صغيرة للحوض',29)">
-🛒 أضف للسلة
-</button>
-
-</div>
-
-</article>
-
-<article class="card product small">
-
-<div class="pic">
-
-<img
-loading="lazy"
-src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=90"
-alt="لعبة خشبية للأرانب">
-
-<span class="tag">
-صغيرة
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★★
-</div>
-
-<h3>
-لعبة خشبية للأرانب
-</h3>
-
-<p class="desc">
-لعبة بسيطة مناسبة للترفيه للحيوانات الصغيرة.
-</p>
-
-<div class="product-meta">
-
-<span class="price">
-25 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
- </span>
- <section>
-
-<div class="info">
-
-<h2>
-💡 نصائح سريعة للحيوانات الأليفة
-</h2>
-
-<div class="info-grid">
-
-<div>
-
-<h3>
-🐱 للقطط
-</h3>
-
-<ul class="list">
-
-<li>
-وفّر الماء النظيف طوال اليوم.
-</li>
-
-<li>
-نظّف صندوق الفضلات بانتظام.
-</li>
-
-<li>
-وفّر ألعابًا بسيطة للحركة والتسلية.
-</li>
-
-<li>
-مشّط الفرو حسب نوعه وطوله.
-</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>
-🐶 للكلاب
-</h3>
-
-<ul class="list">
-
-<li>
-وفّر الماء والطعام المناسبين.
-</li>
-
-<li>
-خصص وقتًا للحركة واللعب يوميًا.
-</li>
-
-<li>
-استخدم أدوات مناسبة لحجم الكلب.
-</li>
-
-<li>
-راقب أي تغيّر غير معتاد في سلوكه.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="guide">
-
-<h2 class="section-title">
-📚 دليل العناية
-</h2>
-
-<div class="policy-grid">
-
-<div class="policy-card">
-
-<h3>
-🐱 العناية بالقطط
-</h3>
-
-<p>
-الغذاء المتوازن والماء النظيف والنظافة
-واللعب اليومي من أساسيات رعاية القطط.
-</p>
-
-</div>
-
-<div class="policy-card">
-
-<h3>
-🐶 العناية بالكلاب
-</h3>
-
-<p>
-احرص على الحركة اليومية والماء النظيف
-والعناية بالفرو واختيار المقاس المناسب
-للأدوات والإكسسوارات.
-</p>
-
-</div>
-
-<div class="policy-card">
-
-<h3>
-🦜 العناية بالطيور
-</h3>
-
-<p>
-حافظ على نظافة القفص والماء والغذاء
-ووفّر للطائر مساحة مناسبة للحركة.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="faq">
-
-<h2 class="section-title">
-❓ الأسئلة الشائعة
-</h2>
-
-<div class="faq">
-
-<details>
-<summary>
-كيف أطلب منتجًا؟
-</summary>
-
-<p>
-أضف المنتجات إلى السلة، ثم اضغط
-«إتمام الطلب» وأدخل بياناتك وأرسل الطلب
-عبر WhatsApp.
-</p>
-
-</details>
-
-<details>
-<summary>
-هل يمكن الدفع عند الاستلام؟
-</summary>
-
-<p>
-نعم، يتم تأكيد طريقة الدفع والتوصيل
-معك عند التواصل عبر WhatsApp.
-</p>
-
-</details>
-
-<details>
-<summary>
-كم تبلغ تكلفة التوصيل؟
-</summary>
-
-<p>
-تظهر خيارات التوصيل أثناء إتمام الطلب.
-قد تختلف التكلفة حسب المدينة وطريقة التوصيل.
-</p>
-
-</details>
-
-<details>
-<summary>
-هل يمكن تغيير الطلب؟
-</summary>
-
-<p>
-يمكنك التواصل معنا عبر WhatsApp في أسرع
-وقت ممكن قبل تجهيز الطلب.
-</p>
-
-</details>
-
-</div>
-
-</section>
-
-<section id="policies">
-
-<h2 class="section-title">
-📦 معلومات الطلب
-</h2>
-
-<div class="policy-grid">
-
-<div class="policy-card">
-
-<h3>
-🚚 التوصيل
-</h3>
-
-<p>
-نقوم بتجهيز الطلب ثم يتم تأكيد تفاصيل
-التوصيل مع العميل حسب المدينة والعنوان.
-</p>
-
-</div>
-
-<div class="policy-card">
-
-<h3>
-🔄 الاستبدال والإرجاع
-</h3>
-
-<p>
-يرجى التواصل معنا قبل الإرجاع أو الاستبدال
-لمعرفة الشروط المتاحة للمنتج والطلب.
-</p>
-
-</div>
-
-<div class="policy-card">
-
-<h3>
-💬 خدمة العملاء
-</h3>
-
-<p>
-للاستفسار عن المنتجات أو الطلبات،
-يمكنك التواصل معنا عبر WhatsApp.
-</p>
-
-<a
-class="btn"
-href="https://wa.me/212684424055"
-target="_blank"
-rel="noopener noreferrer">
-
-💬 تواصل معنا
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="terms">
-
-<div class="legal-page">
-
-<h2>
-الشروط والأحكام
-</h2>
-
-<div class="legal-meta">
-آخر تحديث: 2026
-</div>
-
-<p>
-باستخدامك لموقع PawCasa فإنك توافق على
-الشروط العامة الموضحة في هذه الصفحة.
-</p>
-
-<h3>
-الطلبات
-</h3>
-
-<p>
-إرسال الطلب عبر الموقع لا يعني بالضرورة
-قبوله بشكل نهائي. يتم التواصل مع العميل
-لتأكيد المنتج والعنوان وطريقة التوصيل.
-</p>
-
-<h3>
-الأسعار
-</h3>
-
-<p>
-الأسعار المعروضة بالدرهم المغربي، وقد يتم
-تحديثها من وقت لآخر حسب توفر المنتجات
-وتكاليف التوريد.
-</p>
-
-<h3>
-المخزون
-</h3>
-
-<p>
-قد يتغير توفر المنتجات. في حال عدم توفر
-منتج مطلوب سيتم التواصل مع العميل قبل
-تأكيد الطلب.
-</p>
-
-</div>
-
-</section>
-
-<section id="privacy">
-
-<div class="legal-page">
-
-<h2>
-سياسة الخصوصية
-</h2>
-
-<div class="legal-meta">
-آخر تحديث: 2026
-</div>
-
-<p>
-نحترم خصوصية زوار PawCasa ونسعى إلى
-استخدام البيانات التي يتم تقديمها فقط
-بالقدر اللازم لمعالجة الطلب والتواصل مع
-العميل.
-</p>
-
-<h3>
-البيانات التي قد يتم جمعها
-</h3>
-
-<ul>
-
-<li>
-الاسم.
-</li>
-
-<li>
-رقم الهاتف.
-</li>
-
-<li>
-المدينة.
-</li>
-
-<li>
-العنوان الذي يقدمه العميل لإتمام التوصيل.
-</li>
-
-</ul>
-
-<h3>
-استخدام البيانات
-</h3>
-
-<p>
-تستخدم بيانات الطلب للتواصل مع العميل
-وتأكيد الطلب وترتيب عملية التوصيل.
-</p>
-
-<h3>
-WhatsApp
-</h3>
-
-<p>
-عند الضغط على زر إرسال الطلب عبر WhatsApp،
-يتم فتح تطبيق أو موقع WhatsApp لإرسال
-تفاصيل الطلب إلى رقم المتجر.
-</p>
-
-</div>
-
-</section>
-
-<section id="returns">
-
-<div class="legal-page">
-
-<h2>
-سياسة الإرجاع والاستبدال
-</h2>
-
-<div class="legal-warning">
-يرجى التواصل معنا قبل إرسال أي منتج للإرجاع
-أو الاستبدال حتى يتم التأكد من حالة الطلب
-والمنتج.
-</div>
-
-<h3>
-المنتجات غير المستخدمة
-</h3>
-
-<p>
-يمكن طلب الاستبدال أو الإرجاع للمنتجات
-غير المستخدمة حسب حالة المنتج والاتفاق
-مع المتجر.
-</p>
-
-<h3>
-المنتجات المتضررة
-</h3>
-
-<p>
-إذا وصل المنتج متضررًا، يرجى التواصل معنا
-في أقرب وقت ممكن مع صور واضحة للمنتج
-والتغليف.
-</p>
-
-<h3>
-المنتجات غير القابلة للإرجاع
-</h3>
-
-<p>
-قد توجد منتجات لا يمكن إرجاعها لأسباب
-تتعلق بطبيعتها أو استخدامها، ويتم توضيح
-ذلك عند التواصل بشأن الطلب.
-</p>
-
-</div>
-
-</section>
-
-<section id="shipping">
-
-<div class="legal-page">
-
-<h2>
-سياسة التوصيل
-</h2>
-
-<div class="legal-meta">
-الدار البيضاء والمغرب
-</div>
-
-<h3>
-التوصيل
-</h3>
-
-<p>
-يتم تجهيز الطلب بعد تأكيد البيانات مع
-العميل، ثم يتم ترتيب التوصيل حسب المدينة
-والعنوان.
-</p>
-
-<h3>
-تكلفة التوصيل
-</h3>
-
-<p>
-تظهر خيارات التوصيل المتاحة أثناء إتمام
-الطلب. قد تختلف التكلفة حسب المدينة
-وطريقة التوصيل.
-</p>
-
-<h3>
-العنوان
-</h3>
-
-<p>
-يتحمل العميل مسؤولية تقديم عنوان واضح
-ورقم هاتف صحيح حتى يمكن التواصل معه
-وتسليم الطلب.
-</p>
-
-</div>
-
-</section>
-
-<section id="legal-notice">
-
-<div class="legal-page">
-
-<h2>
-البيانات القانونية
-</h2>
-
-<div class="legal-warning">
-PawCasa في هذه النسخة موقع تجريبي/مشروع
-قيد التطوير. يجب إضافة بيانات النشاط
-القانونية الحقيقية قبل الإطلاق التجاري
-النهائي.
-</div>
-
-<h3>
-اسم المتجر
-</h3>
-
-<p>
-PawCasa
-</p>
-
-<h3>
-الموقع
-</h3>
-
-<p>
-الدار البيضاء، المغرب
-</p>
-
-<h3>
-التواصل
-</h3>
-
-<p>
-WhatsApp:
-<a
-href="https://wa.me/212684424055"
-target="_blank"
-rel="noopener noreferrer">
-
-0684424055
-
-</a>
-</p>
-
-</div>
-
-</section>
-
-<section id="returns-info">
-
-<div class="info">
-
-<h2>
-🐾 نريد أن تكون تجربة الشراء بسيطة
-</h2>
-
-<p>
-اختر المنتجات التي تحتاجها، أضفها إلى
-السلة، ثم أرسل طلبك. سنستخدم البيانات
-التي أدخلتها للتواصل معك وتأكيد تفاصيل
-الطلب والتوصيل.
-</p>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="footer-grid">
-
-<div>
-
-<h3>
-🐾 PawCasa
-</h3>
-
-<p>
-متجر مستلزمات الحيوانات الأليفة
-في الدار البيضاء والمغرب.
-</p>
-
-</div>
-
-<div>
-
-<h3>
-روابط سريعة
-</h3>
-
-<a href="#home">
-الرئيسية
-</a>
-
-<a href="#products">
-المنتجات
-</a>
-
-<a href="#guide">
-دليل العناية
-</a>
-
-<a href="#faq">
-الأسئلة الشائعة
-</a>
-
-</div>
-
-<div>
-
-<h3>
-تواصل معنا
-</h3>
-
-<a
-href="https://wa.me/212684424055"
-target="_blank"
-rel="noopener noreferrer">
-
-💬 WhatsApp
-
-</a>
-
-<p>
-الدار البيضاء، المغرب 🇲🇦
-</p>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-🐾 PawCasa — 2026
-
-<br>
-
-<small>
-متجر إلكتروني لمستلزمات الحيوانات الأليفة.
-</small>
-
-</div>
-
-</footer>
-<!-- نافذة السلة -->
-<div
-class="modal"
-id="cartModal"
-role="dialog"
-aria-modal="true"
-aria-labelledby="cartTitle">
-
-<div class="box">
-
-<span
-class="close"
-onclick="closeCart()"
-aria-label="إغلاق">
-×
-</span>
-
-<h2 id="cartTitle">
-🛒 سلة المشتريات
-</h2>
-
-<div id="cartItems">
-</div>
-
-<div class="order-summary">
-
-<strong>
-المجموع:
-</strong>
-
-<span id="total">
-0
-</span>
-
-درهم
-
-</div>
-
-<div class="cart-actions">
-
-<button
-class="btn"
-type="button"
-onclick="openCheckout()">
-
-إتمام الطلب
-
-</button>
-
-<button
-class="btn secondary"
-type="button"
-onclick="clearCart()">
-
-تفريغ السلة
-
-</button>
-
-</div>
-
-<p class="small-note">
-بعد الضغط على «إتمام الطلب» يمكنك مراجعة
-بياناتك ثم إرسال الطلب عبر WhatsApp.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- نافذة إتمام الطلب -->
-<div
-class="modal"
-id="checkoutModal"
-role="dialog"
-aria-modal="true"
-aria-labelledby="checkoutTitle">
-
-<div class="box">
-
-<span
-class="close"
-onclick="closeCheckout()"
-aria-label="إغلاق">
-×
-</span>
-
-<h2 id="checkoutTitle">
-📦 إتمام الطلب
-</h2>
-
-<div
-id="checkoutSummary"
-class="order-summary">
-</div>
-
-<label for="customerName">
-الاسم
-</label>
-
-<input
-id="customerName"
-type="text"
-placeholder="اكتب اسمك"
-autocomplete="name">
-
-<label for="customerPhone">
-رقم الهاتف
-</label>
-
-<input
-id="customerPhone"
-type="tel"
-placeholder="مثال: 0684424055"
-autocomplete="tel"
-inputmode="tel">
-
-<label for="customerCity">
-المدينة
-</label>
-
-<input
-id="customerCity"
-type="text"
-value="الدار البيضاء"
-placeholder="المدينة"
-autocomplete="address-level2">
-
-<label for="customerAddress">
-العنوان
-</label>
-
-<textarea
-id="customerAddress"
-rows="3"
-placeholder="اكتب عنوان التوصيل بالتفصيل"
-autocomplete="street-address"></textarea>
-
-<label for="paymentMethod">
-طريقة الدفع
-</label>
-
-<select id="paymentMethod">
-
-<option value="cod">
-الدفع عند الاستلام
-</option>
-
-</select>
-
-<div class="checkout-note">
-
-📌 سيتم إرسال بيانات الطلب إلى WhatsApp
-لتأكيد المنتج والعنوان وطريقة التوصيل.
-
-</div>
-
-<label class="consent">
-
-<input
-id="privacyConsent"
-type="checkbox">
-
-<span>
-أوافق على استخدام بياناتي للتواصل معي
-بخصوص هذا الطلب وترتيب التوصيل.
-</span>
-
-</label>
-
-<button
-class="btn"
-type="button"
-onclick="sendOrder()">
-
-💬 إرسال الطلب عبر WhatsApp
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- نافذة عرض الصور -->
-<div
-class="modal media-modal"
-id="mediaModal"
-role="dialog"
-aria-modal="true"
-aria-labelledby="mediaTitle">
-
-<div class="box">
-
-<span
-class="close"
-onclick="closeMedia()"
-aria-label="إغلاق">
-×
-</span>
-
-<h2 id="mediaTitle">
-صورة المنتج
-</h2>
-
-<div class="media-stage">
-
-<img
-id="mediaImage"
-src=""
-alt="صورة المنتج">
-
-</div>
-
-<div
-id="mediaCaption"
-class="media-caption">
-</div>
-
-<div class="media-note">
-اضغط خارج النافذة أو على × للعودة إلى المتجر.
-</div>
-
-</div>
-
-</div>
-
-
-<!-- إشعار -->
-<div
-id="toast"
-role="status"
-aria-live="polite">
-</div>
-
-
-<!-- أزرار الهاتف -->
-<div class="mobile-cta">
-
-<button
-type="button"
-onclick="openCart()">
-
-🛒 السلة
-
-</button>
-
-<button
-type="button"
-class="secondary"
-onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-
-🛍️ المنتجات
-
-</button>
-
-</div>
-
-
-<!-- زر WhatsApp -->
-<a
-class="wa-float"
-href="https://wa.me/212684424055"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="التواصل مع PawCasa عبر WhatsApp">
-
-<span>
-💬 تواصل معنا
-</span>
-
-</a>
-
-
 <script>
-
-/* =========================
-   إعدادات PawCasa
-========================= */
+/* =========================================================
+   PawCasa - Main JavaScript - Fixed Version
+   ========================================================= */
 
 const WHATSAPP_NUMBER = "212684424055";
 
 let cart = [];
-
 let currentCategory = "all";
+let toastTimer = null;
 
 
-/* =========================
-   عناصر الصفحة
-========================= */
+/* =========================================================
+   Helpers
+   ========================================================= */
 
-const countElement =
-document.getElementById("count");
-
-const cartItemsElement =
-document.getElementById("cartItems");
-
-const totalElement =
-document.getElementById("total");
-
-const cartModal =
-document.getElementById("cartModal");
-
-const checkoutModal =
-document.getElementById("checkoutModal");
-
-const mediaModal =
-document.getElementById("mediaModal");
-
-const toastElement =
-document.getElementById("toast");
-
-
-/* =========================
-   تحميل السلة
-========================= */
-
-function loadCart(){
-
-try{
-
-const saved =
-localStorage.getItem("pawCasaCart");
-
-if(saved){
-
-cart = JSON.parse(saved);
-
-if(!Array.isArray(cart)){
-cart = [];
+function $(id) {
+    return document.getElementById(id);
 }
 
+function showToast(message) {
+    const toast = $("toast");
+
+    if (!toast) {
+        alert(message);
+        return;
+    }
+
+    toast.textContent = message;
+    toast.style.display = "block";
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.style.display = "none";
+    }, 2500);
 }
 
-}catch(error){
-
-console.warn(
-"تعذر تحميل السلة:",
-error
-);
-
-cart = [];
-
-}
-
-updateCart();
-
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 
-/* =========================
-   حفظ السلة
-========================= */
+/* =========================================================
+   CART - LOAD
+   ========================================================= */
 
-function saveCart(){
+function loadCart() {
+    try {
+        const saved = localStorage.getItem("pawCasaCart");
 
-try{
+        if (!saved) {
+            cart = [];
+            updateCart();
+            return;
+        }
 
-localStorage.setItem(
-"pawCasaCart",
-JSON.stringify(cart)
-);
+        const data = JSON.parse(saved);
 
-}catch(error){
+        if (!Array.isArray(data)) {
+            cart = [];
+            updateCart();
+            return;
+        }
 
-console.warn(
-"تعذر حفظ السلة:",
-error
-);
+        cart = data
+            .filter(item =>
+                item &&
+                typeof item.name === "string" &&
+                Number.isFinite(Number(item.price))
+            )
+            .map(item => ({
+                name: item.name,
+                price: Number(item.price),
+                qty: Math.max(1, Number(item.qty) || 1)
+            }));
 
+    } catch (error) {
+        console.error("Cart loading error:", error);
+        cart = [];
+    }
+
+    updateCart();
 }
 
+
+/* =========================================================
+   CART - SAVE
+   ========================================================= */
+
+function saveCart() {
+    try {
+        localStorage.setItem(
+            "pawCasaCart",
+            JSON.stringify(cart)
+        );
+    } catch (error) {
+        console.error("Cart saving error:", error);
+    }
 }
 
 
-/* =========================
-   إضافة منتج
-========================= */
+/* =========================================================
+   ADD TO CART
+   ========================================================= */
 
-function add(name,price){
+function add(name, price) {
 
-const existing =
-cart.find(
-item => item.name === name
-);
+    name = String(name || "").trim();
+    price = Number(price);
 
-if(existing){
+    if (!name) {
+        showToast("اسم المنتج غير صحيح.");
+        return;
+    }
 
-existing.qty += 1;
+    if (!Number.isFinite(price)) {
+        showToast("سعر المنتج غير صحيح.");
+        return;
+    }
 
-}else{
+    const existing = cart.find(
+        item => item.name === name
+    );
 
-cart.push({
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            qty: 1
+        });
+    }
 
-name:name,
+    saveCart();
+    updateCart();
 
-price:Number(price),
+    showToast("تمت إضافة المنتج إلى السلة 🛒");
+}
 
-qty:1
 
+/* =========================================================
+   UPDATE CART
+   ========================================================= */
+
+function updateCart() {
+
+    const count = $("count");
+    const cartItems = $("cartItems");
+    const total = $("total");
+
+    const totalItems = cart.reduce(
+        (sum, item) => sum + item.qty,
+        0
+    );
+
+    const totalPrice = cart.reduce(
+        (sum, item) =>
+            sum + (item.price * item.qty),
+        0
+    );
+
+    if (count) {
+        count.textContent = totalItems;
+    }
+
+    if (total) {
+        total.textContent = Math.round(totalPrice);
+    }
+
+    if (!cartItems) {
+        return;
+    }
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = `
+            <div class="small-note">
+                السلة فارغة حاليًا.
+            </div>
+        `;
+        return;
+    }
+
+    cartItems.innerHTML = cart.map(
+        (item, index) => `
+            <div class="cartrow">
+
+                <div>
+                    <strong>
+                        ${escapeHtml(item.name)}
+                    </strong>
+
+                    <br>
+
+                    <span class="small-note">
+                        ${item.price} درهم × ${item.qty}
+                    </span>
+                </div>
+
+                <div class="qty">
+
+                    <button
+                        type="button"
+                        onclick="changeQty(${index}, -1)">
+                        −
+                    </button>
+
+                    <span>${item.qty}</span>
+
+                    <button
+                        type="button"
+                        onclick="changeQty(${index}, 1)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+        `
+    ).join("");
+}
+
+
+/* =========================================================
+   CHANGE QUANTITY
+   ========================================================= */
+
+function changeQty(index, amount) {
+
+    if (!cart[index]) {
+        return;
+    }
+
+    cart[index].qty += Number(amount);
+
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+    }
+
+    saveCart();
+    updateCart();
+}
+
+
+/* =========================================================
+   CLEAR CART
+   ========================================================= */
+
+function clearCart() {
+
+    if (cart.length === 0) {
+        showToast("السلة فارغة بالفعل.");
+        return;
+    }
+
+    cart = [];
+
+    saveCart();
+    updateCart();
+
+    showToast("تم تفريغ السلة.");
+}
+
+
+/* =========================================================
+   OPEN CART
+   ========================================================= */
+
+function openCart() {
+
+    updateCart();
+
+    const modal = $("cartModal");
+
+    if (!modal) {
+        showToast("تعذر فتح السلة.");
+        return;
+    }
+
+    modal.style.display = "flex";
+}
+
+
+/* =========================================================
+   CLOSE CART
+   ========================================================= */
+
+function closeCart() {
+
+    const modal = $("cartModal");
+
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+/* =========================================================
+   OPEN CHECKOUT
+   ========================================================= */
+
+function openCheckout() {
+
+    if (cart.length === 0) {
+        showToast("السلة فارغة. أضف منتجًا أولًا.");
+        return;
+    }
+
+    updateCheckoutSummary();
+    closeCart();
+
+    const modal = $("checkoutModal");
+
+    if (modal) {
+        modal.style.display = "flex";
+    }
+}
+
+
+/* =========================================================
+   CLOSE CHECKOUT
+   ========================================================= */
+
+function closeCheckout() {
+
+    const modal = $("checkoutModal");
+
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+/* =========================================================
+   CHECKOUT SUMMARY
+   ========================================================= */
+
+function updateCheckoutSummary() {
+
+    const summary = $("checkoutSummary");
+
+    if (!summary) {
+        return;
+    }
+
+    const total = cart.reduce(
+        (sum, item) =>
+            sum + item.price * item.qty,
+        0
+    );
+
+    summary.innerHTML = `
+        <strong>ملخص الطلب</strong>
+
+        <br><br>
+
+        ${cart.map(item => `
+            <div>
+                ${escapeHtml(item.name)}
+                × ${item.qty}
+                — ${item.price * item.qty} درهم
+            </div>
+        `).join("")}
+
+        <hr>
+
+        <strong>
+            الإجمالي: ${total} درهم
+        </strong>
+    `;
+}
+
+
+/* =========================================================
+   WHATSAPP ORDER
+   ========================================================= */
+
+function sendOrder() {
+
+    if (cart.length === 0) {
+        showToast("السلة فارغة.");
+        return;
+    }
+
+    const nameEl = $("customerName");
+    const phoneEl = $("customerPhone");
+    const cityEl = $("customerCity");
+    const addressEl = $("customerAddress");
+    const paymentEl = $("paymentMethod");
+    const consentEl = $("privacyConsent");
+
+    if (!nameEl || !phoneEl || !cityEl || !addressEl) {
+        showToast("نموذج الطلب غير مكتمل.");
+        return;
+    }
+
+    const name = nameEl.value.trim();
+    const phone = phoneEl.value.trim();
+    const city = cityEl.value.trim();
+    const address = addressEl.value.trim();
+
+    const payment = paymentEl
+        ? paymentEl.value
+        : "الدفع عند الاستلام";
+
+    if (!name) {
+        showToast("اكتب اسمك.");
+        nameEl.focus();
+        return;
+    }
+
+    if (!phone) {
+        showToast("اكتب رقم الهاتف.");
+        phoneEl.focus();
+        return;
+    }
+
+    /*
+       أرقام المغرب المقبولة:
+
+       0612345678
+       0712345678
+       +212612345678
+       +212712345678
+       212612345678
+       212712345678
+    */
+
+    const cleanPhone = phone
+        .replace(/\s+/g, "")
+        .replace(/-/g, "");
+
+    const validMoroccanPhone =
+        /^(0[67]\d{8}|\+212[67]\d{8}|212[67]\d{8})$/;
+
+    if (!validMoroccanPhone.test(cleanPhone)) {
+        showToast("أدخل رقم هاتف مغربي صحيح.");
+        phoneEl.focus();
+        return;
+    }
+
+    if (!city) {
+        showToast("اكتب المدينة.");
+        cityEl.focus();
+        return;
+    }
+
+    if (!address) {
+        showToast("اكتب عنوان التوصيل.");
+        addressEl.focus();
+        return;
+    }
+
+    if (consentEl && !consentEl.checked) {
+        showToast("يجب الموافقة على الشروط.");
+        return;
+    }
+
+
+    /* =========================
+       PRODUCTS
+       ========================= */
+
+    const productsText = cart.map(item => {
+        return (
+            "• " +
+            item.name +
+            " × " +
+            item.qty +
+            " = " +
+            (item.price * item.qty) +
+            " درهم"
+        );
+    }).join("\n");
+
+
+    /* =========================
+       TOTAL
+       ========================= */
+
+    const total = cart.reduce(
+        (sum, item) =>
+            sum + item.price * item.qty,
+        0
+    );
+
+
+    /* =========================
+       MESSAGE
+       ========================= */
+
+    const message =
+`🐾 طلب جديد من PawCasa
+
+👤 الاسم: ${name}
+📞 الهاتف: ${phone}
+📍 المدينة: ${city}
+🏠 العنوان: ${address}
+💳 طريقة الدفع: ${payment}
+
+🛒 المنتجات:
+${productsText}
+
+💰 الإجمالي: ${total} درهم`;
+
+
+    /* =========================
+       WHATSAPP URL
+       ========================= */
+
+    const whatsappUrl =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    /*
+       استخدام location.href يعمل
+       على Android و iPhone والكمبيوتر.
+    */
+
+    window.location.href = whatsappUrl;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+function searchProducts() {
+
+    const input = $("searchBox");
+
+    if (!input) {
+        return;
+    }
+
+    const query =
+        input.value
+            .trim()
+            .toLowerCase();
+
+    document
+        .querySelectorAll(".product")
+        .forEach(product => {
+
+            const text =
+                product.textContent
+                    .toLowerCase();
+
+            const categoryOK =
+                currentCategory === "all" ||
+                product.classList.contains(
+                    currentCategory
+                );
+
+            const searchOK =
+                !query ||
+                text.includes(query);
+
+            product.style.display =
+                categoryOK && searchOK
+                    ? ""
+                    : "none";
+        });
+}
+
+
+/* =========================================================
+   FILTER
+   ========================================================= */
+
+function filterProducts(category, button) {
+
+    currentCategory = category || "all";
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(item => {
+            item.classList.remove("active");
+        });
+
+    if (button) {
+        button.classList.add("active");
+    }
+
+    searchProducts();
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+function activateCategory(category) {
+
+    currentCategory = category;
+
+    const buttons =
+        document.querySelectorAll(".filter");
+
+    buttons.forEach(button => {
+
+        const onclick =
+            button.getAttribute("onclick") || "";
+
+        button.classList.toggle(
+            "active",
+            onclick.includes("'" + category + "'")
+        );
+    });
+
+    searchProducts();
+
+    const products = $("products");
+
+    if (products) {
+        products.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+
+
+/* =========================================================
+   SORT
+   ========================================================= */
+
+function sortProducts() {
+
+    const sortBox = $("sortBox");
+
+    if (!sortBox) {
+        return;
+    }
+
+    const mode = sortBox.value;
+
+    document
+        .querySelectorAll(".grid")
+        .forEach(grid => {
+
+            const products =
+                Array.from(
+                    grid.querySelectorAll(".product")
+                );
+
+            if (mode === "low") {
+
+                products.sort(
+                    (a, b) =>
+                        getPrice(a) -
+                        getPrice(b)
+                );
+
+            } else if (mode === "high") {
+
+                products.sort(
+                    (a, b) =>
+                        getPrice(b) -
+                        getPrice(a)
+                );
+
+            } else if (mode === "rating") {
+
+                products.sort(
+                    (a, b) =>
+                        getRating(b) -
+                        getRating(a)
+                );
+            }
+
+            products.forEach(product => {
+                grid.appendChild(product);
+            });
+        });
+
+    searchProducts();
+}
+
+
+function getPrice(product) {
+
+    const element =
+        product.querySelector(".price");
+
+    if (!element) {
+        return 0;
+    }
+
+    const value =
+        parseFloat(
+            element.textContent
+                .replace(/[^\d.]/g, "")
+        );
+
+    return Number.isFinite(value)
+        ? value
+        : 0;
+}
+
+
+function getRating(product) {
+
+    const element =
+        product.querySelector(".rating");
+
+    if (!element) {
+        return 0;
+    }
+
+    return (
+        element.textContent.match(/★/g) || []
+    ).length;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    try {
+        localStorage.setItem(
+            "pawCasaDark",
+            dark ? "1" : "0"
+        );
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+
+function loadTheme() {
+
+    try {
+
+        if (
+            localStorage.getItem("pawCasaDark") === "1"
+        ) {
+            document.body.classList.add("dark");
+        }
+
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+
+/* =========================================================
+   MEDIA / PRODUCT IMAGE
+   ========================================================= */
+
+function openMedia(button) {
+
+    if (!button) {
+        return;
+    }
+
+    const url =
+        button.dataset.media;
+
+    if (!url) {
+        showToast("لا توجد صورة لهذا المنتج.");
+        return;
+    }
+
+    const modal = $("mediaModal");
+    const image = $("mediaImage");
+    const caption = $("mediaCaption");
+
+    if (!modal || !image) {
+        return;
+    }
+
+    image.src = url;
+
+    image.alt = "صورة المنتج";
+
+    if (caption) {
+
+        const card =
+            button.closest(".card");
+
+        const title =
+            card
+                ? card.querySelector("h3")
+                : null;
+
+        caption.textContent =
+            title
+                ? title.textContent.trim()
+                : "صورة المنتج";
+    }
+
+    modal.style.display = "flex";
+}
+
+
+function closeMedia() {
+
+    const modal = $("mediaModal");
+
+    if (modal) {
+        modal.style.display = "none";
+    }
+
+    const image = $("mediaImage");
+
+    if (image) {
+        image.src = "";
+    }
+}
+
+
+/* =========================================================
+   CLOSE MODALS WHEN CLICKING OUTSIDE
+   ========================================================= */
+
+window.addEventListener("click", event => {
+
+    const cartModal = $("cartModal");
+    const checkoutModal = $("checkoutModal");
+    const mediaModal = $("mediaModal");
+
+    if (
+        cartModal &&
+        event.target === cartModal
+    ) {
+        closeCart();
+    }
+
+    if (
+        checkoutModal &&
+        event.target === checkoutModal
+    ) {
+        closeCheckout();
+    }
+
+    if (
+        mediaModal &&
+        event.target === mediaModal
+    ) {
+        closeMedia();
+    }
 });
 
-}
 
-saveCart();
+/* =========================================================
+   ESC KEY
+   ========================================================= */
 
-updateCart();
+window.addEventListener("keydown", event => {
 
-showToast(
-"تمت إضافة المنتج إلى السلة 🛒"
-);
+    if (event.key !== "Escape") {
+        return;
+    }
 
-}
-
-
-/* =========================
-   تحديث السلة
-========================= */
-
-function updateCart(){
-
-if(!countElement ||
-!cartItemsElement ||
-!totalElement){
-
-return;
-
-}
-
-const totalItems =
-cart.reduce(
-(sum,item) => sum + item.qty,
-0
-);
-
-const totalPrice =
-cart.reduce(
-(sum,item) =>
-sum + item.price * item.qty,
-0
-);
-
-countElement.textContent =
-totalItems;
-
-totalElement.textContent =
-totalPrice.toFixed(0);
-
-if(cart.length === 0){
-
-cartItemsElement.innerHTML = `
-<div class="small-note">
-السلة فارغة حاليًا.
-<br>
-أضف بعض المنتجات للبدء.
-</div>
-`;
-
-return;
-
-}
-
-cartItemsElement.innerHTML =
-cart.map(
-(item,index) => `
-
-<div class="cartrow">
-
-<div>
-
-<strong>
-${escapeHtml(item.name)}
-</strong>
-
-<br>
-
-<span class="small-note">
-${item.price} درهم × ${item.qty}
-</span>
-
-</div>
-
-<div class="qty">
-
-<button
-type="button"
-onclick="changeQty(${index},-1)"
-aria-label="إنقاص الكمية">
-−
-</button>
-
-<span>
-${item.qty}
-</span>
-
-<button
-type="button"
-onclick="changeQty(${index},1)"
-aria-label="زيادة الكمية">
-+
-</button>
-
-</div>
-
-</div>
-
-`
-).join("");
-
-}
-
-
-/* =========================
-   تغيير الكمية
-========================= */
-
-function changeQty(index,change){
-
-if(!cart[index]){
-return;
-}
-
-cart[index].qty += change;
-
-if(cart[index].qty <= 0){
-
-cart.splice(index,1);
-
-}
-
-saveCart();
-
-updateCart();
-
-}
-
-
-/* =========================
-   تفريغ السلة
-========================= */
-
-function clearCart(){
-
-cart = [];
-
-saveCart();
-
-updateCart();
-
-showToast(
-"تم تفريغ السلة."
-);
-
-}
-
-
-/* =========================
-   فتح السلة
-========================= */
-
-function openCart(){
-
-updateCart();
-
-cartModal.style.display =
-"flex";
-
-}
-
-
-/* =========================
-   إغلاق السلة
-========================= */
-
-function closeCart(){
-
-cartModal.style.display =
-"none";
-
-}
-
-
-/* =========================
-   إتمام الطلب
-========================= */
-
-function openCheckout(){
-
-if(cart.length === 0){
-
-showToast(
-"أضف منتجًا واحدًا على الأقل."
-);
-
-return;
-
-}
-
-updateCheckoutSummary();
-
-closeCart();
-
-checkoutModal.style.display =
-"flex";
-
-}
-
-
-/* =========================
-   ملخص الطلب
-========================= */
-
-function updateCheckoutSummary(){
-
-const summary =
-document.getElementById(
-"checkoutSummary"
-);
-
-if(!summary){
-return;
-}
-
-const total =
-cart.reduce(
-(sum,item) =>
-sum + item.price * item.qty,
-0
-);
-
-summary.innerHTML = `
-
-<strong>
-ملخص الطلب
-</strong>
-
-<br><br>
-
-${cart.map(
-item => `
-<div>
-${escapeHtml(item.name)}
-× ${item.qty}
-— ${item.price * item.qty} درهم
-</div>
-`
-).join("")}
-
-<hr>
-
-<strong>
-الإجمالي: ${total} درهم
-</strong>
-
-`;
-
-}
-
-
-/* =========================
-   إغلاق نموذج الطلب
-========================= */
-
-function closeCheckout(){
-
-checkoutModal.style.display =
-"none";
-
-}
-
-
-/* =========================
-   إرسال الطلب إلى WhatsApp
-========================= */
-
-function sendOrder(){
-
-if(cart.length === 0){
-
-showToast(
-"السلة فارغة."
-);
-
-return;
-
-}
-
-const name =
-document.getElementById(
-"customerName"
-).value.trim();
-
-const phone =
-document.getElementById(
-"customerPhone"
-).value.trim();
-
-const city =
-document.getElementById(
-"customerCity"
-).value.trim();
-
-const address =
-document.getElementById(
-"customerAddress"
-).value.trim();
-
-const payment =
-document.getElementById(
-"paymentMethod"
-).value;
-
-const consent =
-document.getElementById(
-"privacyConsent"
-).checked;
-
-
-if(!name){
-
-showToast(
-"اكتب اسمك أولًا."
-);
-
-return;
-
-}
-
-
-if(!phone){
-
-showToast(
-"اكتب رقم الهاتف."
-);
-
-return;
-
-}
-
-
-if(!city){
-
-showToast(
-"اكتب المدينة."
-);
-
-return;
-
-}
-
-
-if(!address){
-
-showToast(
-"اكتب عنوان التوصيل."
-);
-
-return;
-
-}
-
-
-if(!consent){
-
-showToast(
-"يجب الموافقة على استخدام البيانات لإتمام الطلب."
-);
-
-return;
-
-}
-
-
-const total =
-cart.reduce(
-(sum,item) =>
-sum + item.price * item.qty,
-0
-);
-
-
-let message =
-"🐾 طلب جديد من PawCasa%0A%0A";
-
-
-message +=
-"👤 الاسم: " +
-encodeURIComponent(name) +
-"%0A";
-
-
-message +=
-"📞 الهاتف: " +
-encodeURIComponent(phone) +
-"%0A";
-
-
-message +=
-"📍 المدينة: " +
-encodeURIComponent(city) +
-"%0A";
-
-
-message +=
-"🏠 العنوان: " +
-encodeURIComponent(address) +
-"%0A";
-
-
-message +=
-"💳 الدفع: " +
-encodeURIComponent(
-payment === "cod"
-? "الدفع عند الاستلام"
-: payment
-) +
-"%0A%0A";
-
-
-message +=
-"🛒 المنتجات:%0A";
-
-
-cart.forEach(
-item => {
-
-message +=
-"• " +
-encodeURIComponent(item.name) +
-" × " +
-item.qty +
-" = " +
-(item.price * item.qty) +
-" درهم%0A";
-
+    closeCart();
+    closeCheckout();
+    closeMedia();
 });
 
 
-message +=
-"%0A💰 الإجمالي: " +
-total +
-" درهم";
-
-
-const url =
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-message;
-
-
-window.open(
-url,
-"_blank",
-"noopener,noreferrer"
-);
-
-}
-
-
-/* =========================
-   البحث
-========================= */
-
-function searchProducts(){
-
-const input =
-document.getElementById(
-"searchBox"
-);
-
-if(!input){
-return;
-}
-
-const query =
-input.value
-.trim()
-.toLowerCase();
-
-document
-.querySelectorAll(".product")
-.forEach(
-product => {
-
-const text =
-product.textContent
-.toLowerCase();
-
-const categoryMatch =
-currentCategory === "all" ||
-product.classList.contains(
-currentCategory
-);
-
-const searchMatch =
-!query ||
-text.includes(query);
-
-product.style.display =
-categoryMatch &&
-searchMatch
-? ""
-: "none";
-
-});
-
-}
-
-
-/* =========================
-   تصفية المنتجات
-========================= */
-
-function filterProducts(
-category,
-button
-){
-
-currentCategory =
-category;
-
-document
-.querySelectorAll(".filter")
-.forEach(
-item =>
-item.classList.remove(
-"active"
-)
-);
-
-if(button){
-
-button.classList.add(
-"active"
-);
-
-}
-
-searchProducts();
-
-}
-
-
-/* =========================
-   اختيار فئة
-========================= */
-
-function activateCategory(
-category
-){
-
-const button =
-document.querySelector(
-`.filter[onclick*="'${category}'"]`
-);
-
-filterProducts(
-category,
-button
-);
-
-document
-.getElementById("products")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* =========================
-   ترتيب المنتجات
-========================= */
-
-function sortProducts(){
-
-const sort =
-document.getElementById(
-"sortBox"
-).value;
-
-const grids =
-document.querySelectorAll(
-".grid"
-);
-
-grids.forEach(
-grid => {
-
-const products =
-Array.from(
-grid.querySelectorAll(
-".product"
-)
-);
-
-if(sort === "low"){
-
-products.sort(
-(a,b) =>
-getPrice(a) -
-getPrice(b)
-);
-
-}
-
-if(sort === "high"){
-
-products.sort(
-(a,b) =>
-getPrice(b) -
-getPrice(a)
-);
-
-}
-
-if(sort === "rating"){
-
-products.sort(
-(a,b) =>
-getRating(b) -
-getRating(a)
-);
-
-}
-
-products.forEach(
-product =>
-grid.appendChild(product)
-);
-
-});
-
-searchProducts();
-
-}
-
-
-/* =========================
-   استخراج السعر
-========================= */
-
-function getPrice(product){
-
-const price =
-product.querySelector(
-".price"
-);
-
-if(!price){
-return 0;
-}
-
-const value =
-parseFloat(
-price.textContent
-.replace(/[^\d.]/g,"")
-);
-
-return Number.isFinite(value)
-? value
-: 0;
-
-}
-
-
-/* =========================
-   استخراج التقييم
-========================= */
-
-function getRating(product){
-
-const rating =
-product.querySelector(
-".rating"
-);
-
-if(!rating){
-return 0;
-}
-
-return (
-rating.textContent.match(
-/★/g
-) || []
-).length;
-
-}
-
-
-/* =========================
-   الوضع الداكن
-========================= */
-
-function toggleTheme(){
-
-document.body.classList.toggle(
-"dark"
-);
-
-const isDark =
-document.body.classList.contains(
-"dark"
-);
-
-try{
-
-localStorage.setItem(
-"pawCasaDark",
-isDark
-? "1"
-: "0"
-);
-
-}catch(error){}
-
-}
-
-
-/* =========================
-   تحميل الوضع
-========================= */
-
-function loadTheme(){
-
-try{
-
-if(
-localStorage.getItem(
-"pawCasaDark"
-) === "1"
-){
-
-document.body.classList.add(
-"dark"
-);
-
-}
-
-}catch(error){}
-
-}
-
-
-/* =========================
-   عرض الصور
-========================= */
-
-function openMedia(button){
-
-if(!button){
-return;
-}
-
-const url =
-button.dataset.media;
-
-if(!url){
-return;
-}
-
-const image =
-document.getElementById(
-"mediaImage"
-);
-
-const caption =
-document.getElementById(
-"mediaCaption"
-);
-
-image.src = url;
-
-image.alt =
-"صورة المنتج";
-
-caption.textContent =
-button.closest(".card")
-?.querySelector("h3")
-?.textContent
-.trim() || "صورة المنتج";
-
-mediaModal.style.display =
-"flex";
-
-}
-
-
-/* =========================
-   إغلاق الصور
-========================= */
-
-function closeMedia(){
-
-mediaModal.style.display =
-"none";
-
-const image =
-document.getElementById(
-"mediaImage"
-);
-
-if(image){
-
-image.src = "";
-
-}
-
-}
-
-
-/* =========================
-   إشعار
-========================= */
-
-let toastTimer;
-
-function showToast(message){
-
-if(!toastElement){
-return;
-}
-
-toastElement.textContent =
-message;
-
-toastElement.style.display =
-"block";
-
-clearTimeout(
-toastTimer
-);
-
-toastTimer =
-setTimeout(
-() => {
-
-toastElement.style.display =
-"none";
-
-},
-2500
-);
-
-}
-
-
-/* =========================
-   حماية النصوص
-========================= */
-
-function escapeHtml(value){
-
-return String(value)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
-
-}
-
-
-/* =========================
-   إغلاق النوافذ
-========================= */
-
-window.addEventListener(
-"click",
-function(event){
-
-if(event.target === cartModal){
-
-closeCart();
-
-}
-
-if(event.target === checkoutModal){
-
-closeCheckout();
-
-}
-
-if(event.target === mediaModal){
-
-closeMedia();
-
-}
-
-}
-);
-
-
-/* =========================
-   زر Escape
-========================= */
-
-window.addEventListener(
-"keydown",
-function(event){
-
-if(event.key !== "Escape"){
-return;
-}
-
-closeCart();
-
-closeCheckout();
-
-closeMedia();
-
-}
-);
-
-
-/* =========================
-   بدء التطبيق
-========================= */
+/* =========================================================
+   INITIALIZATION
+   ========================================================= */
 
 document.addEventListener(
-"DOMContentLoaded",
-function(){
+    "DOMContentLoaded",
+    () => {
 
-loadCart();
+        loadCart();
+        loadTheme();
+        searchProducts();
 
-loadTheme();
-
-searchProducts();
-
-}
+        console.log(
+            "PawCasa JavaScript loaded successfully."
+        );
+    }
 );
 
- </script>
- </body>
-</html>
+
+/* =========================================================
+   GLOBAL SAFETY
+   ========================================================= */
+
+window.add = add;
+window.changeQty = changeQty;
+window.clearCart = clearCart;
+
+window.openCart = openCart;
+window.closeCart = closeCart;
+
+window.openCheckout = openCheckout;
+window.closeCheckout = closeCheckout;
+
+window.sendOrder = sendOrder;
+
+window.searchProducts = searchProducts;
+window.filterProducts = filterProducts;
+window.activateCategory = activateCategory;
+window.sortProducts = sortProducts;
+
+window.toggleTheme = toggleTheme;
+
+window.openMedia = openMedia;
+window.closeMedia = closeMedia;
+
+</script>
