@@ -1,3668 +1,4033 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>PawCasa | متجر مستلزمات الحيوانات الأليفة</title>
-
-<meta name="description" content="PawCasa — متجر مستلزمات الحيوانات الأليفة في المغرب.">
-<meta name="theme-color" content="#3f7d70">
-
-<style>
-:root{
---bg:#fffaf5;
---card:#fff;
---ink:#263238;
---muted:#68757a;
---green:#3f7d70;
---green2:#dfeee9;
---orange:#ef9b63;
---cream:#f7eadb;
---line:#eadfd4;
---shadow:0 14px 40px #26323812;
-}
-
-*{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-background:var(--bg);
-color:var(--ink);
-font-family:Tahoma,Arial,sans-serif;
-}
-
-button,
-input,
-textarea,
-select{
-font-family:inherit;
-}
-
-button{
-cursor:pointer;
-}
-
-header{
-position:sticky;
-top:0;
-z-index:50;
-background:#fffffff2;
-backdrop-filter:blur(14px);
-border-bottom:1px solid var(--line);
-}
-
-.nav{
-max-width:1180px;
-margin:auto;
-padding:13px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-}
-
-.logo{
-font-size:27px;
-font-weight:900;
-color:var(--green);
-}
-
-nav a{
-text-decoration:none;
-color:var(--ink);
-margin:0 6px;
-font-weight:700;
-}
-
-.nav-actions{
-display:flex;
-gap:8px;
-}
-
-.iconbtn,
-.cart{
-border:0;
-border-radius:12px;
-padding:10px 13px;
-}
-
-.iconbtn{
-background:var(--cream);
-}
-
-.cart{
-background:var(--green);
-color:#fff;
-}
-
-.hero{
-max-width:1180px;
-margin:auto;
-padding:58px 20px 30px;
-display:grid;
-grid-template-columns:1.05fr .95fr;
-gap:35px;
-align-items:center;
-}
-
-.badge{
-background:#f8dfca;
-color:#83512f;
-padding:8px 13px;
-border-radius:30px;
-font-weight:800;
-display:inline-block;
-}
-
-.hero h1{
-font-size:52px;
-line-height:1.15;
-margin:18px 0 12px;
-}
-
-.hero p{
-font-size:18px;
-color:var(--muted);
-line-height:1.9;
-}
-
-.hero-buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-top:22px;
-}
-
-.btn{
-border:0;
-background:var(--green);
-color:#fff;
-padding:13px 19px;
-border-radius:13px;
-font-weight:800;
-transition:.2s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-.secondary{
-background:#fff;
-color:var(--green);
-border:1px solid #c9ddd7;
-}
-
-.hero-visual{
-height:350px;
-border-radius:35px;
-background:
-radial-gradient(circle at 30% 25%,#fff 0 8%,transparent 9%),
-linear-gradient(145deg,#f6d0b0,#f5e9da);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:125px;
-box-shadow:var(--shadow);
-position:relative;
-overflow:hidden;
-}
-
-.bubble{
-position:absolute;
-background:#ffffff88;
-border-radius:50%;
-padding:14px;
-font-size:24px;
-}
-
-.b1{
-top:25px;
-right:30px;
-}
-
-.b2{
-bottom:35px;
-left:35px;
-}
-
-section{
-max-width:1180px;
-margin:22px auto;
-padding:20px;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:25px;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-}
-
-.feature{
-background:var(--card);
-border:1px solid var(--line);
-padding:20px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 5px 20px #00000008;
-}
-
-.feature b{
-display:block;
-margin:8px 0;
-}
-
-.launch-panel{
-max-width:1180px;
-margin:18px auto;
-padding:22px 20px;
-border:1px solid var(--line);
-border-radius:24px;
-background:linear-gradient(135deg,#dfeee9,#fff0df);
-display:flex;
-justify-content:space-between;
-gap:20px;
-align-items:center;
-}
-
-.launch-points{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-}
-
-.launch-points span{
-background:#ffffffb8;
-padding:9px 12px;
-border-radius:12px;
-font-weight:800;
-font-size:13px;
-}
-
-.shop-tools{
-display:flex;
-gap:10px;
-max-width:760px;
-margin:0 auto 16px;
-}
-
-.search,
-.shop-tools select{
-background:#fff;
-border:1px solid var(--line);
-padding:13px 15px;
-border-radius:13px;
-color:var(--ink);
-}
-
-.search{
-flex:1;
-}
-
-.shop-tools select{
-min-width:210px;
-}
-
-.cat-intro{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px;
-margin-bottom:20px;
-}
-
-.cat-tile{
-border:1px solid var(--line);
-background:#fff;
-border-radius:17px;
-padding:14px;
-text-align:center;
-transition:.2s;
-}
-
-.cat-tile:hover{
-transform:translateY(-3px);
-box-shadow:var(--shadow);
-}
-
-.cat-tile span{
-display:block;
-font-size:25px;
-margin-bottom:5px;
-}
-
-.cat-tile b{
-font-size:13px;
-}
-
-.filters{
-text-align:center;
-margin-bottom:20px;
-}
-
-.filter{
-background:#fff;
-border:1px solid var(--line);
-padding:9px 16px;
-border-radius:22px;
-margin:4px;
-}
-
-.filter.active{
-background:var(--green);
-color:#fff;
-}
-
-.budget-banner{
-background:linear-gradient(135deg,#fff0df,#e5f1ed);
-border:1px solid var(--line);
-border-radius:20px;
-padding:18px 20px;
-margin-bottom:18px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:17px;
-}
-
-.card{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 7px 25px #00000009;
-transition:.25s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:var(--shadow);
-}
-
-.pic{
-height:220px;
-background:#f4eee7;
-position:relative;
-overflow:hidden;
-}
-
-.pic img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.4s;
-}
-
-.card:hover img{
-transform:scale(1.05);
-}
-
-.tag{
-position:absolute;
-top:10px;
-right:10px;
-background:#fff;
-padding:6px 9px;
-border-radius:20px;
-font-size:12px;
-font-weight:800;
-}
-
-.wishlist{
-position:absolute;
-top:10px;
-left:10px;
-z-index:3;
-border:0;
-background:#fff;
-border-radius:50%;
-width:38px;
-height:38px;
-font-size:18px;
-box-shadow:0 5px 15px #0001;
-}
-
-.wishlist.active{
-background:#f8dfca;
-}
-
-.body{
-padding:15px;
-}
-
-.body h3{
-margin:0 0 8px;
-}
-
-.desc{
-font-size:13px;
-color:var(--muted);
-line-height:1.6;
-min-height:42px;
-}
-
-.price{
-color:var(--green);
-font-size:21px;
-font-weight:900;
-}
-
-.rating{
-color:#e79a4f;
-font-size:14px;
-}
-
-.stock{
-font-size:12px;
-color:var(--green);
-font-weight:800;
-margin-top:7px;
-}
-
-.body .btn{
-width:100%;
-margin-top:9px;
-}
-
-.product-meta{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:7px;
-}
-
-.mini-badge{
-font-size:11px;
-background:#f7eadb;
-padding:5px 8px;
-border-radius:10px;
-font-weight:800;
-}
-
-.empty-state{
-display:none;
-text-align:center;
-padding:30px;
-background:var(--card);
-border:1px dashed var(--line);
-border-radius:18px;
-color:var(--muted);
-margin-top:15px;
-}
-
-.info{
-background:var(--green2);
-border-radius:25px;
-padding:30px;
-line-height:1.9;
-}
-
-.info-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-}
-
-.list{
-padding-right:20px;
-}
-
-.faq details{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:14px;
-padding:15px;
-margin:9px 0;
-}
-
-.faq summary{
-cursor:pointer;
-font-weight:800;
-}
-
-.legal-page{
-max-width:1000px;
-margin:25px auto;
-background:var(--card);
-border:1px solid var(--line);
-border-radius:22px;
-padding:24px;
-}
-
-.legal-page h2{
-color:var(--green);
-}
-
-.legal-page p,
-.legal-page li{
-line-height:1.9;
-color:var(--muted);
-}
-
-.legal-nav{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-justify-content:center;
-margin:20px;
-}
-
-.legal-nav a{
-padding:9px 13px;
-border:1px solid var(--line);
-border-radius:12px;
-text-decoration:none;
-color:var(--green);
-background:#fff;
-font-weight:800;
-font-size:13px;
-}
-
-footer{
-background:#263238;
-color:#fff;
-padding:35px;
-margin-top:40px;
-}
-
-.footer-grid{
-max-width:1000px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-text-align:right;
-}
-
-.footer-grid a{
-color:#fff;
-text-decoration:none;
-display:block;
-margin:7px 0;
-}
-
-.footer-bottom{
-border-top:1px solid #ffffff22;
-margin-top:22px;
-padding-top:18px;
-text-align:center;
-}
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:#0009;
-z-index:100;
-align-items:center;
-justify-content:center;
-padding:18px;
-}
-
-.modal.open{
-display:flex;
-}
-
-.box{
-background:var(--card);
-color:var(--ink);
-border-radius:22px;
-padding:25px;
-width:min(480px,100%);
-max-height:90vh;
-overflow:auto;
-}
-
-.close{
-float:left;
-border:0;
-background:none;
-font-size:28px;
-cursor:pointer;
-color:var(--ink);
-}
-
-input,
-textarea,
-select{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:10px;
-margin:6px 0 12px;
-}
-
-.cartrow{
-display:flex;
-justify-content:space-between;
-gap:10px;
-border-bottom:1px solid var(--line);
-padding:10px 0;
-}
-
-.qty{
-display:flex;
-align-items:center;
-gap:7px;
-}
-
-.qty button{
-border:1px solid #ddd;
-background:#fff;
-border-radius:7px;
-padding:4px 9px;
-}
-
-.checkout-note{
-background:#f7eadb;
-padding:12px;
-border-radius:12px;
-font-size:13px;
-line-height:1.7;
-margin:10px 0;
-}
-
-.order-summary{
-background:#f7f3ef;
-border-radius:13px;
-padding:12px;
-margin:10px 0;
-}
-
-.consent{
-display:flex;
-gap:8px;
-align-items:flex-start;
-font-size:12px;
-color:var(--muted);
-}
-
-.consent input{
-width:auto;
-}
-
-.cart-actions{
-display:flex;
-gap:8px;
-margin-top:12px;
-}
-
-.cart-actions .btn{
-flex:1;
-}
-
-.media-stage{
-background:#111;
-border-radius:16px;
-overflow:hidden;
-aspect-ratio:16/10;
-}
-
-.media-stage img{
-width:100%;
-height:100%;
-object-fit:contain;
-}
-
-.media-caption{
-text-align:center;
-padding:10px;
-font-weight:700;
-}
-
-.wa-float{
-position:fixed;
-right:18px;
-bottom:18px;
-z-index:90;
-background:#25D366;
-color:#fff;
-text-decoration:none;
-padding:12px 16px;
-border-radius:999px;
-font-weight:900;
-box-shadow:0 10px 28px #0003;
-}
-
-.mobile-cta{
-display:none;
-}
-
-#toast{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#263238;
-color:#fff;
-padding:13px 18px;
-border-radius:12px;
-display:none;
-z-index:200;
-}
-
-body.dark{
---bg:#172022;
---card:#202b2e;
---ink:#f2f5f4;
---muted:#b8c4c4;
---line:#344346;
---cream:#29383a;
-}
-
-body.dark header{
-background:#172022ee;
-}
-
-body.dark .search,
-body.dark .shop-tools select,
-body.dark .filter:not(.active),
-body.dark .cat-tile,
-body.dark .secondary,
-body.dark .box{
-background:#202b2e;
-color:var(--ink);
-}
-
-@media(max-width:900px){
-.grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.features{
-grid-template-columns:repeat(2,1fr);
-}
-
-.cat-intro{
-grid-template-columns:repeat(3,1fr);
-}
-}
-
-@media(max-width:720px){
-nav{
-display:none;
-}
-
-.hero{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.info-grid{
-grid-template-columns:1fr;
-}
-
-.shop-tools{
-flex-direction:column;
-}
-
-.shop-tools select{
-min-width:0;
-}
-
-.launch-panel{
-margin:12px;
-flex-direction:column;
-align-items:stretch;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.mobile-cta{
-display:flex;
-position:fixed;
-bottom:10px;
-left:10px;
-right:10px;
-z-index:80;
-background:#fffffff2;
-padding:8px;
-gap:8px;
-border-radius:16px;
-}
-
-.mobile-cta button{
-flex:1;
-border:0;
-border-radius:12px;
-padding:11px;
-background:var(--green);
-color:#fff;
-font-weight:800;
-}
-
-body{
-padding-bottom:70px;
-}
-}
-
-@media(max-width:480px){
-.grid{
-grid-template-columns:1fr;
-}
-
-.features{
-grid-template-columns:1fr 1fr;
-}
-
-.cat-intro{
-grid-template-columns:repeat(2,1fr);
-}
-
-.hero-visual{
-height:250px;
-font-size:90px;
-}
-}
-</style>
+
+  <!-- =========================
+       PawCasa - إعدادات أساسية
+       ========================= -->
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#3f7d70"
+  >
+
+  <meta
+    name="color-scheme"
+    content="light dark"
+  >
+
+  <meta
+    name="referrer"
+    content="strict-origin-when-cross-origin"
+  >
+
+  <!-- =========================
+       Google Search Console
+       ========================= -->
+  <meta
+    name="google-site-verification"
+    content="N_c3XfpLJcHqfJGi1cxVdoigay20mFdA4z-oPIh5TlQ"
+  >
+
+  <meta
+    name="googlebot"
+    content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  >
+
+  <!-- =========================
+       SEO
+       ========================= -->
+  <title>PawCasa | متجر مستلزمات الحيوانات الأليفة في المغرب</title>
+
+  <meta
+    name="description"
+    content="PawCasa متجر مستلزمات الحيوانات الأليفة في المغرب. منتجات للقطط والكلاب والطيور والحيوانات الصغيرة مع طلب سهل عبر WhatsApp."
+  >
+
+  <meta
+    name="keywords"
+    content="PawCasa, متجر حيوانات, مستلزمات قطط, مستلزمات كلاب, مستلزمات الحيوانات, الدار البيضاء, المغرب, pet shop Casablanca, accessoires animaux Maroc"
+  >
+
+  <meta
+    name="author"
+    content="PawCasa"
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  >
+
+  <link
+    rel="canonical"
+    href="https://buffunferox.github.io/pawcasa-animalstor/"
+  >
+
+  <!-- =========================
+       Open Graph - Facebook / Google
+       ========================= -->
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:locale"
+    content="ar_MA"
+  >
+
+  <meta
+    property="og:site_name"
+    content="PawCasa"
+  >
+
+  <meta
+    property="og:title"
+    content="PawCasa | متجر مستلزمات الحيوانات الأليفة"
+  >
+
+  <meta
+    property="og:description"
+    content="مستلزمات القطط والكلاب والطيور والحيوانات الصغيرة في المغرب، مع طلب سهل وسريع عبر WhatsApp."
+  >
+
+  <meta
+    property="og:url"
+    content="https://buffunferox.github.io/pawcasa-animalstor/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://buffunferox.github.io/pawcasa-animalstor/"
+  >
+
+  <!-- =========================
+       Twitter / X
+       ========================= -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="PawCasa | متجر الحيوانات الأليفة في المغرب"
+  >
+
+  <meta
+    name="twitter:description"
+    content="مستلزمات الحيوانات الأليفة في المغرب مع طلب سريع عبر WhatsApp."
+  >
+
+  <meta
+    name="twitter:url"
+    content="https://buffunferox.github.io/pawcasa-animalstor/"
+  >
+
+  <!-- =========================
+       Favicon
+       ========================= -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%233f7d70'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='58'%3E🐾%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- =========================
+       Google Structured Data
+       ========================= -->
+
+  <!-- WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PawCasa",
+    "url": "https://buffunferox.github.io/pawcasa-animalstor/",
+    "inLanguage": "ar-MA",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://buffunferox.github.io/pawcasa-animalstor/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PawCasa",
+    "url": "https://buffunferox.github.io/pawcasa-animalstor/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+212684424055",
+      "contactType": "customer service",
+      "areaServed": "MA",
+      "availableLanguage": [
+        "ar",
+        "fr"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Pet Store -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetStore",
+    "name": "PawCasa",
+    "url": "https://buffunferox.github.io/pawcasa-animalstor/",
+    "description": "متجر مستلزمات الحيوانات الأليفة في المغرب.",
+    "telephone": "+212684424055",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Morocco"
+    },
+    "priceRange": "MAD"
+  }
+  </script>
+
+  <!-- =========================
+       التصميم
+       ========================= -->
+  <style>
+
+    :root {
+      --bg: #fffaf5;
+      --card: #ffffff;
+      --ink: #263238;
+      --muted: #68757a;
+
+      --green: #3f7d70;
+      --green-dark: #315f55;
+      --green2: #dfeee9;
+
+      --orange: #ef9b63;
+      --cream: #f7eadb;
+
+      --line: #eadfd4;
+
+      --danger: #c94b4b;
+
+      --shadow:
+        0 14px 40px rgba(38, 50, 56, 0.08);
+
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(223, 238, 233, 0.7),
+          transparent 35%
+        ),
+        var(--bg);
+
+      color: var(--ink);
+
+      font-family:
+        Tahoma,
+        Arial,
+        "Noto Sans Arabic",
+        sans-serif;
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       Dark Mode
+       ========================= */
+
+    body.dark {
+      --bg: #101817;
+      --card: #182321;
+      --ink: #f4f8f7;
+      --muted: #a9b8b4;
+
+      --green: #70b8a7;
+      --green-dark: #9bd1c3;
+      --green2: #203c35;
+
+      --orange: #f2a673;
+      --cream: #2a2520;
+
+      --line: #30423e;
+
+      --shadow:
+        0 14px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    /* =========================
+       Header
+       ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(255, 255, 255, 0.92);
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid var(--line);
+
+      transition:
+        background 0.3s ease,
+        border 0.3s ease;
+    }
+
+    body.dark header {
+      background: rgba(16, 24, 23, 0.94);
+    }
+
+    .nav {
+      width: min(1200px, calc(100% - 32px));
+
+      min-height: 70px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      text-decoration: none;
+
+      font-size: 25px;
+      font-weight: 900;
+
+      color: var(--green);
+
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: inline-flex;
+
+      width: 42px;
+      height: 42px;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 14px;
+
+      background: var(--green2);
+
+      font-size: 24px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 5px;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--green2);
+      color: var(--green);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+    }
+
+    .iconbtn,
+    .cart {
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      color: var(--ink);
+
+      min-height: 42px;
+
+      padding: 9px 13px;
+
+      border-radius: 13px;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border 0.2s ease;
+    }
+
+    .iconbtn:hover,
+    .cart:hover {
+      transform: translateY(-2px);
+      background: var(--green2);
+    }
+
+    .cart {
+      font-weight: 800;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* =========================
+       Mobile Menu
+       ========================= */
+
+    .mobile-menu {
+      display: none;
+
+      position: fixed;
+
+      top: 76px;
+      right: 12px;
+      left: 12px;
+
+      z-index: 150;
+
+      background: var(--card);
+
+      border: 1px solid var(--line);
+
+      border-radius: 20px;
+
+      padding: 10px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-menu.open {
+      display: grid;
+      gap: 5px;
+    }
+
+    .mobile-menu a {
+      display: block;
+
+      padding: 13px 15px;
+
+      border-radius: 13px;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      transition: background 0.2s ease;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--green2);
+      color: var(--green);
+    }
+
+    /* =========================
+       Buttons
+       ========================= */
+
+    .btn {
+      border: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--green),
+          var(--green-dark)
+        );
+
+      color: #fff;
+
+      padding: 12px 18px;
+
+      border-radius: 14px;
+
+      font-weight: 900;
+
+      box-shadow:
+        0 8px 20px rgba(63, 125, 112, 0.18);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 25px rgba(63, 125, 112, 0.25);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn.secondary {
+      background: var(--green2);
+      color: var(--green-dark);
+
+      box-shadow: none;
+    }
+
+    body.dark .btn.secondary {
+      color: var(--green);
+    }
+
+    /* =========================
+       Main
+       ========================= */
+
+    main {
+      width: min(1200px, calc(100% - 32px));
+
+      margin: auto;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .section-title {
+      font-size: clamp(25px, 4vw, 38px);
+
+      margin-bottom: 18px;
+
+      font-weight: 900;
+    }
+
+    /* =========================
+       Forms
+       ========================= */
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      color: var(--ink);
+
+      border-radius: 13px;
+
+      padding: 12px 14px;
+
+      outline: none;
+
+      transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--green);
+
+      box-shadow:
+        0 0 0 4px rgba(63, 125, 112, 0.12);
+    }
+
+    textarea {
+      min-height: 110px;
+
+      resize: vertical;
+    }
+
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 19px;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .nav {
+        width: min(100% - 20px, 1200px);
+
+        min-height: 64px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .logo span {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+      }
+
+      .nav-actions {
+        gap: 5px;
+      }
+
+      .iconbtn,
+      .cart {
+        padding: 8px 10px;
+        min-height: 40px;
+      }
+
+      main {
+        width: min(100% - 20px, 1200px);
+      }
+
+    }
+
+    @media (max-width: 420px) {
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .logo span {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+      }
+
+      .cart {
+        font-size: 13px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
-
-<header>
-<div class="nav">
-
-<div class="logo">🐾 PawCasa</div>
-
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#why">لماذا نحن</a>
-<a href="#products">المنتجات</a>
-<a href="#guide">العناية</a>
-<a href="#faq">الأسئلة</a>
-</nav>
-
-<div class="nav-actions">
-
-<button
-class="iconbtn"
-type="button"
-id="themeBtn"
->
-🌙
-</button>
-
-<button
-class="iconbtn"
-type="button"
-id="searchBtn"
->
-🔎
-</button>
-
-<button
-class="cart"
-type="button"
-id="cartBtn"
->
-🛒 <span id="count">0</span>
-</button>
-
-</div>
-
-</div>
-</header>
-
-<main id="home">
-
-<div class="hero">
-
-<div>
-
-<span class="badge">
-🇲🇦 متجر مغربي للحيوانات الأليفة
-</span>
-
-<h1>
-كل ما يحتاجه صديقك، في مكان واحد 🐾
-</h1>
-
-<p>
-منتجات عملية للقطط والكلاب والطيور والحيوانات الصغيرة،
-مع سلة مشتريات وطلب سريع عبر WhatsApp.
-</p>
-
-<div class="hero-buttons">
-
-<a
-class="btn"
-href="#products"
->
-🛍️ اكتشف المنتجات
-</a>
-
-<a
-class="btn secondary"
-href="#guide"
->
-📚 دليل العناية
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-visual">
-🐱 🐶
-<span class="bubble b1">❤️</span>
-<span class="bubble b2">🐾</span>
-</div>
-
-</div>
-
-<section class="launch-panel">
-
-<div>
-<span class="badge">✨ PawCasa</span>
-
-<h2>
-متجر بسيط وسريع
-</h2>
-
-<p>
-اختر منتجاتك، أضفها للسلة، ثم أرسل الطلب عبر WhatsApp.
-</p>
-</div>
-
-<div class="launch-points">
-<span>🇲🇦 المغرب</span>
-<span>💵 الدفع عند الاستلام</span>
-<span>📦 توصيل</span>
-</div>
-
-</section>
-
-<section id="why">
-
-<h2 class="section-title">
-لماذا PawCasa؟
-</h2>
-
-<div class="features">
-
-<div class="feature">
-🚚
-<b>توصيل داخل المغرب</b>
-<span>نجهز الطلب للتوصيل حسب المدينة.</span>
-</div>
-
-<div class="feature">
-💰
-<b>أسعار اقتصادية</b>
-<span>منتجات مناسبة للميزانيات المختلفة.</span>
-</div>
-
-<div class="feature">
-🔒
-<b>طلب بسيط</b>
-<span>السلة ثم إرسال التفاصيل عبر WhatsApp.</span>
-</div>
-
-<div class="feature">
-🐾
-<b>منتجات مختارة</b>
-<span>مستلزمات عملية للحيوانات الأليفة.</span>
-</div>
-
-</div>
-
-</section>
-
-<section id="products">
-
-<h2 class="section-title">
-🛍️ متجر PawCasa
-</h2>
-
-<div class="shop-tools">
-
-<input
-id="searchBox"
-class="search"
-type="search"
-placeholder="🔎 ابحث عن منتج..."
->
-
-<select id="sortBox">
-
-<option value="default">
-ترتيب المنتجات
-</option>
-
-<option value="low">
-السعر: من الأقل للأعلى
-</option>
-
-<option value="high">
-السعر: من الأعلى للأقل
-</option>
-
-<option value="rating">
-الأعلى تقييماً
-</option>
-
-</select>
-
-</div>
-
-<div class="cat-intro">
-
-<button
-class="cat-tile"
-type="button"
-data-category="cat"
->
-<span>🐱</span>
-<b>القطط</b>
-</button>
-
-<button
-class="cat-tile"
-type="button"
-data-category="dog"
->
-<span>🐶</span>
-<b>الكلاب</b>
-</button>
-
-<button
-class="cat-tile"
-type="button"
-data-category="bird"
->
-<span>🦜</span>
-<b>الطيور</b>
-</button>
-
-<button
-class="cat-tile"
-type="button"
-data-category="fish"
->
-<span>🐠</span>
-<b>الأسماك</b>
-</button>
-
-<button
-class="cat-tile"
-type="button"
-data-category="small"
->
-<span>🐰</span>
-<b>الحيوانات الصغيرة</b>
-</button>
-
-</div>
-
-<div class="filters">
-
-<button
-class="filter active"
-type="button"
-data-filter="all"
->
-الكل
-</button>
-
-<button
-class="filter"
-type="button"
-data-filter="cat"
->
-🐱 قطط
-</button>
-
-<button
-class="filter"
-type="button"
-data-filter="dog"
->
-🐶 كلاب
-</button>
-
-<button
-class="filter"
-type="button"
-data-filter="bird"
->
-🦜 طيور
-</button>
-
-<button
-class="filter"
-type="button"
-data-filter="fish"
->
-🐠 أسماك
-</button>
-
-<button
-class="filter"
-type="button"
-data-filter="small"
->
-🐰 صغيرة
-</button>
-
-<button
-class="filter"
-type="button"
-data-filter="care"
->
-🪮 عناية
-</button>
-
-</div>
-
-<div class="budget-banner">
-
-<h3>
-💸 المنتجات الاقتصادية
-</h3>
-
-<p>
-خيارات بسيطة ومفيدة بميزانية صغيرة.
-</p>
+  <!-- =====================================================
+     الجزء الثاني — PawCasa
+     جميع المنتجات
+     ===================================================== -->
+
+<section id="products" class="products-section">
+
+  <div class="section-head">
+
+    <div>
+      <span class="section-kicker">🐾 PawCasa Shop</span>
+
+      <h2 class="section-title">
+        🛍️ منتجات PawCasa
+      </h2>
+
+      <p>
+        اختر مستلزمات مناسبة لحيوانك الأليف
+        وأضفها إلى سلة المشتريات.
+      </p>
+    </div>
 
   </div>
-  <div class="grid" id="productGrid">
-
-<article
-class="card product cat"
-data-name="كرة صغيرة للقطط"
-data-price="20"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=800&q=85"
-alt="كرة صغيرة للقطط"
->
-
-<button
-class="wishlist"
-type="button"
-data-wish
->
-♡
-</button>
-
-<span class="tag">
-20 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة صغيرة للقطط
-</h3>
-
-<p class="desc">
-لعبة بسيطة وخفيفة للترفيه داخل المنزل.
-</p>
-
-<span class="price">
-20 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="كرة صغيرة للقطط"
-data-price="20"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-
-<article
-class="card product cat"
-data-name="طوق قطط اقتصادي"
-data-price="25"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=85"
-alt="طوق قطط اقتصادي"
->
-
-<button
-class="wishlist"
-type="button"
-data-wish
->
-♡
-</button>
-
-<span class="tag">
-25 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-طوق قطط اقتصادي
-</h3>
-
-<p class="desc">
-طوق خفيف للاستخدام اليومي مع تصميم بسيط.
-</p>
-
-<span class="price">
-25 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="طوق قطط اقتصادي"
-data-price="25"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-
-<article
-class="card product cat"
-data-name="كرة ريش للقطط"
-data-price="29"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=85"
-alt="كرة ريش للقطط"
->
-
-<button
-class="wishlist"
-type="button"
-data-wish
->
-♡
-</button>
-
-<span class="tag">
-29 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة ريش للقطط
-</h3>
-
-<p class="desc">
-لعبة صغيرة للتفاعل والحركة اليومية.
-</p>
-
-<span class="price">
-29 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="كرة ريش للقطط"
-data-price="29"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-
-<article
-class="card product care"
-data-name="مشط صغير للعناية"
-data-price="35"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=800&q=85"
-alt="مشط صغير للعناية"
->
-
-<span class="tag">
-35 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-مشط صغير للعناية
-</h3>
-
-<p class="desc">
-أداة اقتصادية للعناية المنتظمة بالفرو.
-</p>
 
-<span class="price">
-35 درهم
-</span>
 
-<div class="stock">
-✓ متوفر
-</div>
+  <!-- البحث والترتيب -->
+
+  <div class="search-area">
+
+    <div class="search-box">
+
+      <span>🔎</span>
+
+      <input
+        id="searchBox"
+        type="search"
+        placeholder="ابحث عن منتج..."
+        autocomplete="off"
+        aria-label="البحث عن المنتجات"
+      >
+
+    </div>
+
 
-<button
-class="btn add-btn"
-type="button"
-data-name="مشط صغير للعناية"
-data-price="35"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
+    <select
+      id="sortBox"
+      aria-label="ترتيب المنتجات"
+    >
 
-
-<article
-class="card product dog"
-data-name="كرة لعب للكلاب"
-data-price="39"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=85"
-alt="كرة لعب للكلاب"
->
-
-<span class="tag">
-39 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-كرة لعب للكلاب
-</h3>
-
-<p class="desc">
-كرة بسيطة للعب الخفيف والتفاعل اليومي.
-</p>
+      <option value="default">
+        الترتيب الافتراضي
+      </option>
+
+      <option value="low">
+        السعر: من الأقل للأعلى
+      </option>
+
+      <option value="high">
+        السعر: من الأعلى للأقل
+      </option>
+
+      <option value="rating">
+        الأعلى تقييماً
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- التصنيفات -->
+
+  <div
+    class="filters"
+    role="tablist"
+    aria-label="تصنيفات المنتجات"
+  >
+
+    <button
+      type="button"
+      class="filter active"
+      onclick="filterProducts('all',this)"
+    >
+      🛍️ الكل
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      onclick="filterProducts('cat',this)"
+    >
+      🐱 القطط
+    </button>
 
-<span class="price">
-39 درهم
-</span>
+    <button
+      type="button"
+      class="filter"
+      onclick="filterProducts('dog',this)"
+    >
+      🐶 الكلاب
+    </button>
 
-<div class="stock">
-✓ متوفر
-</div>
+    <button
+      type="button"
+      class="filter"
+      onclick="filterProducts('bird',this)"
+    >
+      🦜 الطيور
+    </button>
 
-<button
-class="btn add-btn"
-type="button"
-data-name="كرة لعب للكلاب"
-data-price="39"
->
-🛒 أضف للسلة
-</button>
+    <button
+      type="button"
+      class="filter"
+      onclick="filterProducts('fish',this)"
+    >
+      🐠 الأسماك
+    </button>
 
-</div>
-</article>
+    <button
+      type="button"
+      class="filter"
+      onclick="filterProducts('small',this)"
+    >
+      🐰 الحيوانات الصغيرة
+    </button>
 
+    <button
+      type="button"
+      class="filter"
+      onclick="filterProducts('care',this)"
+    >
+      🧴 العناية
+    </button>
+
+  </div>
 
-<article
-class="card product dog"
-data-name="حبل لعب اقتصادي"
-data-price="45"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=85"
-alt="حبل لعب اقتصادي"
->
-
-<span class="tag">
-45 درهم
-</span>
-
-</div>
+
+  <!-- =====================================================
+       المنتجات
+       ===================================================== -->
 
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-حبل لعب اقتصادي
-</h3>
-
-<p class="desc">
-حبل خفيف للعب والتفاعل مع الكلب.
-</p>
+  <div class="grid">
 
-<span class="price">
-45 درهم
-</span>
 
-<div class="stock">
-✓ متوفر
-</div>
+    <!-- ================= CAT ================= -->
 
-<button
-class="btn add-btn"
-type="button"
-data-name="حبل لعب اقتصادي"
-data-price="45"
->
-🛒 أضف للسلة
-</button>
+    <article
+      class="product card cat"
+      data-name="كرة صغيرة للقطط"
+      data-price="20"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
 
-</div>
-</article>
-
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="كرة صغيرة للقطط"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23dfeee9'/%3E%3Ccircle cx='400' cy='250' r='110' fill='%23ef9b63'/%3E%3Ctext x='400' y='430' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
 
-<article
-class="card product cat dog"
-data-name="وعاء بلاستيكي خفيف"
-data-price="45"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=85"
-alt="وعاء بلاستيكي خفيف"
->
-
-<span class="tag">
-45 درهم
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-وعاء بلاستيكي خفيف
-</h3>
-
-<p class="desc">
-وعاء اقتصادي للماء أو الطعام وسهل التنظيف.
-</p>
-
-<span class="price">
-45 درهم
-</span>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="وعاء بلاستيكي خفيف"
-data-price="45"
->
-🛒 أضف للسلة
-</button>
+        </div>
 
-</div>
-</article>
-
-
-<article
-class="card product bird"
-data-name="لعبة حبل للطيور"
-data-price="29"
-data-rating="5"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=900&q=90"
-alt="لعبة حبل للطيور"
->
-
-<span class="tag">
-طيور
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★★
-</div>
-
-<h3>
-لعبة حبل للطيور
-</h3>
-
-<p class="desc">
-إكسسوار ترفيهي بسيط للطيور الصغيرة.
-</p>
-
-<div class="product-meta">
-<span class="price">
-29 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
-</span>
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="لعبة حبل للطيور"
-data-price="29"
->
-🛒 أضف للسلة
-</button>
+        <span class="tag">
+          اقتصادي
+        </span>
 
-</div>
-</article>
-
-
-<article
-class="card product bird"
-data-name="مجثم خشبي للطيور"
-data-price="35"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=900&q=90"
-alt="مجثم خشبي للطيور"
->
-
-<span class="tag">
-طيور
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-مجثم خشبي للطيور
-</h3>
-
-<p class="desc">
-مجثم بسيط للوقوف والحركة داخل القفص.
-</p>
-
-<div class="product-meta">
-<span class="price">
-35 درهم
-</span>
-
-<span class="mini-badge">
-شائع
-</span>
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="مجثم خشبي للطيور"
-data-price="35"
->
-🛒 أضف للسلة
-</button>
+      </div>
 
-</div>
-</article>
-
-
-<article
-class="card product fish"
-data-name="زينة صغيرة للحوض"
-data-price="25"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=900&q=90"
-alt="زينة صغيرة للحوض"
->
-
-<span class="tag">
-أسماك
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-زينة صغيرة للحوض
-</h3>
-
-<p class="desc">
-زينة بسيطة لإضافة لمسة جمالية إلى حوض السمك.
-</p>
-
-<div class="product-meta">
-<span class="price">
-25 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
-</span>
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="زينة صغيرة للحوض"
-data-price="25"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-
-<article
-class="card product fish"
-data-name="شبكة صغيرة للحوض"
-data-price="29"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=90"
-alt="شبكة صغيرة للحوض"
->
-
-<span class="tag">
-أسماك
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-شبكة صغيرة للحوض
-</h3>
-
-<p class="desc">
-شبكة خفيفة لتنظيف الحوض والعناية اليومية.
-</p>
-
-<div class="product-meta">
-<span class="price">
-29 درهم
-</span>
-
-<span class="mini-badge">
-عملي
-</span>
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="شبكة صغيرة للحوض"
-data-price="29"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-
-<article
-class="card product small"
-data-name="لعبة خشبية للأرانب"
-data-price="25"
-data-rating="5"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=90"
-alt="لعبة خشبية للأرانب"
->
-
-<span class="tag">
-صغيرة
-</span>
-
-</div>
-
-<div class="body">
-
-<div class="rating">
-★★★★★
-</div>
-
-<h3>
-لعبة خشبية للأرانب
-</h3>
-
-<p class="desc">
-لعبة بسيطة للترفيه للحيوانات الصغيرة.
-</p>
-
-<div class="product-meta">
-<span class="price">
-25 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
-</span>
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="لعبة خشبية للأرانب"
-data-price="25"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-
-<article
-class="card product small"
-data-name="وعاء صغير للحيوانات"
-data-price="25"
-data-rating="4"
->
-
-<div class="pic">
-
-<img
-src="https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&w=900&q=90"
-alt="وعاء صغير للحيوانات"
->
-
-<span class="tag">
-صغيرة
-</span>
 
-</div>
+      <div class="body">
 
-<div class="body">
+        <div class="rating">
+          ★★★★☆
+        </div>
 
-<div class="rating">
-★★★★☆
-</div>
-
-<h3>
-وعاء صغير للحيوانات
-</h3>
-
-<p class="desc">
-وعاء صغير للطعام أو الماء للاستخدام اليومي.
-</p>
-
-<div class="product-meta">
-<span class="price">
-25 درهم
-</span>
-
-<span class="mini-badge">
-اقتصادي
-</span>
-</div>
-
-<div class="stock">
-✓ متوفر
-</div>
-
-<button
-class="btn add-btn"
-type="button"
-data-name="وعاء صغير للحيوانات"
-data-price="25"
->
-🛒 أضف للسلة
-</button>
-
-</div>
-</article>
-
-</div>
-
-<div
-id="emptyState"
-class="empty-state"
->
-<h3>
-لم نجد منتجات مطابقة 🔎
-</h3>
-<p>
-جرب كلمة بحث أخرى أو اختر تصنيفاً مختلفاً.
-</p>
-</div>
-
-</section>
-
-<section id="guide">
-
-<h2 class="section-title">
-📚 دليل العناية
-</h2>
-
-<div class="info-grid">
-
-<div class="info">
-
-<h3>🐱 العناية بالقطط</h3>
+        <h3>
+          كرة صغيرة للقطط
+        </h3>
 
-<ul class="list">
-<li>توفير ماء نظيف دائماً.</li>
-<li>العناية بالفرو بانتظام.</li>
-<li>توفير ألعاب مناسبة.</li>
-<li>الحفاظ على نظافة مكان الطعام.</li>
-</ul>
+        <p class="desc">
+          كرة بسيطة للعب والترفيه داخل المنزل.
+        </p>
 
-</div>
+        <div class="price-row">
 
-<div class="info">
+          <span class="price">
+            20 درهم
+          </span>
 
-<h3>🐶 العناية بالكلاب</h3>
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'كرة صغيرة للقطط',
+            'كرة بسيطة للعب والترفيه داخل المنزل.',
+            20
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('كرة صغيرة للقطط',20)"
+        >
+          🛒 أضف للسلة
+        </button>
 
-<ul class="list">
-<li>توفير الماء النظيف.</li>
-<li>اختيار ألعاب مناسبة للحجم.</li>
-<li>العناية بالفرو.</li>
-<li>توفير الحركة والنشاط اليومي.</li>
-</ul>
+      </div>
 
-</div>
+    </article>
+
 
-</div>
+    <!-- ================= CAT ================= -->
 
-</section>
+    <article
+      class="product card cat"
+      data-name="طوق قطط اقتصادي"
+      data-price="25"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="طوق قطط اقتصادي"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23f7eadb'/%3E%3Cpath d='M220 260 Q400 150 580 260 Q400 370 220 260Z' fill='%233f7d70'/%3E%3Ccircle cx='400' cy='260' r='35' fill='%23ef9b63'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
 
-<section id="faq" class="faq">
+        </div>
 
-<h2 class="section-title">
-❓ الأسئلة الشائعة
-</h2>
+      </div>
 
-<details>
-<summary>
-كيف أطلب منتجاً؟
-</summary>
-<p>
-أضف المنتج للسلة ثم افتح السلة واضغط إتمام الطلب.
-</p>
-</details>
+
+      <div class="body">
 
-<details>
-<summary>
-هل الدفع عند الاستلام متاح؟
-</summary>
-<p>
-نعم، يمكنك اختيار الدفع عند الاستلام.
-</p>
-</details>
+        <div class="rating">
+          ★★★★☆
+        </div>
 
-<details>
-<summary>
-هل يمكن تغيير الكمية؟
-</summary>
-<p>
-نعم، من خلال أزرار + و − داخل السلة.
-</p>
-</details>
+        <h3>
+          طوق قطط اقتصادي
+        </h3>
 
-</section>
+        <p class="desc">
+          طوق بسيط للاستخدام اليومي للقطط.
+        </p>
 
-<section id="terms" class="legal-page">
+        <div class="price-row">
 
-<h2>
-الشروط والأحكام
-</h2>
+          <span class="price">
+            25 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'طوق قطط اقتصادي',
+            'طوق بسيط للاستخدام اليومي للقطط.',
+            25
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('طوق قطط اقتصادي',25)"
+        >
+          🛒 أضف للسلة
+        </button>
 
-<p>
-إرسال الطلب عبر الموقع يعني رغبة العميل في شراء المنتجات المحددة.
-يتم تأكيد تفاصيل الطلب والتوصيل عبر WhatsApp.
-</p>
+      </div>
+
+    </article>
+
 
-</section>
+    <!-- ================= CAT ================= -->
+
+    <article
+      class="product card cat"
+      data-name="كرة ريش للقطط"
+      data-price="29"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="كرة ريش للقطط"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23dfeee9'/%3E%3Ccircle cx='400' cy='280' r='85' fill='%23ef9b63'/%3E%3Cpath d='M400 200 Q330 80 280 170 Q350 155 400 230' fill='%233f7d70'/%3E%3Cpath d='M410 205 Q480 90 530 175 Q455 155 410 235' fill='%233f7d70'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
 
-<section id="privacy" class="legal-page">
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★☆
+        </div>
+
+        <h3>
+          كرة ريش للقطط
+        </h3>
+
+        <p class="desc">
+          لعبة خفيفة لتحفيز القطط على الحركة واللعب.
+        </p>
 
-<h2>
-الخصوصية
-</h2>
+        <div class="price-row">
 
-<p>
-تستخدم بيانات العميل فقط لمعالجة الطلب والتواصل بخصوصه.
-</p>
+          <span class="price">
+            29 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'كرة ريش للقطط',
+            'لعبة خفيفة لتحفيز القطط على الحركة واللعب.',
+            29
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('كرة ريش للقطط',29)"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================= CAT ================= -->
+
+    <article
+      class="product card cat"
+      data-name="كرة تفاعلية بسيطة"
+      data-price="49"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="كرة تفاعلية بسيطة"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23f7eadb'/%3E%3Ccircle cx='400' cy='250' r='120' fill='%233f7d70'/%3E%3Ccircle cx='355' cy='220' r='20' fill='%23fff'/%3E%3Ccircle cx='445' cy='220' r='20' fill='%23fff'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★☆
+        </div>
+
+        <h3>
+          كرة تفاعلية بسيطة
+        </h3>
+
+        <p class="desc">
+          لعبة تفاعلية للترفيه وتحفيز نشاط القطط.
+        </p>
+
+        <div class="price-row">
+
+          <span class="price">
+            49 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'كرة تفاعلية بسيطة',
+            'لعبة تفاعلية للترفيه وتحفيز نشاط القطط.',
+            49
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('كرة تفاعلية بسيطة',49)"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================= CAT ================= -->
+
+    <article
+      class="product card cat"
+      data-name="لعبة تفاعلية للقطط"
+      data-price="69"
+      data-rating="5"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="لعبة تفاعلية للقطط"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23dfeee9'/%3E%3Ccircle cx='400' cy='250' r='110' fill='%23ef9b63'/%3E%3Ccircle cx='360' cy='220' r='18' fill='%23fff'/%3E%3Ccircle cx='440' cy='220' r='18' fill='%23fff'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
+
+        <span class="tag">
+          ⭐ مميز
+        </span>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★★
+        </div>
+
+        <h3>
+          لعبة تفاعلية للقطط
+        </h3>
+
+        <p class="desc">
+          لعبة تساعد على الترفيه وتحفيز الحركة داخل المنزل.
+        </p>
+
+        <div class="price-row">
+
+          <span class="price">
+            69 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'لعبة تفاعلية للقطط',
+            'لعبة تساعد على الترفيه وتحفيز الحركة داخل المنزل.',
+            69
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('لعبة تفاعلية للقطط',69)"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================= DOG ================= -->
+
+    <article
+      class="product card dog"
+      data-name="كرة لعب للكلاب"
+      data-price="39"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="كرة لعب للكلاب"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23f7eadb'/%3E%3Ccircle cx='400' cy='250' r='115' fill='%23ef9b63'/%3E%3Cpath d='M320 250 Q400 180 480 250 Q400 320 320 250Z' fill='%233f7d70'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★☆
+        </div>
+
+        <h3>
+          كرة لعب للكلاب
+        </h3>
+
+        <p class="desc">
+          كرة مناسبة للعب والترفيه مع الكلاب.
+        </p>
+
+        <div class="price-row">
+
+          <span class="price">
+            39 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'كرة لعب للكلاب',
+            'كرة مناسبة للعب والترفيه مع الكلاب.',
+            39
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('كرة لعب للكلاب',39)"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================= DOG ================= -->
+
+    <article
+      class="product card dog"
+      data-name="حبل لعب اقتصادي"
+      data-price="45"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="حبل لعب اقتصادي للكلاب"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23dfeee9'/%3E%3Cpath d='M280 150 Q400 260 520 150 M280 370 Q400 260 520 370' fill='none' stroke='%23ef9b63' stroke-width='55' stroke-linecap='round'/%3E%3Ctext x='400' y='460' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★☆
+        </div>
+
+        <h3>
+          حبل لعب اقتصادي
+        </h3>
+
+        <p class="desc">
+          حبل للعب والسحب ومناسب للكلاب.
+        </p>
+
+        <div class="price-row">
+
+          <span class="price">
+            45 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'حبل لعب اقتصادي',
+            'حبل للعب والسحب ومناسب للكلاب.',
+            45
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('حبل لعب اقتصادي',45)"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================= DOG ================= -->
+
+    <article
+      class="product card dog"
+      data-name="كرة تفاعلية للكلاب"
+      data-price="49"
+      data-rating="4"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="كرة تفاعلية للكلاب"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23f7eadb'/%3E%3Ccircle cx='400' cy='250' r='115' fill='%233f7d70'/%3E%3Ccircle cx='360' cy='220' r='18' fill='%23fff'/%3E%3Ccircle cx='440' cy='220' r='18' fill='%23fff'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★☆
+        </div>
+
+        <h3>
+          كرة تفاعلية للكلاب
+        </h3>
+
+        <p class="desc">
+          لعبة تفاعلية تساعد على الحركة والنشاط.
+        </p>
+
+        <div class="price-row">
+
+          <span class="price">
+            49 درهم
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="details(
+            'كرة تفاعلية للكلاب',
+            'لعبة تفاعلية تساعد على الحركة والنشاط.',
+            49
+          )"
+        >
+          👀 التفاصيل
+        </button>
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="add('كرة تفاعلية للكلاب',49)"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================= DOG ================= -->
+
+    <article
+      class="product card dog"
+      data-name="لعبة للكلاب"
+      data-price="79"
+      data-rating="5"
+    >
+
+      <button
+        type="button"
+        class="wishlist"
+        onclick="toggleWish(this)"
+        aria-label="إضافة إلى المفضلة"
+        aria-pressed="false"
+      >
+        ♡
+      </button>
+
+      <div class="pic">
+
+        <div class="product-media">
+
+          <img
+            loading="lazy"
+            alt="لعبة للكلاب"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23dfeee9'/%3E%3Cpath d='M300 260 Q400 120 500 260 Q400 400 300 260Z' fill='%23ef9b63'/%3E%3Ctext x='400' y='440' text-anchor='middle' font-family='Arial' font-size='34' fill='%23385c55'%3EPawCasa%3C/text%3E%3C/svg%3E"
+          >
+
+          <button
+            type="button"
+            class="media-open"
+            onclick="openMedia(this)"
+            aria-label="عرض الصورة"
+          >
+            🔍
+          </button>
+
+        </div>
+
+        <span class="tag">
+          ⭐ مميز
+        </span>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="rating">
+          ★★★★★
+        </div>
+
+        <h3>
+          لعبة للكلاب
+        </h3>
+
+        <p class="desc">
+          لعبة للترفيه وال
+            <!-- =========================
+       CART OVERLAY
+       ========================= -->
+
+  <div
+    id="cartOverlay"
+    class="modal-overlay"
+    onclick="closeCartOnOverlay(event)"
+    aria-hidden="true"
+  >
+
+    <div
+      class="cart-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cartTitle"
+    >
+
+      <div class="modal-head">
 
-</section>
+        <div>
+          <span class="section-kicker">
+            🛒 PawCasa
+          </span>
+
+          <h2 id="cartTitle">
+            سلة المشتريات
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="close-btn"
+          onclick="closeCart()"
+          aria-label="إغلاق السلة"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <!-- عناصر السلة -->
 
-<section id="returns" class="legal-page">
+      <div
+        id="cartItems"
+        class="cart-items"
+      ></div>
 
-<h2>
-الإرجاع والاستبدال
-</h2>
 
-<p>
-في حالة وجود مشكلة في المنتج، يرجى التواصل مع PawCasa في أقرب وقت.
-</p>
+      <!-- السلة فارغة -->
 
-</section>
+      <div
+        id="cartEmpty"
+        class="cart-empty"
+        style="display:none"
+      >
+
+        <div class="empty-icon">
+          🛒
+        </div>
+
+        <h3>
+          السلة فارغة
+        </h3>
+
+        <p>
+          أضف بعض المنتجات أولاً ثم عد إلى هنا لإتمام طلبك.
+        </p>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="closeCart(); document.getElementById('products').scrollIntoView({behavior:'smooth'});"
+        >
+          🛍️ تصفح المنتجات
+        </button>
 
-<section id="shipping" class="legal-page">
+      </div>
 
-<h2>
-التوصيل
-</h2>
 
-<p>
-تكلفة التوصيل تعتمد على المدينة وطريقة التوصيل المختارة.
-</p>
+      <!-- ملخص السلة -->
+
+      <div
+        id="cartSummary"
+        class="cart-summary"
+      >
 
-</section>
+        <div class="summary-row">
 
-</main>
+          <span>
+            عدد المنتجات
+          </span>
 
-<footer>
+          <strong id="cartQuantity">
+            0
+          </strong>
 
-<div class="footer-grid">
+        </div>
 
-<div>
-<h3>
-🐾 PawCasa
-</h3>
 
-<p>
-متجر مستلزمات الحيوانات الأليفة في المغرب.
-</p>
+        <div class="summary-row">
 
-</div>
+          <span>
+            المجموع
+          </span>
 
-<div>
-<h3>
-روابط
-</h3>
+          <strong>
+            <span id="cartTotal">
+              0
+            </span>
+            درهم
+          </strong>
 
-<a href="#home">الرئيسية</a>
-<a href="#products">المنتجات</a>
-<a href="#guide">العناية</a>
-<a href="#faq">الأسئلة</a>
-</div>
+        </div>
 
-<div>
-<h3>
-تواصل معنا
-</h3>
 
-<a
-href="https://wa.me/212684424055"
-target="_blank"
-rel="noopener"
->
-💬 WhatsApp
-</a>
+        <div class="cart-actions">
+
+          <button
+            type="button"
+            class="btn secondary"
+            onclick="clearCart()"
+          >
+            🗑️ تفريغ السلة
+          </button>
 
-</div>
+          <button
+            type="button"
+            class="btn"
+            onclick="openCheckout()"
+          >
+            ✅ إتمام الطلب
+          </button>
 
-</div>
+        </div>
 
-<div class="footer-bottom">
-© 2026 PawCasa — جميع الحقوق محفوظة
-</div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CHECKOUT MODAL
+       ========================= -->
+
+  <div
+    id="checkoutOverlay"
+    class="modal-overlay"
+    onclick="closeCheckoutOnOverlay(event)"
+    aria-hidden="true"
+  >
+
+    <div
+      class="checkout-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="checkoutTitle"
+    >
+
+      <div class="modal-head">
+
+        <div>
+
+          <span class="section-kicker">
+            📦 PawCasa
+          </span>
+
+          <h2 id="checkoutTitle">
+            إتمام الطلب
+          </h2>
+
+        </div>
+
+        <button
+          type="button"
+          class="close-btn"
+          onclick="closeCheckout()"
+          aria-label="إغلاق نموذج الطلب"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <p class="checkout-note">
+        أدخل معلوماتك بشكل صحيح حتى نتمكن من
+        التواصل معك لتأكيد الطلب والتوصيل.
+      </p>
+
+
+      <form
+        id="checkoutForm"
+        onsubmit="submitOrder(event)"
+        novalidate
+      >
+
+        <!-- الاسم -->
+
+        <div class="form-group">
+
+          <label for="customerName">
+            الاسم الكامل *
+          </label>
+
+          <input
+            id="customerName"
+            name="name"
+            type="text"
+            placeholder="مثال: محمد العلوي"
+            autocomplete="name"
+            minlength="2"
+            maxlength="80"
+            required
+          >
+
+          <small
+            class="error-message"
+            id="nameError"
+          ></small>
+
+        </div>
+
+
+        <!-- الهاتف -->
+
+        <div class="form-group">
+
+          <label for="customerPhone">
+            رقم الهاتف *
+          </label>
+
+          <input
+            id="customerPhone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="06XXXXXXXX"
+            autocomplete="tel"
+            maxlength="14"
+            required
+          >
+
+          <small
+            class="form-help"
+          >
+            أدخل رقم هاتف مغربي صالح، مثال:
+            0612345678
+          </small>
+
+          <small
+            class="error-message"
+            id="phoneError"
+          ></small>
+
+        </div>
+
+
+        <!-- المدينة -->
+
+        <div class="form-group">
+
+          <label for="customerCity">
+            المدينة *
+          </label>
+
+          <select
+            id="customerCity"
+            name="city"
+            required
+          >
+
+            <option value="">
+              اختر المدينة
+            </option>
+
+            <option value="Casablanca">
+              الدار البيضاء
+            </option>
+
+            <option value="Rabat">
+              الرباط
+            </option>
+
+            <option value="Marrakech">
+              مراكش
+            </option>
+
+            <option value="Fes">
+              فاس
+            </option>
+
+            <option value="Tangier">
+              طنجة
+            </option>
+
+            <option value="Agadir">
+              أكادير
+            </option>
+
+            <option value="Meknes">
+              مكناس
+            </option>
+
+            <option value="Oujda">
+              وجدة
+            </option>
+
+            <option value="Kenitra">
+              القنيطرة
+            </option>
+
+            <option value="El Jadida">
+              الجديدة
+            </option>
+
+            <option value="Other">
+              مدينة أخرى
+            </option>
+
+          </select>
+
+          <small
+            class="error-message"
+            id="cityError"
+          ></small>
+
+        </div>
+
+
+        <!-- العنوان -->
+
+        <div class="form-group">
+
+          <label for="customerAddress">
+            العنوان *
+          </label>
+
+          <textarea
+            id="customerAddress"
+            name="address"
+            placeholder="الحي، الشارع، رقم المنزل..."
+            autocomplete="street-address"
+            minlength="5"
+            maxlength="300"
+            required
+          ></textarea>
+
+          <small
+            class="error-message"
+            id="addressError"
+          ></small>
+
+        </div>
+
+
+        <!-- ملاحظات -->
+
+        <div class="form-group">
+
+          <label for="customerNote">
+            ملاحظات إضافية
+            <span>
+              (اختياري)
+            </span>
+          </label>
+
+          <textarea
+            id="customerNote"
+            name="note"
+            placeholder="مثال: اتصل بي قبل التوصيل..."
+            maxlength="500"
+          ></textarea>
+
+        </div>
+
+
+        <!-- طريقة الدفع -->
+
+        <div class="form-group">
+
+          <label>
+            طريقة الدفع
+          </label>
+
+          <div class="payment-options">
+
+            <label class="payment-option">
+
+              <input
+                type="radio"
+                name="payment"
+                value="الدفع عند الاستلام"
+                checked
+              >
+
+              <span>
+                💵
+                الدفع عند الاستلام
+              </span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- ملخص الطلب -->
+
+        <div class="checkout-summary">
+
+          <div>
+
+            <span>
+              عدد المنتجات
+            </span>
+
+            <strong id="checkoutQuantity">
+              0
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              المجموع
+            </span>
+
+            <strong>
+              <span id="checkoutTotal">
+                0
+              </span>
+              درهم
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- الموافقة -->
+
+        <label class="agree">
+
+          <input
+            id="agreeTerms"
+            type="checkbox"
+            required
+          >
+
+          <span>
+            أوافق على مراجعة بيانات الطلب
+            والتواصل معي لتأكيده.
+          </span>
+
+        </label>
+
+
+        <div
+          class="error-message"
+          id="termsError"
+        ></div>
+
+
+        <!-- الأزرار -->
+
+        <div class="checkout-actions">
+
+          <button
+            type="button"
+            class="btn secondary"
+            onclick="closeCheckout()"
+          >
+            رجوع
+          </button>
+
+          <button
+            type="submit"
+            class="btn whatsapp-btn"
+          >
+            💬 إرسال الطلب عبر WhatsApp
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       PRODUCT DETAILS MODAL
+       ========================= -->
+
+  <div
+    id="detailsOverlay"
+    class="modal-overlay"
+    onclick="closeDetailsOnOverlay(event)"
+    aria-hidden="true"
+  >
+
+    <div
+      class="details-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detailsTitle"
+    >
+
+      <button
+        type="button"
+        class="close-btn details-close"
+        onclick="closeDetails()"
+        aria-label="إغلاق التفاصيل"
+      >
+        ✕
+      </button>
+
+      <div class="details-icon">
+        🐾
+      </div>
+
+      <span class="section-kicker">
+        PawCasa
+      </span>
+
+      <h2 id="detailsTitle">
+        تفاصيل المنتج
+      </h2>
+
+      <p id="detailsDescription">
+        وصف المنتج
+      </p>
+
+      <div class="details-price">
+
+        <span>
+          السعر:
+        </span>
+
+        <strong>
+          <span id="detailsPrice">
+            0
+          </span>
+          درهم
+        </strong>
+
+      </div>
+
+      <div class="details-actions">
+
+        <button
+          type="button"
+          class="btn secondary"
+          onclick="closeDetails()"
+        >
+          إغلاق
+        </button>
+
+        <button
+          type="button"
+          class="btn"
+          id="detailsAddButton"
+        >
+          🛒 أضف للسلة
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       IMAGE / MEDIA MODAL
+       ========================= -->
+
+  <div
+    id="mediaOverlay"
+    class="modal-overlay media-overlay"
+    onclick="closeMediaOnOverlay(event)"
+    aria-hidden="true"
+  >
+
+    <div
+      class="media-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="صورة المنتج"
+    >
+
+      <button
+        type="button"
+        class="close-btn"
+        onclick="closeMedia()"
+        aria-label="إغلاق الصورة"
+      >
+        ✕
+      </button>
+
+      <img
+        id="mediaImage"
+        src=""
+        alt="صورة المنتج"
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TOAST NOTIFICATION
+       ========================= -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <span id="toastIcon">
+      ✓
+    </span>
+
+    <span id="toastMessage">
+      تم بنجاح
+    </span>
+  </div>
+
+
+  <!-- =========================
+       CONTACT / FOOTER
+       ========================= -->
+
+  <footer id="contact">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+
+        <a
+          href="#home"
+          class="logo"
+        >
+          <span>🐾</span>
+          <strong>PawCasa</strong>
+        </a>
+
+        <p>
+          متجر مستلزمات الحيوانات الأليفة
+          في المغرب.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <h3>
+          روابط سريعة
+        </h3>
+
+        <a href="#products">
+          المنتجات
+        </a>
+
+        <a href="#guide">
+          دليل العناية
+        </a>
+
+        <a href="#faq">
+          الأسئلة الشائعة
+        </a>
+
+      </div>
+
+
+      <div class="footer-contact">
+
+        <h3>
+          تواصل معنا
+        </h3>
+
+        <a
+          href="https://wa.me/212684424055"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 WhatsApp
+        </a>
+
+        <a
+          href="tel:+212684424055"
+        >
+          📞 +212 684 424 055
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © <span id="year"></span> PawCasa
+      </span>
+
+      <span>
+        صنع بحب للحيوانات الأليفة 🐾
+      </span>
+
+    </div>
 
   </footer>
-  <div
-id="modal"
-class="modal"
-aria-hidden="true"
->
-
-<div class="box">
 
-<button
-class="close"
-type="button"
-id="closeCartBtn"
->
-×
-</button>
-
-<h2>
-🛒 سلة المشتريات
-</h2>
-
-<div id="cartItems"></div>
-
-<div class="order-summary">
-
-<strong>
-الإجمالي:
-</strong>
-
-<span id="total">
-0
-</span>
 
-درهم
-
-</div>
-
-<div
-id="checkoutForm"
-style="display:none"
->
+  <!-- =========================
+       إضافات CSS للجزء الثالث
+       ========================= -->
 
-<input
-id="name"
-type="text"
-placeholder="الاسم الكامل"
->
-
-<input
-id="phone"
-type="tel"
-placeholder="رقم الهاتف"
->
-
-<input
-id="city"
-type="text"
-placeholder="المدينة"
->
-
-<textarea
-id="address"
-rows="3"
-placeholder="العنوان بالتفصيل"
-></textarea>
+  <style>
 
-<select id="delivery">
+    /* Hero */
 
-<option value="20">
-توصيل عادي — 20 درهم
-</option>
+    .hero {
+      padding: 70px 0 45px;
+    }
 
-<option value="30">
-توصيل سريع — 30 درهم
-</option>
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 50px;
 
-</select>
+      min-height: 520px;
+    }
 
-<div class="checkout-note">
-💳 الدفع عند الاستلام.
-سيتم تأكيد الطلب والتوصيل معك عبر WhatsApp.
-</div>
-
-<label class="consent">
+    .hero-badge,
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
 
-<input
-id="consent"
-type="checkbox"
->
+      padding: 7px 12px;
 
-<span>
-أؤكد أن البيانات صحيحة وأرغب في إرسال الطلب.
-</span>
+      background: var(--green2);
+      color: var(--green);
 
-</label>
+      border-radius: 999px;
 
-<button
-class="btn"
-type="button"
-id="sendOrderBtn"
->
-💬 إرسال الطلب عبر WhatsApp
-</button>
+      font-weight: 900;
+      font-size: 14px;
+    }
 
-</div>
+    .hero h1 {
+      margin: 18px 0;
 
-<div class="cart-actions">
+      font-size: clamp(40px, 6vw, 72px);
 
-<button
-class="btn"
-type="button"
-id="checkoutBtn"
->
-إتمام الطلب
-</button>
+      line-height: 1.08;
 
-<button
-class="btn secondary"
-type="button"
-id="clearCartBtn"
->
-🗑️ تفريغ السلة
-</button>
+      font-weight: 950;
+    }
 
-</div>
+    .hero h1 span {
+      color: var(--green);
+    }
 
-</div>
+    .hero-text > p {
+      max-width: 650px;
 
-</div>
+      color: var(--muted);
 
+      font-size: 18px;
+    }
 
-<div
-id="mediaModal"
-class="modal"
-aria-hidden="true"
->
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
 
-<div class="box">
+      gap: 10px;
 
-<button
-class="close"
-type="button"
-id="closeMediaBtn"
->
-×
-</button>
+      margin-top: 25px;
+    }
 
-<div class="media-stage">
+    .hero-buttons a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-<img
-id="mediaImage"
-alt="صورة المنتج"
->
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
 
-</div>
+      gap: 15px;
 
-<div
-id="mediaCaption"
-class="media-caption"
->
-</div>
+      margin-top: 22px;
 
-</div>
+      color: var(--muted);
 
-</div>
+      font-size: 14px;
+      font-weight: 700;
+    }
 
+    .hero-card {
+      position: relative;
 
-<div
-id="detailsModal"
-class="modal"
-aria-hidden="true"
->
+      min-height: 420px;
 
-<div class="box">
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-<button
-class="close"
-type="button"
-id="closeDetailsBtn"
->
-×
-</button>
+      text-align: center;
 
-<h2 id="detailsTitle"></h2>
+      padding: 40px;
 
-<p id="detailsText"></p>
+      border-radius: 40px;
 
-<h3>
-<span id="detailsPrice"></span>
-درهم
-</h3>
+      background:
+        radial-gradient(
+          circle at 30% 20%,
+          rgba(255,255,255,.9),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          var(--green2),
+          var(--cream)
+        );
 
-<button
-class="btn"
-type="button"
-id="detailsAddBtn"
->
-🛒 أضف للسلة
-</button>
+      border: 1px solid var(--line);
 
-</div>
+      box-shadow: var(--shadow);
 
-</div>
+      overflow: hidden;
+    }
 
+    .hero-paw {
+      width: 170px;
+      height: 170px;
 
-<div id="toast"></div>
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
+      border-radius: 50%;
 
-<div class="mobile-cta">
+      background: var(--card);
 
-<button
-type="button"
-id="mobileSearchBtn"
->
-🔎 بحث
-</button>
+      font-size: 90px;
 
-<button
-type="button"
-id="mobileCartBtn"
->
-🛒 السلة
-(
-<span id="mobileCount">0</span>
-)
-</button>
+      box-shadow: var(--shadow);
 
-</div>
+      margin-bottom: 25px;
+    }
 
+    .hero-card h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
 
-<a
-class="wa-float"
-href="https://wa.me/212684424055"
-target="_blank"
-rel="noopener noreferrer"
->
-💬
-<span>
-WhatsApp
-</span>
-</a>
+    .hero-card p {
+      max-width: 400px;
+      color: var(--muted);
+    }
 
+    .hero-mini-products {
+      display: flex;
+      gap: 10px;
 
-<script>
+      margin-top: 25px;
+    }
 
-'use strict';
+    .hero-mini-products span {
+      width: 45px;
+      height: 45px;
 
-const WHATSAPP_NUMBER = '212684424055';
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-const CART_KEY = 'pawCasaCart';
+      border-radius: 14px;
 
-const THEME_KEY = 'pawCasaTheme';
+      background: var(--card);
 
-let cart = [];
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
 
+      font-size: 22px;
+    }
 
-/* =========================
-   HELPERS
-========================= */
 
-function $(id){
-return document.getElementById(id);
-}
+    /* Features */
 
+    .info {
+      padding: 55px 0;
+    }
 
-function showToast(message){
+    .features {
+      display: grid;
 
-const toast = $('toast');
+      grid-template-columns:
+        repeat(4, 1fr);
 
-if(!toast) return;
+      gap: 15px;
+    }
 
-toast.textContent = message;
+    .feature {
+      display: flex;
+      flex-direction: column;
 
-toast.style.display = 'block';
+      gap: 7px;
 
-clearTimeout(window.pawToastTimer);
+      padding: 22px;
 
-window.pawToastTimer =
-setTimeout(function(){
+      background: var(--card);
 
-toast.style.display = 'none';
+      border: 1px solid var(--line);
 
-},2200);
+      border-radius: var(--radius);
 
-}
+      box-shadow: var(--shadow);
+    }
 
+    .feature-icon {
+      width: 52px;
+      height: 52px;
 
-/* =========================
-   CART STORAGE
-========================= */
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-function loadCart(){
+      border-radius: 16px;
 
-try{
+      background: var(--green2);
 
-const saved =
-localStorage.getItem(CART_KEY);
+      font-size: 25px;
 
-if(!saved){
-return [];
-}
+      margin-bottom: 7px;
+    }
 
-const data =
-JSON.parse(saved);
+    .feature b {
+      font-size: 18px;
+    }
 
-if(!Array.isArray(data)){
-return [];
-}
+    .feature span {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-return data
-.filter(function(item){
 
-return item &&
-typeof item.name === 'string' &&
-Number.isFinite(Number(item.price)) &&
-Number.isFinite(Number(item.qty));
+    /* Products */
 
-})
-.map(function(item){
+    .products-section {
+      padding: 55px 0;
+    }
 
-return {
-name:item.name,
-price:Number(item.price),
-qty:Math.max(1,Number(item.qty))
-};
+    .section-head {
+      margin-bottom: 25px;
+    }
 
-});
+    .section-title {
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
 
-}catch(error){
+    .section-head p {
+      color: var(--muted);
+    }
 
-console.error(error);
+    .search-area {
+      display: grid;
 
-return [];
+      grid-template-columns: 1fr 220px;
 
-}
+      gap: 10px;
 
-}
+      margin-bottom: 15px;
+    }
 
+    .search-box {
+      display: flex;
+      align-items: center;
 
-function saveCart(){
+      gap: 10px;
 
-try{
+      background: var(--card);
 
-localStorage.setItem(
-CART_KEY,
-JSON.stringify(cart)
-);
+      border: 1px solid var(--line);
 
-}catch(error){
+      border-radius: 14px;
 
-console.error(error);
+      padding-right: 13px;
+    }
 
-}
+    .search-box input {
+      border: 0;
+      box-shadow: none;
+    }
 
-}
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
 
+      gap: 8px;
 
-/* =========================
-   CART
-========================= */
+      margin-bottom: 25px;
+    }
 
-function updateCartCount(){
+    .filter {
+      border: 1px solid var(--line);
 
-const total =
-cart.reduce(
-function(sum,item){
+      background: var(--card);
 
-return sum + item.qty;
+      color: var(--ink);
 
-},
-0
-);
+      padding: 9px 14px;
 
-if($('count')){
-$('count').textContent = total;
-}
+      border-radius: 999px;
 
-if($('mobileCount')){
-$('mobileCount').textContent = total;
-}
+      font-weight: 800;
+    }
 
-}
+    .filter.active,
+    .filter:hover {
+      background: var(--green);
 
+      border-color: var(--green);
 
-function addToCart(name,price){
+      color: white;
+    }
 
-price = Number(price);
+    .grid {
+      display: grid;
 
-if(!name || !Number.isFinite(price)){
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-showToast('تعذر إضافة المنتج');
+      gap: 18px;
+    }
 
-return;
+    .product {
+      position: relative;
 
-}
+      display: flex;
+      flex-direction: column;
 
-const existing =
-cart.find(
-function(item){
-return item.name === name;
-}
-);
+      overflow: hidden;
 
-if(existing){
+      background: var(--card);
 
-existing.qty++;
+      border: 1px solid var(--line);
 
-}else{
+      border-radius: var(--radius);
 
-cart.push({
-name:name,
-price:price,
-qty:1
-});
+      box-shadow: var(--shadow);
 
-}
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
 
-saveCart();
+    .product:hover {
+      transform: translateY(-4px);
+    }
 
-updateCartCount();
+    .wishlist {
+      position: absolute;
 
-renderCart();
+      z-index: 3;
 
-showToast('تمت إضافة المنتج إلى السلة ✓');
+      top: 12px;
+      left: 12px;
 
-}
+      width: 40px;
+      height: 40px;
 
+      border-radius: 50%;
 
-function renderCart(){
+      border: 1px solid var(--line);
 
-const container =
-$('cartItems');
+      background: rgba(255,255,255,.92);
 
-const totalElement =
-$('total');
+      font-size: 23px;
 
-const checkoutButton =
-$('checkoutBtn');
+      color: var(--ink);
+    }
 
-if(!container){
-return;
-}
+    .wishlist.active {
+      color: #d74e4e;
+    }
 
-if(cart.length === 0){
+    .pic {
+      position: relative;
 
-container.innerHTML = `
-<div style="text-align:center;padding:25px">
-<h3>السلة فارغة 🐾</h3>
-<p style="color:var(--muted)">
-أضف بعض المنتجات للبدء.
-</p>
-</div>
-`;
+      overflow: hidden;
 
-if(totalElement){
-totalElement.textContent = '0';
-}
+      background: var(--green2);
+    }
 
-if(checkoutButton){
-checkoutButton.style.display = 'none';
-}
+    .product-media {
+      position: relative;
+    }
 
-return;
+    .product-media img {
+      width: 100%;
+      aspect-ratio: 1.35;
 
-}
+      object-fit: cover;
+    }
 
-container.innerHTML =
-cart.map(
-function(item,index){
+    .media-open {
+      position: absolute;
 
-return `
+      right: 10px;
+      bottom: 10px;
 
-<div class="cartrow">
+      width: 40px;
+      height: 40px;
 
-<div>
+      border: 0;
 
-<strong>
-${escapeHTML(item.name)}
-</strong>
+      border-radius: 12px;
 
-<br>
+      background: rgba(255,255,255,.92);
+    }
 
-<small>
-${item.price} درهم × ${item.qty}
-</small>
+    .tag {
+      position: absolute;
 
-</div>
+      right: 12px;
+      top: 12px;
 
-<div class="qty">
+      background: var(--orange);
 
-<button
-type="button"
-data-cart-action="minus"
-data-index="${index}"
->
-−
-</button>
+      color: #fff;
 
-<strong>
-${item.qty}
-</strong>
+      padding: 5px 9px;
 
-<button
-type="button"
-data-cart-action="plus"
-data-index="${index}"
->
-+
-</button>
+      border-radius: 999px;
 
-</div>
+      font-size: 12px;
+      font-weight: 900;
+    }
 
-</div>
+    .body {
+      display: flex;
+      flex-direction: column;
 
-`;
+      gap: 9px;
 
-}
-).join('');
+      padding: 18px;
+    }
 
-const total =
-cart.reduce(
-function(sum,item){
+    .rating {
+      color: #efa94f;
 
-return sum +
-item.price *
-item.qty;
+      letter-spacing: 1px;
+    }
 
-},
-0
-);
+    .body h3 {
+      font-size: 19px;
+    }
 
-if(totalElement){
-totalElement.textContent = total;
-}
+    .desc {
+      min-height: 50px;
 
-if(checkoutButton){
-checkoutButton.style.display = 'block';
-}
+      color: var(--muted);
 
-}
+      font-size: 14px;
+    }
 
+    .price-row {
+      display: flex;
+      align-items: center;
 
-function changeQuantity(index,amount){
+      gap: 10px;
 
-if(!cart[index]){
-return;
-}
+      margin-top: 3px;
+    }
 
-cart[index].qty += amount;
+    .price {
+      color: var(--green);
 
-if(cart[index].qty <= 0){
+      font-size: 21px;
 
-cart.splice(index,1);
+      font-weight: 950;
+    }
 
-}
+    .old {
+      color: var(--muted);
 
-saveCart();
+      text-decoration: line-through;
 
-updateCartCount();
+      font-size: 13px;
+    }
 
-renderCart();
+    .body .btn {
+      width: 100%;
+    }
 
-}
+    .empty-state {
+      text-align: center;
 
+      padding: 60px 20px;
 
-function clearCart(){
+      background: var(--card);
 
-if(cart.length === 0){
+      border: 1px solid var(--line);
 
-showToast('السلة فارغة');
+      border-radius: var(--radius);
+    }
 
-return;
+    .empty-state > div {
+      font-size: 45px;
+    }
 
-}
+    .empty-state p {
+      color: var(--muted);
+      margin: 5px 0 18px;
+    }
 
-cart = [];
 
-saveCart();
+    /* FAQ */
 
-updateCartCount();
+    .faq {
+      padding: 55px 0;
+    }
 
-renderCart();
+    .faq details {
+      background: var(--card);
 
-$('checkoutForm').style.display =
-'none';
+      border: 1px solid var(--line);
 
-$('checkoutBtn').style.display =
-'block';
+      border-radius: 15px;
 
-showToast('تم تفريغ السلة');
+      padding: 16px 18px;
 
-}
+      margin-bottom: 10px;
+    }
 
+    .faq summary {
+      cursor: pointer;
 
-/* =========================
-   CART MODAL
-========================= */
+      font-weight: 900;
+    }
 
-function openCart(){
+    .faq details p {
+      color: var(--muted);
 
-renderCart();
+      padding-top: 12
+      <script>
+/* =========================================================
+   PawCasa — الجزء الرابع
+   JavaScript
+   ========================================================= */
 
-$('modal').classList.add('open');
+(function () {
 
-$('modal').setAttribute(
-'aria-hidden',
-'false'
-);
+  "use strict";
 
-}
+  /* -------------------------------------------------------
+     عناصر الصفحة
+     ------------------------------------------------------- */
 
+  const productsContainer = document.querySelector(".grid");
+  const products = Array.from(
+    document.querySelectorAll(".product")
+  );
 
-function closeCart(){
+  const searchBox = document.getElementById("searchBox");
+  const sortBox = document.getElementById("sortBox");
+  const emptyState = document.getElementById("emptyState");
 
-$('modal').classList.remove('open');
+  let currentCategory = "all";
 
-$('modal').setAttribute(
-'aria-hidden',
-'true'
-);
+  /* -------------------------------------------------------
+     السلة
+     ------------------------------------------------------- */
 
-}
+  let cart = [];
 
+  try {
+    cart = JSON.parse(
+      localStorage.getItem("pawcasa_cart") || "[]"
+    );
 
-/* =========================
-   CHECKOUT
-========================= */
+    if (!Array.isArray(cart)) {
+      cart = [];
+    }
+  } catch (error) {
+    cart = [];
+  }
 
-function showCheckout(){
 
-if(cart.length === 0){
+  /* -------------------------------------------------------
+     المفضلة
+     ------------------------------------------------------- */
 
-showToast('السلة فارغة');
+  let wishlist = [];
 
-return;
+  try {
+    wishlist = JSON.parse(
+      localStorage.getItem("pawcasa_wishlist") || "[]"
+    );
 
-}
+    if (!Array.isArray(wishlist)) {
+      wishlist = [];
+    }
+  } catch (error) {
+    wishlist = [];
+  }
 
-$('checkoutForm').style.display =
-'block';
 
-$('checkoutBtn').style.display =
-'none';
+  /* -------------------------------------------------------
+     حفظ السلة
+     ------------------------------------------------------- */
 
-}
+  function saveCart() {
 
+    localStorage.setItem(
+      "pawcasa_cart",
+      JSON.stringify(cart)
+    );
 
-function sendOrder(){
+  }
 
-const name =
-$('name').value.trim();
 
-const phone =
-$('phone').value.trim();
+  /* -------------------------------------------------------
+     حفظ المفضلة
+     ------------------------------------------------------- */
 
-const city =
-$('city').value.trim();
+  function saveWishlist() {
 
-const address =
-$('address').value.trim();
+    localStorage.setItem(
+      "pawcasa_wishlist",
+      JSON.stringify(wishlist)
+    );
 
-const delivery =
-Number(
-$('delivery').value
-);
+  }
 
-const consent =
-$('consent').checked;
 
+  /* -------------------------------------------------------
+     Toast
+     ------------------------------------------------------- */
 
-if(!name){
+  function toast(message, type = "success") {
 
-showToast('أدخل الاسم');
+    let box = document.getElementById(
+      "pawcasa-toast"
+    );
 
-$('name').focus();
+    if (!box) {
 
-return;
+      box = document.createElement("div");
 
-}
+      box.id = "pawcasa-toast";
 
-if(!phone){
+      box.style.cssText = `
+        position:fixed;
+        left:50%;
+        bottom:25px;
+        transform:translateX(-50%) translateY(20px);
+        z-index:99999;
+        padding:13px 20px;
+        border-radius:14px;
+        background:#203f3a;
+        color:#fff;
+        font-size:15px;
+        font-weight:700;
+        box-shadow:0 12px 35px rgba(0,0,0,.18);
+        opacity:0;
+        pointer-events:none;
+        transition:.3s ease;
+        direction:rtl;
+        text-align:center;
+      `;
 
-showToast('أدخل رقم الهاتف');
+      document.body.appendChild(box);
+    }
 
-$('phone').focus();
 
-return;
+    box.textContent =
+      (type === "error" ? "⚠️ " : "✓ ") + message;
 
-}
 
-if(!city){
+    box.style.opacity = "1";
 
-showToast('أدخل المدينة');
+    box.style.transform =
+      "translateX(-50%) translateY(0)";
 
-$('city').focus();
 
-return;
+    clearTimeout(box._timer);
 
-}
+    box._timer = setTimeout(function () {
 
-if(!address){
+      box.style.opacity = "0";
 
-showToast('أدخل العنوان');
+      box.style.transform =
+        "translateX(-50%) translateY(20px)";
 
-$('address').focus();
+    }, 2500);
 
-return;
+  }
 
-}
 
-if(!consent){
+  /* -------------------------------------------------------
+     إضافة منتج للسلة
+     ------------------------------------------------------- */
 
-showToast('يرجى تأكيد البيانات');
+  window.add = function (name, price) {
 
-return;
+    price = Number(price);
 
-}
+    if (!name || !Number.isFinite(price)) {
 
-if(cart.length === 0){
+      toast(
+        "تعذر إضافة المنتج.",
+        "error"
+      );
 
-showToast('السلة فارغة');
+      return;
+    }
 
-return;
 
-}
+    const existing = cart.find(
+      item => item.name === name
+    );
 
 
-const subtotal =
-cart.reduce(
-function(sum,item){
+    if (existing) {
 
-return sum +
-item.price *
-item.qty;
+      existing.quantity += 1;
 
-},
-0
-);
+    } else {
 
+      cart.push({
+        name: name,
+        price: price,
+        quantity: 1
+      });
 
-const total =
-subtotal +
-delivery;
+    }
 
 
-const products =
-cart.map(
-function(item){
+    saveCart();
 
-return (
-'• ' +
-item.name +
-' × ' +
-item.qty +
-' = ' +
-(item.price * item.qty) +
-' درهم'
-);
+    updateCartUI();
 
-}
-).join('\n');
+    toast(
+      "تمت إضافة " + name + " إلى السلة."
+    );
 
+  };
 
-const message =
-`مرحباً PawCasa 👋
 
-أريد تأكيد هذا الطلب:
+  /* -------------------------------------------------------
+     حذف منتج
+     ------------------------------------------------------- */
 
-${products}
+  window.removeFromCart = function (index) {
 
-━━━━━━━━━━━━━━
+    if (
+      index < 0 ||
+      index >= cart.length
+    ) {
+      return;
+    }
 
-المنتجات: ${subtotal} درهم
-التوصيل: ${delivery} درهم
-الإجمالي: ${total} درهم
 
-━━━━━━━━━━━━━━
+    cart.splice(index, 1);
 
-الاسم: ${name}
-الهاتف: ${phone}
-المدينة: ${city}
-العنوان: ${address}
+    saveCart();
 
-شكراً لكم.`;
+    updateCartUI();
 
+    toast("تم حذف المنتج من السلة.");
 
-const url =
-'https://wa.me/' +
-WHATSAPP_NUMBER +
-'?text=' +
-encodeURIComponent(message);
+  };
 
 
-const newWindow =
-window.open(
-url,
-'_blank'
-);
+  /* -------------------------------------------------------
+     زيادة الكمية
+     ------------------------------------------------------- */
 
+  window.increaseQty = function (index) {
 
-if(!newWindow){
+    if (!cart[index]) {
+      return;
+    }
 
-window.location.href = url;
+    cart[index].quantity += 1;
 
-}
+    saveCart();
 
-}
+    updateCartUI();
 
+  };
 
-/* =========================
-   SEARCH
-========================= */
 
-function normalizeText(text){
+  /* -------------------------------------------------------
+     تقليل الكمية
+     ------------------------------------------------------- */
 
-return String(text || '')
-.toLowerCase()
-.replace(/[ًٌٍَُِّْـ]/g,'')
-.replace(/[أإآ]/g,'ا')
-.replace(/ة/g,'ه');
+  window.decreaseQty = function (index) {
 
-}
+    if (!cart[index]) {
+      return;
+    }
 
 
-function applyFilters(){
+    cart[index].quantity -= 1;
 
-const query =
-normalizeText(
-$('searchBox').value.trim()
-);
 
+    if (cart[index].quantity <= 0) {
 
-const activeButton =
-document.querySelector(
-'.filter.active'
-);
+      cart.splice(index, 1);
 
+    }
 
-const category =
-activeButton ?
-activeButton.dataset.filter :
-'all';
 
+    saveCart();
 
-let visible = 0;
+    updateCartUI();
 
+  };
 
-document.querySelectorAll(
-'.product'
-).forEach(
-function(product){
 
-const productText =
-normalizeText(
-product.textContent
-);
+  /* -------------------------------------------------------
+     حساب عدد المنتجات
+     ------------------------------------------------------- */
 
-const categoryMatch =
-category === 'all' ||
-product.classList.contains(category);
+  function getCartCount() {
 
-const searchMatch =
-!query ||
-productText.includes(query);
+    return cart.reduce(
+      (total, item) =>
+        total + Number(item.quantity || 0),
+      0
+    );
 
-if(
-categoryMatch &&
-searchMatch
-){
+  }
 
-product.style.display = '';
 
-visible++;
+  /* -------------------------------------------------------
+     حساب المجموع
+     ------------------------------------------------------- */
 
-}else{
+  function getCartTotal() {
 
-product.style.display = 'none';
+    return cart.reduce(
+      (total, item) =>
+        total +
+        Number(item.price || 0) *
+        Number(item.quantity || 0),
+      0
+    );
 
-}
+  }
 
-}
-);
 
+  /* -------------------------------------------------------
+     تحديث عداد السلة
+     ------------------------------------------------------- */
 
-$('emptyState').style.display =
-visible === 0 ?
-'block' :
-'none';
+  function updateCartBadges() {
 
-}
+    const count = getCartCount();
 
 
-function setCategory(category){
+    const selectors = [
+      "#cartCount",
+      ".cart-count",
+      "[data-cart-count]"
+    ];
 
-document.querySelectorAll(
-'.filter'
-).forEach(
-function(button){
 
-button.classList.toggle(
-'active',
-button.dataset.filter === category
-);
+    selectors.forEach(function (selector) {
 
-}
-);
+      document
+        .querySelectorAll(selector)
+        .forEach(function (element) {
 
-applyFilters();
+          element.textContent = count;
 
-$('products').scrollIntoView({
-behavior:'smooth'
-});
+          element.style.display =
+            count > 0 ? "" : "none";
 
-}
+        });
 
+    });
 
-/* =========================
-   SORT
-========================= */
 
-function sortProducts(){
+    document
+      .querySelectorAll("[data-cart-total]")
+      .forEach(function (element) {
 
-const value =
-$('sortBox').value;
+        element.textContent =
+          getCartTotal() + " درهم";
 
-const grid =
-$('productGrid');
+      });
 
-const products =
-Array.from(
-grid.querySelectorAll('.product')
-);
+  }
 
 
-products.sort(
-function(a,b){
+  /* -------------------------------------------------------
+     إنشاء نافذة السلة
+     ------------------------------------------------------- */
 
-const priceA =
-Number(a.dataset.price);
+  function createCartModal() {
 
-const priceB =
-Number(b.dataset.price);
+    if (
+      document.getElementById(
+        "pawcasa-cart-modal"
+      )
+    ) {
+      return;
+    }
 
-const ratingA =
-Number(a.dataset.rating);
 
-const ratingB =
-Number(b.dataset.rating);
+    const modal =
+      document.createElement("div");
 
+    modal.id =
+      "pawcasa-cart-modal";
 
-if(value === 'low'){
-return priceA - priceB;
-}
 
-if(value === 'high'){
-return priceB - priceA;
-}
+    modal.innerHTML = `
 
-if(value === 'rating'){
-return ratingB - ratingA;
-}
+      <div class="pawcasa-modal-overlay"
+           onclick="closeCart()"></div>
 
-return 0;
+      <div class="pawcasa-cart-panel">
 
-}
-);
+        <div class="pawcasa-cart-header">
 
+          <div>
+            <span>🛒</span>
+            <strong>سلة PawCasa</strong>
+          </div>
 
-products.forEach(
-function(product){
+          <button
+            type="button"
+            onclick="closeCart()"
+            aria-label="إغلاق"
+          >
+            ×
+          </button>
 
-grid.appendChild(product);
+        </div>
 
-}
-);
 
-applyFilters();
+        <div
+          id="pawcasa-cart-items"
+          class="pawcasa-cart-items"
+        ></div>
 
-}
 
+        <div class="pawcasa-cart-footer">
 
-/* =========================
-   THEME
-========================= */
+          <div class="pawcasa-total">
 
-function toggleTheme(){
+            <span>
+              المجموع
+            </span>
 
-document.body.classList.toggle('dark');
+            <strong
+              id="pawcasa-cart-total"
+            >
+              0 درهم
+            </strong>
 
-try{
+          </div>
 
-localStorage.setItem(
-THEME_KEY,
-document.body.classList.contains('dark')
-? 'dark'
-: 'light'
-);
 
-}catch(error){}
+          <button
+            type="button"
+            class="pawcasa-checkout"
+            onclick="checkoutWhatsApp()"
+          >
+            💬 الطلب عبر WhatsApp
+          </button>
 
-}
 
+          <button
+            type="button"
+            class="pawcasa-clear"
+            onclick="clearCart()"
+          >
+            🗑️ إفراغ السلة
+          </button>
 
-/* =========================
-   WISHLIST
-========================= */
+        </div>
 
-function toggleWishlist(button){
+      </div>
 
-button.classList.toggle('active');
+    `;
 
-button.textContent =
-button.classList.contains('active')
-?
-'♥'
-:
-'♡';
 
-}
+    document.body.appendChild(modal);
 
 
-/* =========================
-   MEDIA
-========================= */
+    const style =
+      document.createElement("style");
 
-function openMedia(button){
 
-const src =
-button.dataset.media;
+    style.textContent = `
 
-if(!src){
-return;
-}
+      #pawcasa-cart-modal {
+        position:fixed;
+        inset:0;
+        z-index:100000;
+        display:none;
+        direction:rtl;
+      }
 
-const product =
-button.closest('.product');
+      #pawcasa-cart-modal.open {
+        display:block;
+      }
 
-const title =
-product ?
-product.querySelector('h3')?.textContent :
-'صورة المنتج';
+      .pawcasa-modal-overlay {
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,.5);
+        backdrop-filter:blur(4px);
+      }
 
-$('mediaImage').src = src;
+      .pawcasa-cart-panel {
+        position:absolute;
+        top:0;
+        right:0;
+        width:min(440px,94vw);
+        height:100%;
+        background:#fff;
+        box-shadow:-15px 0 45px rgba(0,0,0,.2);
+        display:flex;
+        flex-direction:column;
+        animation:pawSlide .25s ease;
+      }
 
-$('mediaImage').alt =
-title || 'صورة المنتج';
+      @keyframes pawSlide {
+        from {
+          transform:translateX(100%);
+        }
 
-$('mediaCaption').textContent =
-title || 'صورة المنتج';
+        to {
+          transform:translateX(0);
+        }
+      }
 
-$('mediaModal').classList.add('open');
+      .pawcasa-cart-header {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:20px;
+        border-bottom:1px solid #eee;
+        font-size:20px;
+      }
 
-}
+      .pawcasa-cart-header div {
+        display:flex;
+        gap:10px;
+        align-items:center;
+      }
 
+      .pawcasa-cart-header button {
+        width:38px;
+        height:38px;
+        border:0;
+        border-radius:50%;
+        background:#f2f5f4;
+        font-size:26px;
+        cursor:pointer;
+      }
 
-function closeMedia(){
+      .pawcasa-cart-items {
+        flex:1;
+        overflow:auto;
+        padding:15px;
+      }
 
-$('mediaModal').classList.remove('open');
+      .pawcasa-cart-item {
+        display:grid;
+        grid-template-columns:1fr auto;
+        gap:10px;
+        padding:15px;
+        margin-bottom:10px;
+        border:1px solid #e8eeee;
+        border-radius:16px;
+      }
 
-}
+      .pawcasa-cart-name {
+        font-weight:800;
+        margin-bottom:5px;
+      }
 
+      .pawcasa-cart-price {
+        color:#39756b;
+        font-weight:700;
+      }
 
-/* =========================
-   DETAILS
-========================= */
+      .pawcasa-qty {
+        display:flex;
+        align-items:center;
+        gap:8px;
+        margin-top:10px;
+      }
 
-function openDetails(
-name,
-description,
-price
-){
+      .pawcasa-qty button {
+        width:30px;
+        height:30px;
+        border:0;
+        border-radius:9px;
+        background:#e8f1ef;
+        cursor:pointer;
+        font-weight:900;
+      }
 
-$('detailsTitle').textContent =
-name;
+      .pawcasa-remove {
+        border:0;
+        background:none;
+        color:#b33;
+        cursor:pointer;
+        font-size:18px;
+      }
 
-$('detailsText').textContent =
-description;
+      .pawcasa-cart-footer {
+        border-top:1px solid #eee;
+        padding:18px;
+      }
 
-$('detailsPrice').textContent =
-price;
+      .pawcasa-total {
+        display:flex;
+        justify-content:space-between;
+        font-size:19px;
+        margin-bottom:14px;
+      }
 
-$('detailsAddBtn').dataset.name =
-name;
+      .pawcasa-checkout,
+      .pawcasa-clear {
+        width:100%;
+        padding:14px;
+        border:0;
+        border-radius:13px;
+        cursor:pointer;
+        font-weight:800;
+        font-size:15px;
+        margin-top:8px;
+      }
 
-$('detailsAddBtn').dataset.price =
-price;
+      .pawcasa-checkout {
+        background:#39756b;
+        color:#fff;
+      }
 
-$('detailsModal').classList.add('open');
+      .pawcasa-clear {
+        background:#f2f2f2;
+        color:#555;
+      }
 
-}
+      .pawcasa-empty-cart {
+        text-align:center;
+        padding:60px 20px;
+        color:#777;
+      }
 
+    `;
 
-function closeDetails(){
 
-$('detailsModal').classList.remove('open');
+    document.head.appendChild(style);
 
-}
+  }
 
 
-/* =========================
-   SEARCH FOCUS
-========================= */
+  /* -------------------------------------------------------
+     تحديث محتوى السلة
+     ------------------------------------------------------- */
 
-function focusSearch(){
+  function updateCartUI() {
 
-$('products').scrollIntoView({
-behavior:'smooth',
-block:'start'
-});
+    createCartModal();
 
-setTimeout(
-function(){
 
-$('searchBox').focus();
+    const container =
+      document.getElementById(
+        "pawcasa-cart-items"
+      );
 
-},
-350
-);
 
+    const total =
+      document.getElementById(
+        "pawcasa-cart-total"
+      );
 
-/* =========================
-   ESCAPE HTML
-========================= */
 
-function escapeHTML(value){
+    if (!container) {
+      return;
+    }
 
-return String(value).replace(
-/[&<>"']/g,
-function(char){
 
-return {
-'&':'&amp;',
-'<':'&lt;',
-'>':'&gt;',
-'"':'&quot;',
-"'":'&#039;'
-}[char];
+    if (!cart.length) {
 
-}
-);
+      container.innerHTML = `
 
-}
+        <div class="pawcasa-empty-cart">
 
+          <div style="font-size:55px">
+            🛒
+          </div>
 
-/* =========================
-   EVENTS
-========================= */
+          <h3>
+            السلة فارغة
+          </h3>
 
-document.addEventListener(
-'DOMContentLoaded',
-function(){
+          <p>
+            أضف منتجاتك المفضلة إلى السلة.
+          </p>
 
-cart = loadCart();
+        </div>
 
-updateCartCount();
+      `;
 
-renderCart();
+    } else {
 
+      container.innerHTML =
+        cart.map(function (item, index) {
 
-/* Add product */
+          const subtotal =
+            item.price *
+            item.quantity;
 
-document.addEventListener(
-'click',
-function(event){
 
-const addButton =
-event.target.closest(
-'.add-btn'
-);
+          return `
 
-if(addButton){
+            <div class="pawcasa-cart-item">
 
-addToCart(
-addButton.dataset.name,
-addButton.dataset.price
-);
+              <div>
 
-return;
+                <div class="pawcasa-cart-name">
+                  ${escapeHTML(item.name)}
+                </div>
 
-}
+                <div class="pawcasa-cart-price">
+                  ${item.price} درهم
+                </div>
 
 
-/* Cart */
+                <div class="pawcasa-qty">
 
-if(
-event.target.closest('#cartBtn') ||
-event.target.closest('#mobileCartBtn')
-){
+                  <button
+                    type="button"
+                    onclick="decreaseQty(${index})"
+                  >
+                    −
+                  </button>
 
-openCart();
+                  <strong>
+                    ${item.quantity}
+                  </strong>
 
-return;
+                  <button
+                    type="button"
+                    onclick="increaseQty(${index})"
+                  >
+                    +
+                  </button>
 
-}
+                  <span>
+                    = ${subtotal} درهم
+                  </span>
 
+                </div>
 
-/* Close cart */
+              </div>
 
-if(
-event.target.closest('#closeCartBtn')
-){
 
-closeCart();
+              <button
+                type="button"
+                class="pawcasa-remove"
+                onclick="removeFromCart(${index})"
+                aria-label="حذف"
+              >
+                🗑️
+              </button>
 
-return;
+            </div>
 
-}
+          `;
 
+        }).join("");
 
-/* Checkout */
+    }
 
-if(
-event.target.closest('#checkoutBtn')
-){
 
-showCheckout();
+    if (total) {
 
-return;
+      total.textContent =
+        getCartTotal() + " درهم";
 
-}
+    }
 
 
-/* Clear */
+    updateCartBadges();
 
-if(
-event.target.closest('#clearCartBtn')
-){
+  }
 
-clearCart();
 
-return;
+  /* -------------------------------------------------------
+     فتح السلة
+     ------------------------------------------------------- */
 
-}
+  window.openCart = function () {
 
+    createCartModal();
 
-/* Send order */
+    updateCartUI();
 
-if(
-event.target.closest('#sendOrderBtn')
-){
+    document
+      .getElementById(
+        "pawcasa-cart-modal"
+      )
+      .classList.add("open");
 
-sendOrder();
+    document.body.style.overflow = "hidden";
 
-return;
+  };
 
-}
 
+  /* -------------------------------------------------------
+     إغلاق السلة
+     ------------------------------------------------------- */
 
-/* Theme */
+  window.closeCart = function () {
 
-if(
-event.target.closest('#themeBtn')
-){
+    const modal =
+      document.getElementById(
+        "pawcasa-cart-modal"
+      );
 
-toggleTheme();
 
-return;
+    if (modal) {
 
-}
+      modal.classList.remove("open");
 
+    }
 
-/* Search */
 
-if(
-event.target.closest('#searchBtn') ||
-event.target.closest('#mobileSearchBtn')
-){
+    document.body.style.overflow = "";
 
-focusSearch();
+  };
 
-return;
 
-}
+  /* -------------------------------------------------------
+     إفراغ السلة
+     ------------------------------------------------------- */
 
+  window.clearCart = function () {
 
-/* Wishlist */
+    if (!cart.length) {
 
-const wishlist =
-event.target.closest('[data-wish]');
+      toast("السلة فارغة.");
 
-if(wishlist){
+      return;
+    }
 
-toggleWishlist(wishlist);
 
-return;
+    const confirmed =
+      window.confirm(
+        "هل تريد إفراغ السلة بالكامل؟"
+      );
 
-}
 
+    if (!confirmed) {
+      return;
+    }
 
-/* Categories */
 
-const category =
-event.target.closest(
-'[data-category]'
-);
+    cart = [];
 
-if(category){
+    saveCart();
 
-setCategory(
-category.dataset.category
-);
+    updateCartUI();
 
-return;
+    toast("تم إفراغ السلة.");
 
-}
+  };
 
 
-/* Filters */
+  /* -------------------------------------------------------
+     الطلب عبر WhatsApp
+     ------------------------------------------------------- */
 
-const filter =
-event.target.closest(
-'[data-filter]'
-);
+  window.checkoutWhatsApp = function () {
 
-if(filter){
+    if (!cart.length) {
 
-setCategory(
-filter.dataset.filter
-);
+      toast(
+        "السلة فارغة.",
+        "error"
+      );
 
-return;
+      return;
+    }
 
-}
 
+    /*
+      مهم:
+      استبدل الرقم التالي برقم WhatsApp الخاص بـPawCasa.
 
-/* Cart quantity */
+      يجب أن يكون بصيغة دولية بدون +
+      مثال المغرب:
+      2126XXXXXXXX
+    */
 
-const cartAction =
-event.target.closest(
-'[data-cart-action]'
-);
+    const whatsappNumber =
+      "212600000000";
 
-if(cartAction){
 
-const index =
-Number(
-cartAction.dataset.index
-);
+    const lines = [
 
-const amount =
-cartAction.dataset.cartAction === 'plus'
-?
-1
-:
--1;
+      "🐾 *طلب جديد من PawCasa*",
+      "",
+      "🛍️ المنتجات:",
+      ""
 
-changeQuantity(
-index,
-amount
-);
+    ];
 
-return;
 
-}
+    cart.forEach(function (item) {
 
-}
-);
+      lines.push(
+        "• " +
+        item.name +
+        " × " +
+        item.quantity +
+        " = " +
+        (
+          item.price *
+          item.quantity
+        ) +
+        " درهم"
+      );
 
+    });
 
-/* Search */
 
-$('searchBox').addEventListener(
-'input',
-applyFilters
-);
+    lines.push("");
 
+    lines.push(
+      "💰 *المجموع: " +
+      getCartTotal() +
+      " درهم*"
+    );
 
-/* Sort */
+    lines.push("");
 
-$('sortBox').addEventListener(
-'change',
-sortProducts
-);
+    lines.push(
+      "📍 أرسل لي معلومات التوصيل من فضلك."
+    );
 
 
-/* Close modals */
+    const message =
+      encodeURIComponent(
+        lines.join("\n")
+      );
 
-$('modal').addEventListener(
-'click',
-function(event){
 
-if(
-event.target === $('modal')
-){
+    const url =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      message;
 
-closeCart();
 
-}
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
 
-}
-);
+  };
 
 
-$('mediaModal').addEventListener(
-'click',
-function(event){
+  /* -------------------------------------------------------
+     تفاصيل المنتج
+     ------------------------------------------------------- */
 
-if(
-event.target === $('mediaModal')
-){
+  window.details = function (
+    name,
+    description,
+    price
+  ) {
 
-closeMedia();
+    const old =
+      document.getElementById(
+        "pawcasa-details-modal"
+      );
 
-}
 
-}
-);
+    if (old) {
+      old.remove();
+    }
 
 
-$('detailsModal').addEventListener(
-'click',
-function(event){
+    const modal =
+      document.createElement("div");
 
-if(
-event.target === $('detailsModal')
-){
 
-closeDetails();
+    modal.id =
+      "pawcasa-details-modal";
 
-}
 
-}
-);
+    modal.innerHTML = `
 
+      <div class="details-overlay"
+           onclick="closeDetails()"></div>
 
-/* Close buttons */
+      <div class="details-box">
 
-$('closeMediaBtn').addEventListener(
-'click',
-closeMedia
-);
+        <button
+          type="button"
+          class="details-close"
+          onclick="closeDetails()"
+          aria-label="إغلاق"
+        >
+          ×
+        </button>
 
-$('closeDetailsBtn').addEventListener(
-'click',
-closeDetails
-);
+        <div class="details-icon">
+          🐾
+        </div>
 
+        <span class="details-brand">
+          PawCasa
+        </span>
 
-/* Details add */
+        <h2>
+          ${escapeHTML(name)}
+        </h2>
 
-$('detailsAddBtn').addEventListener(
-'click',
-function(){
+        <p>
+          ${escapeHTML(description)}
+        </p>
 
-addToCart(
-this.dataset.name,
-this.dataset.price
-);
+        <div class="details-price">
+          ${price} درهم
+        </div>
 
-closeDetails();
+        <button
+          type="button"
+          class="details-add"
+          onclick="add(
+            '${escapeJS(name)}',
+            ${price}
+          );closeDetails();"
+        >
+          🛒 أضف إلى السلة
+        </button>
 
-}
-);
+      </div>
 
+    `;
 
-/* Keyboard */
 
-document.addEventListener(
-'keydown',
-function(event){
+    const style =
+      document.createElement("style");
 
-if(event.key === 'Escape'){
 
-closeCart();
+    style.textContent = `
 
-closeMedia();
+      #pawcasa-details-modal {
+        position:fixed;
+        inset:0;
+        z-index:100001;
+        direction:rtl;
+      }
 
-closeDetails();
+      .details-overlay {
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,.55);
+        backdrop-filter:blur(5px);
+      }
 
-}
+      .details-box {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:min(460px,90vw);
+        background:#fff;
+        border-radius:25px;
+        padding:35px 25px 25px;
+        text-align:center;
+        box-shadow:0 25px 70px rgba(0,0,0,.25);
+        animation:pawPop .25s ease;
+      }
 
-}
-);
+      @keyframes pawPop {
+        from {
+          opacity:0;
+          transform:translate(-50%,-47%) scale(.94);
+        }
 
+        to {
+          opacity:1;
+          transform:translate(-50%,-50%) scale(1);
+        }
+      }
 
-/* Theme restore */
+      .details-close {
+        position:absolute;
+        top:12px;
+        left:12px;
+        width:38px;
+        height:38px;
+        border:0;
+        border-radius:50%;
+        background:#f2f5f4;
+        font-size:25px;
+        cursor:pointer;
+      }
 
-try{
+      .details-icon {
+        font-size:60px;
+        margin-bottom:8px;
+      }
 
-if(
-localStorage.getItem(THEME_KEY)
-===
-'dark'
-){
+      .details-brand {
+        color:#39756b;
+        font-weight:800;
+      }
 
-document.body.classList.add('dark');
+      .details-box h2 {
+        margin:10px 0;
+      }
 
-}
+      .details-box p {
+        color:#666;
+        line-height:1.8;
+      }
 
-}catch(error){}
+      .details-price {
+        font-size:24px;
+        font-weight:900;
+        color:#39756b;
+        margin:20px 0;
+      }
 
+      .details-add {
+        width:100%;
+        padding:14px;
+        border:0;
+        border-radius:13px;
+        background:#39756b;
+        color:#fff;
+        font-weight:800;
+        font-size:16px;
+        cursor:pointer;
+      }
 
-/* Image fallback */
+    `;
 
-document.querySelectorAll(
-'img'
-).forEach(
-function(image){
 
-image.addEventListener(
-'error',
-function(){
+    document.head.appendChild(style);
 
-if(this.dataset.fallback){
-return;
-}
+    document.body.appendChild(modal);
 
-this.dataset.fallback = '1';
+  };
 
-this.src =
-'data:image/svg+xml;charset=UTF-8,' +
-encodeURIComponent(
-`
-<svg
-xmlns="http://www.w3.org/2000/svg"
-width="800"
-height="500"
->
-<rect
-width="100%"
-height="100%"
-fill="#f4eee7"
-/>
 
-<text
-x="50%"
-y="50%"
-text-anchor="middle"
-font-size="40"
-fill="#3f7d70"
->
-PawCasa
-</text>
+  /* -------------------------------------------------------
+     إغلاق التفاصيل
+     ------------------------------------------------------- */
 
-</svg>
-`
-);
+  window.closeDetails = function () {
 
-}
-);
+    const modal =
+      document.getElementById(
+        "pawcasa-details-modal"
+      );
 
-}
-);
 
+    if (modal) {
+      modal.remove();
+    }
 
-applyFilters();
+  };
 
-}
-);
 
-</script>
+  /* -------------------------------------------------------
+     المفضلة
+     ------------------------------------------------------- */
 
-</body>
-  </html>
+  window.toggleWish = function (button) {
+
+    const card =
+      button
+  
