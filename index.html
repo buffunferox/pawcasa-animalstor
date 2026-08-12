@@ -2266,7 +2266,7 @@ footer {
 
       <a
         class="btn btn-primary"
-        href="https://wa.me/2126844254055"
+        href="https://wa.me/212684424055"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -3994,19 +3994,106 @@ window.addEventListener(
      ========================================================= -->
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-document.getElementById(
-  "currentYear"
-).textContent =
-  new Date().getFullYear();
+  /* =========================
+     السنة الحالية
+     ========================= */
+  const yearElement = document.getElementById("currentYear");
 
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  /* =========================
+     زر إرسال الطلب عبر WhatsApp
+     ========================= */
+  const whatsappButton = document.getElementById("whatsappOrder");
+
+  if (whatsappButton) {
+
+    whatsappButton.addEventListener("click", function () {
+
+      const customerPhoneElement =
+        document.getElementById("customerPhone");
+
+      const customerAddressElement =
+        document.getElementById("customerAddress");
+
+      const customerNameElement =
+        document.getElementById("customerName");
+
+      const customerPhone =
+        customerPhoneElement
+          ? customerPhoneElement.value.trim()
+          : "";
+
+      const customerAddress =
+        customerAddressElement
+          ? customerAddressElement.value.trim()
+          : "";
+
+      const customerName =
+        customerNameElement
+          ? customerNameElement.value.trim()
+          : "";
+
+      /* التحقق من رقم الهاتف */
+      if (!customerPhone) {
+
+        alert("يرجى إدخال رقم الهاتف أولاً.");
+
+        if (customerPhoneElement) {
+          customerPhoneElement.focus();
+        }
+
+        return;
+      }
+
+      /* التحقق من عنوان التوصيل */
+      if (!customerAddress) {
+
+        alert("يرجى إدخال عنوان التوصيل أولاً.");
+
+        if (customerAddressElement) {
+          customerAddressElement.focus();
+        }
+
+        return;
+      }
+
+      /* =========================
+         رسالة WhatsApp
+         ========================= */
+      const message =
+        "مرحباً PawCasa 👋\n\n" +
+        "أريد تأكيد طلبي.\n\n" +
+        "الاسم: " + (customerName || "غير محدد") + "\n" +
+        "رقم الهاتف: " + customerPhone + "\n" +
+        "عنوان التوصيل: " + customerAddress + "\n\n" +
+        "أرجو تأكيد الطلب وشكراً لكم.";
+
+      /* =========================
+         رقم WhatsApp
+         المغرب +212
+         ========================= */
+      const whatsappNumber = "212684424055";
+
+      const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+      /* فتح WhatsApp */
+      window.open(whatsappURL, "_blank");
+
+    });
+  }
+
+});
 </script>
 
-
-<!-- =========================================================
-     نهاية الصفحة
-     ========================================================= -->
-
 </body>
-
 </html>
+
